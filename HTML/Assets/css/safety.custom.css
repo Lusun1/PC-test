@@ -1,0 +1,31 @@
+
+#instruction6 {
+    display: none;
+}
+
+#instruction5 {
+    display: none;
+}
+
+#instruction4 {
+    display: none;
+}
+
+#instruction3 {
+    display: none;
+}
+
+#instruction2 {
+    display: none;
+}
+
+#question1 {
+    display: none;
+}
+
+
+#hint {
+    display: none;
+    float: right;
+    margin-right:10px;
+}

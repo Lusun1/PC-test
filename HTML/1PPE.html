@@ -1,0 +1,198 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+       <!-- Standard CTAT libraries     -->
+    <link rel="stylesheet" href="https://cdn.ctat.cs.cmu.edu/releases/latest/CTAT.min.css"/>
+    <link rel="shortcut icon" href="">
+    <script src="https://cdn.ctat.cs.cmu.edu/releases/latest/jquery.min.js"></script>
+    <script src="https://cdn.ctat.cs.cmu.edu/releases/latest/ctat.min.js"></script>
+    <script src="https://cdn.ctat.cs.cmu.edu/releases/latest/ctatloader.js"></script>
+
+    <title>Instruction</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-8nq3OiMMgrVFAHyRMMO+DTfMEciSY+c3Awhj/5ljQ1xck1Uv2BUtMjsjLD8GT5Er" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link rel = "stylesheet" href = "Assets/css/custom.css">
+    <!-- <link rel = "stylesheet" href = "Assets/css/custom.common.style.css"> -->
+
+  </head>
+
+  <body>
+    <form class="testItemContainer" id="form1">
+        <div class="form-group">
+          <div class="row">
+                    <div class="col-sm-2" style = "padding-right:5px;">
+                      <table class="table table-hover text-grey">
+                          <thead>
+                            <tr>
+                              <th scope="col">Table of Content</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="table-active text-white">
+                              <td>01 PPE Safety</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>02 Safety</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>03 EOS Layout Outside</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>04 EOS Layout Inside</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>05 IPMC</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>06 Mounting of Recoater Blade</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>07 Leveling of Build Plate</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>08 Set Up Conditions</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>09 Start Build</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>10 Laser Sintering Process</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>11 Monitor and Take out Build</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                    </div>
+                    <div class="col-sm-10" style = "padding:5px;">
+                      <div clas ="row">
+                        <div class="card text-white border-dark mb-3 card-format1 lead">
+                          <div class="card-header">PPE</div>
+                          <div class="card-body border-dark">
+                            <div class="card-text text-secondary" id = "instruction1">
+                              <p class="lead">Before using EOS, there are basic prerequisite about safety:
+                                <ul class="lead"><li>Only qualified persons trained by EOS are allowed to operate the machine</li>
+                                <li>It is necessary to wear personal protective equipment(PPE) to prevent hazards.</li></ul>
+                              </p>
+                              <p class="lead">
+                                <font color="white">PPE</font> is for personal protection equipment. The personal protective equipment protects the operator as well as possible against the remaining hazards. 
+                              </p>
+                              <p class="lead">The following items belong to PPE:
+                                <ol class="lead">
+                                  <li>Safety glasses</li>
+                                  <li>Nitrile gloves</li>
+                                  <li>Respirators</li>
+                                  <li>Closed toe shoes</li>
+                                  <li>Protecting clothing(flame-retardant)</li>
+                                </ol>
+                              </p>
+                            </div>
+                            <div class="card-text text-secondary" id = "instruction2">
+                              <p class="lead">Nitrile gloves:<br>Function: Protect the hands against skin contact with metal powders.</p>
+                              <p class="lead">
+                                <input type="image" src="Assets/images/PPE1_gloves.png" align="center" width="50%" height="60%" style="padding:5%">
+                              </p>
+                            </div>
+                            <div class="card-text text-secondary" id = "instruction3">
+                              <p class="lead">Safety glasses:<br>Function: Protect the eyes against the entry of metal powder.</p>
+                              <p class="lead">
+                                <input type="image" src="Assets/images/PPE2_glasses.png" align="center" width="50%" height="60%" style="padding:5%">
+                              </p>
+                            </div>
+                            <div class="card-text text-secondary" id = "instruction4">
+                              <p class="lead">Respirator: <br>Respirator needed if powder is being used.<br>Function: Protect against inhaling metal powder dusts and burns</p>
+                              <p class="lead">
+                                <input type="image" src="Assets/images/PPE3_respirator.png" align="center" width="50%" height="60%" style="padding:5%">
+                              </p>
+                            </div>
+                            <div class="card-text text-secondary" id = "instruction5">
+                              <p class="lead">Close toe shoes:<br>Function: Protect again crushing and falling parts. Due the protection against electrostatic charging they also protect against sparking.</p>
+                              <p class="lead">
+                                <input type="image" src="Assets/images/PPE4_closeshoes.png" align="center" width="50%" height="60%" style="padding:5%">
+                              </p>
+                            </div>
+                            <div class="card-text text-secondary" id = "instruction6">
+                              <p class="lead">Closed protective clothing made of flame-retardant material:<br>Function: Protects against direct skin contact with metal powders as well as burns.</p>
+                              <p class="lead">
+                                <input type="image" src="Assets/images/PPE5_clothes.png" align="center" width="50%" height="60%" style="padding:5%">
+                              </p>
+                            </div>
+                            <div class="card-text text-white lead" id = "question1">
+                              <div>Answer the question below:</div>
+                                <div id="questionText"></div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheckA" name ="checkGroup">
+                                    <label id="checkA" for="defaultCheckA">
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheckB" name ="checkGroup">
+                                    <label id="checkB" for="defaultCheckB">
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheckC" name ="checkGroup">
+                                    <label id="checkC" for="defaultCheckC">
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheckD" name ="checkGroup">
+                                    <label id="checkD" for="defaultCheckD">
+                                    </label>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="card-footer bg-transparent border-dark lead">
+                            <button type="button" class="btn btn-success float-right" id="next"style="font-size : 20px;">Next</button>
+                            <button type="button" class="btn btn-success" id="hint" style="font-size : 20px;">Hint</button>
+                            <div id = "hint_text"/>
+                          </div>
+                          </div>
+                          </div>
+                            <!-- <div class="card text-white" width="100%;"style = "border-radius: 0px;padding-top:10px;">
+                              <div class="card-body">
+                                <p class="card-text"><br>
+                                  <button type="button" class="btn btn-success float-right" id="next">Next</button>
+                                  <button type="button" class="btn btn-success" id="hint">Hint</button>
+                                  <div id = "hint_text"/>
+                              </p>
+                              </div> 
+                            </div>  -->
+                          </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </form>
+
+    <!-- ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="Assets/js/custom/PPE.js"></script>
+  </body

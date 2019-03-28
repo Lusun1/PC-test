@@ -1,0 +1,217 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+      <!-- Standard CTAT libraries    -->
+    <link rel="stylesheet" href="https://cdn.ctat.cs.cmu.edu/releases/latest/CTAT.min.css"/>
+    <link rel="shortcut icon" href="">
+    <script src="https://cdn.ctat.cs.cmu.edu/releases/latest/jquery.min.js"></script>
+    <script src="https://cdn.ctat.cs.cmu.edu/releases/latest/ctat.min.js"></script>
+    <script src="https://cdn.ctat.cs.cmu.edu/releases/latest/ctatloader.js"></script>
+
+    <title>Instruction</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-8nq3OiMMgrVFAHyRMMO+DTfMEciSY+c3Awhj/5ljQ1xck1Uv2BUtMjsjLD8GT5Er" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link rel = "stylesheet" href = "Assets/css/custom.css">
+    <!-- <link rel = "stylesheet" href = "Assets/css/custom.common.style.css"> -->
+
+  </head>
+
+  <body>
+    <form class="testItemContainer" id="form1">
+        <div class="form-group">
+          <div class="card border-success mb-3 text-warning" id = "card1" style="margin:10px;border-radius: 0px;">
+                <div class="row">
+                    <div class="col-sm-3">
+                      <table class="table table-hover text-success">
+                          <thead>
+                            <tr>
+                              <th scope="col">Table of Content</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>01 PPE Safety</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>02 Safety</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active text-white">
+                              <td>03 EOS Layout Outside</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>04 EOS Layout Inside</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>05 IPMC</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>06 Mounting of Recoater Blade</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>07 Leveling of Build Plate</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>08 Set Up Conditions</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>09 Start Build</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>10 Laser Sintering Process</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>11 Monitor and Take out Build</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                    </div>
+                    <div class="col-sm-9">
+                      <div clas ="row">
+                        <div class="card border-success text-white" width="100%" style="min-height:60%;border-radius: 0px;">
+                          <div class="card-header">EOS Layout</div>
+                          <div class="card-body bg-dark">
+                            <div class="card-text text-warning" id = "instruction1">
+                              <p>The picture below shows the EOS layout. In this chapter, you will learn to remember these parts and understand the function of each part.</p>
+                              <p>
+                                <input type="image" src="Assets/images/EOSLayout_outside.png" align="center" width="75%" height="70%" style="padding:5%">
+                              </p>
+                            </div>
+                            <div class="card-text text-warning" id = "instruction2">
+                              <p>
+                                <font color="white">Recirculating filter system - fine filter stage</font> Maybe use Unit Model to represent the model<br>Function: The Recirculating filter system draws particle laden inert gas from the process chamber, filters it and then feeds it back to the process chamber.
+                              </p>
+                              <div class = "row">
+                                <div class = "col-sm-8">
+                                  <input type="image" src="Assets/images/EOSLayout_filter.png" align="right" width="70%" height="80%" style="padding:5%"><br>
+                                </div>
+                                <div class = "col-sm-4">
+                                  <br>
+                                  <br>
+                                  <ol>
+                                    <li>Locking lever</li>
+                                    <li>Passivation connection</li>
+                                    <li>Locking lever</li>
+                                    <li>Door lock</li>
+                                  </ol> 
+                                  <ul>
+                                    <li>A Pressure vessel housing</li>
+                                    <li>B Cartridge filter chamber</li>
+                                    <li>C particle collecting bin</li>
+                                  </ul> 
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-text text-warning" id = "instruction3">
+                              <p>
+                                <font color="white">Touch sensitive monitor</font> Maybe use Unit Model to represent the model<br>
+                                The following operations will be useful in your using of monitor:<br>
+                                <ul>
+                                    <li>Establish process conditions Start button</li>
+                                    <li>Pick the job</li>
+                                    <li>Stop when you have problem</li>
+                                    <li>Restart the build after you stop it</li>
+                                  </ul> 
+                              </p>
+                              <p>
+                                <input type="image" src="Assets/images/EOSLayout_screen.jpg" align="center" width="70%" height="80%" style="padding:5%"><br>
+                              </p>
+                            </div>
+                            <div class="card-text text-warning" id = "instruction4">
+                              <p>
+                                <font color="white">Emergency stop circuit</font> Maybe use Unit Model to represent the model
+                              </p>
+                              <p>
+                                <input type="image" src="Assets/images/EOSLayout_emergency.png" align="center" width="30%" height="30%" style="padding:5%"><br>
+                              </p>
+                            </div>
+                            <div class="card-text text-warning" id = "instruction5">
+                              <p>
+                                <font color="white">Process chamber</font> Maybe use Unit Model to represent the model
+                              </p>
+                              <p>
+                                <input type="image" src="Assets/images/EOSLayout_chamber.png" align="center" width="70%" height="80%" style="padding:5%"><br>
+                              </p>
+                            </div>
+                            <div class="card-text text-warning" id = "instruction6">
+                              <p>
+                                <font color="white">Inert gas selection switch</font> Maybe use Unit Model to represent the model
+                              </p>
+                              <p>
+                                <input type="image" src="Assets/images/EOSLayout_inertgas.png" align="center" width="30%" height="30%" style="padding:5%"><br>
+                              </p>
+                            </div>
+                            <div class="card-text text-warning" id = "question1">
+                              <div>Answer the question below:</div>
+                                <div id="questionText"></div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheckA" name ="checkGroup">
+                                    <label id="checkA" for="defaultCheckA">
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheckB" name ="checkGroup">
+                                    <label id="checkB" for="defaultCheckB">
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheckC" name ="checkGroup">
+                                    <label id="checkC" for="defaultCheckC">
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheckD" name ="checkGroup">
+                                    <label id="checkD" for="defaultCheckD">
+                                    </label>
+                                </div>
+                              </div>
+                          </div>
+                          </div>
+                          </div>
+                            <div class="card border-success text-white" width="100%;"style = "border-radius: 0px;">
+                              <div class="card-body">
+                                <p class="card-text"><br>
+                                  <button type="button" class="btn btn-success float-right" id="next">Next</button>
+                                  <button type="button" class="btn btn-success" id="hint">Hint</button>
+                                  <div id = "hint_text"/>
+                              </p>
+                              </div> 
+                            </div> 
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="Assets/js/custom/EOSLayout.js"></script>
+  </body

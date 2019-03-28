@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package name="Lu-MFI-PC" label="Lu-MFI-PC" description="Lu-MFI-PC" tutor_type="javascript">
+  <Problems>
+    <Problem name="PPE" label="PPE" description="PPE" tutor_flag="tutor" problem_file="PPE.brd" selection_features="()" student_interface="1PPE.html">
+      <Skills>
+      </Skills>
+    </Problem>
+    <Problem name="Safety" label="Safety" description="Safety" tutor_flag="tutor" problem_file="Safety.brd" selection_features="()" student_interface="2Safety.html">
+      <Skills>
+      </Skills>
+    </Problem>
+    <Problem name="EOSLayout" label="EOSLayout" description="EOSLayout" tutor_flag="tutor" problem_file="EOSLayout.brd" selection_features="()" student_interface="2EOSLayout.html">
+      <Skills>
+      </Skills>
+    </Problem>
+    <Problem name="EOSLayout_Inside" label="EOSLayout_Inside" description="EOSLayout_Inside" tutor_flag="tutor" problem_file="EOSLayout_Inside.brd" selection_features="()" student_interface="2EOSLayout_Inside.html">
+      <Skills>
+      </Skills>
+    </Problem>
+  </Problems>
+  <ProblemSets>
+    <ProblemSet name="Lu-MFI-PC" label="Lu-MFI-PC" description="Lu-MFI-PC" status="Active" team_size="1" selection_algorithm="sequential" max_count="1000" max_repeat="1" initial_sequence="0">
+      <Problems>
+        <Problem name="PPE" position="1" role="0"/>
+        <Problem name="Safety" position="5" role="0"/>
+      </Problems>
+      <Skills>
+      </Skills>
+      <Assets>
+      </Assets>
+      <Categories>
+        <Standard name="Student" label="Problem Set Categories" description="Student Standards" category="standard"/>
+        <Standard name="CommonCore" label="Common Core Standards" description="Common Core Standards" category="standard"/>
+        <Standard name="NCTM" label="NCTM Curriculum Focal Points" description="NCTM Curriculum Focal Points" category="standard"/>
+        <Standard name="PA" label="PA Assessment Anchors" description="PA Assessment Anchors" category="standard"/>
+        <Collection name="general" label="Released Problem Sets" description="Released Problem Sets"/>
+      </Categories>
+    </ProblemSet>
+  </ProblemSets>
+  <Assets>
+    <!-- HTML files -->
+    <Asset name="1PPE.html" label="1PPE.html" description="1PPE.html" asset_locator="HTML/1PPE.html"/>
+    <Asset name="2Safety.html" label="2Safety.html" description="2Safety.html" asset_locator="HTML/2Safety.html"/>
+    <!-- BRD files -->
+    <Asset name="PPE.brd" label="PPE.brd" description="PPE.brd" asset_locator="FinalBRDs/PPE.brd"/>
+    <Asset name="Safety.brd" label="Safety.brd" description="Safety.brd" asset_locator="FinalBRDs/Safety.brd"/>
+    <!-- Javascript files -->
+    <Asset name="PPE.js" label="PPE.js" description="PPE.js" asset_locator="HTML/Assets/js/custom/PPE.js"/>
+    <Asset name="Safety.js" label="Safety.js" description="Safety.js" asset_locator="HTML/Assets/js/custom/Safety.js"/>
+  </Assets>
+</Package>

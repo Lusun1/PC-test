@@ -1,0 +1,41 @@
+body {
+    font-size: 15em !important; 
+}
+
+.card-format1{
+    width:"100%";
+    padding-left:0px;
+    min-height:60%;
+    border-radius: 0px;
+}
+
+#instruction6 {
+    display: none;
+}
+
+#instruction5 {
+    display: none;
+}
+
+#instruction4 {
+    display: none;
+}
+
+#instruction3 {
+    display: none;
+}
+
+#instruction2 {
+    display: none;
+}
+
+#question1 {
+    display: none;
+}
+
+
+#hint {
+    display: none;
+    float: right;
+    margin-right:10px;
+}
