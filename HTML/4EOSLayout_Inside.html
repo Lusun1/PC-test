@@ -4,7 +4,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-      <!-- Standard CTAT libraries    -->
+       <!-- Standard CTAT libraries     -->
     <link rel="stylesheet" href="https://cdn.ctat.cs.cmu.edu/releases/latest/CTAT.min.css"/>
     <link rel="shortcut icon" href="">
     <script src="https://cdn.ctat.cs.cmu.edu/releases/latest/jquery.min.js"></script>
@@ -23,42 +23,42 @@
   </head>
 
 <style>
-#sortable1, #sortable2, #sortable3,#sortable4,#sortable5 {
-  border: 2px solid grey;
-  width: 250px;
-  min-height: 20px;
-  list-style-type: none;
-  margin: 0;
-  padding: 0 0 0 0;
-  float: left;
-  margin-right: 10px;
-  font-size: 0.9em;
-}
-#rest_sortable1, #rest_sortable2{
-  border: 2px solid grey;
-  width: 250px;
-  min-height: 20px;
-  list-style-type: none;
-  margin: 0;
-  padding: 0 0 0 0;
-  float: left;
-  margin-right: 10px;
-  font-size: 0.9em;
-}
-#sortable1 li, #sortable2 li, #sortable3 li,#sortable4 li,#sortable5 li {
-  border: 1px solid #eee;
-  margin: 0 5px 5px 5px;
-  padding: 5px;
-  font-size: 0.9em;
-}
+  #sortable1, #sortable2, #sortable3,#sortable4,#sortable5 {
+    border: 2px solid white;
+    width: 250px;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 0;
+    float: left;
+    margin-right: 10px;
+    font-size: 0.9em;
+  }
+  #rest_sortable1, #rest_sortable2{
+    border: 2px solid white;
+    width: 250px;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 0;
+    float: left;
+    margin-right: 10px;
+    font-size: 0.9em;
+  }
+  #sortable1 li, #sortable2 li, #sortable3 li,#sortable4 li,#sortable5 li {
+    border: 1px solid #eee;
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 0.9em;
+  }
 </style>
+
   <body>
     <form class="testItemContainer" id="form1">
         <div class="form-group">
-          <div class="card border-success mb-3 text-warning" id = "card1" style="margin:10px;border-radius: 0px;">
-                <div class="row">
-                    <div class="col-sm-3">
-                      <table class="table table-hover text-success">
+          <div class="row">
+                    <div class="col-sm-2" style = "padding-right:5px;">
+                      <table class="table table-hover text-grey">
                           <thead>
                             <tr>
                               <th scope="col">Table of Content</th>
@@ -75,12 +75,12 @@
                             </tr>
                           </tbody>
                           <tbody>
-                            <tr class="table-active text-white">
+                            <tr class="table-active">
                               <td>03 EOS Layout Outside</td>
                             </tr>
                           </tbody>
                           <tbody>
-                            <tr class="table-active">
+                            <tr class="table-active text-white">
                               <td>04 EOS Layout Inside</td>
                             </tr>
                           </tbody>
@@ -121,84 +121,122 @@
                           </tbody>
                       </table>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-10" style = "padding:5px;">
                       <div clas ="row">
-                        <div class="card border-success text-white" width="100%" style="min-height:60%;border-radius: 0px;">
-                          <div class="card-header">EOS Layout</div>
-                          <div class="card-body bg-dark">
-                            <div class="card-text text-warning" id = "instruction1">
-                              <p>The picture below shows the EOS chamber. In this chapter, you will learn to remember these parts and understand the function of each part. In the real operation, you will do operations in the chamber.</p>
-                              <p>
-                                <input type="image" src="Assets/images/EOSLayout_chamber.png" align="center" width="70%" height="80%" style="padding:5%">
+                        <div class="card text-white border-dark mb-3 card-format1 lead">
+                          <div class="card-header">EOS Layout Inside</div>
+                          <div class="card-body border-dark">
+                            <div class="card-text text-secondary" id = "instruction1">
+                              <p class="lead">In this chapter, you will learn the items inside of EOS Machine chamber. The picture below shows all parts you need to know in the chamber. Please go through each part and answer the question.
+                              </p>
+                              <p class="lead"> Parts inside of process chamber:<br>
+                                1. Recoater, 2. Building platform, 3. Collector duct, 4. Dispenser duct, 5. Rocket switches
                               </p>
                             </div>
-                            <div class="card-text text-warning" id = "question1">
-                                <div class="row">
-                                  <div class="col-sm-3">
-                                      <div class="row">
-                                        <div>Answer the question below:</div>
-                                        <div id="questionText" style="max-width:90%"></div>
-                                      </div>
-                                      <div class="row">
-                                          <ul id="sortable1" class="connectedSortable" style="max-width:100%">
-                                              <li class="ui-state-default" id="term1"></li>
-                                              <li class="ui-state-default" id="term2"></li>
-                                              <li class="ui-state-default" id="term3"></li>
-                                              <li class="ui-state-default" id="term4"></li>
-                                              <li class="ui-state-default" id="term5"></li>
-                                          </ul> 
-                                      </div>
-                                  </div>
-                                  <div class="col-sm-2">
-                                      <div class="row">
-                                          <ul id="sortable2" class="connectedSortable" style="width:100%;min-height:5%; vertical-align: middle"></ul>
-                                      </div>
-                                      <div class="row" style="margin-top:50%">
-                                          <ul id="sortable3" class="connectedSortable" style="width:100%;min-height:5%"></ul>
-                                      </div>
-                                      <div class="row" style="margin-top:50%">
-                                          <ul id="rest_sortable1" style="width:80%;min-height:5%;">Collector duct</ul>
-                                      </div>
-                                  </div>
-                                  <div class="col-sm-5">
-                                      <div class="row">
-                                          <img id="layout" src="Assets/images/EOSLayout_chamber.png" style="width:90%;height:50%;">
-                                      </div>
-                                  </div>
-                                  <div class="col-sm-2">
-                                      <div class="row" style="margin-top:60%">
-                                          <ul id="sortable4" class="connectedSortable" style="width:100%;min-height:5%; vertical-align: middle"></ul>
-                                      </div>
-                                      <div class="row" style="margin-top:50%">
-                                          <ul id="sortable5" class="connectedSortable" style="width:100%;min-height:5%; vertical-align: middle"></ul>
-                                      </div>
-                                  </div>
-                              </div>
-                              </div>
-                          </div>
-                          </div>
-                          </div>
-                            <div class="card border-success text-white" width="100%;"style = "border-radius: 0px;">
-                              <div class="card-body">
-                                <p class="card-text"><br>
-                                  <button type="button" class="btn btn-success float-right" id="next">Next</button>
-                                  <button type="button" class="btn btn-success" id="hint">Hint</button>
-                                  <div id = "hint_text"/>
+                            <div class="card-text text-secondary" id = "instruction1-unity">
+                              <p class="lead">
+                                <input type="image" src="Assets/images/4EOS_layout_Inside_Overview.png" align="center" width="100%" height="80%">
                               </p>
-                              </div> 
-                            </div> 
+                            </div>
+                            <div class="card-text text-secondary" id = "term1">
+                              <p class="lead">Please select out the Recoater at below:
+                            </div>
+                            <div class="card-text text-secondary" id = "term1-unity">
+                              <p class="lead">
+                                <input type="image" src="Assets/images/4EOS_layout_Inside_term1.png" align="center" width="100%" height="80%">
+                              </p>
+                            </div>
+                            <div class="card-text text-secondary" id = "term2">
+                              <p class="lead">Please select out the Building platform at below:
+                            </div>
+                            <div class="card-text text-secondary" id = "term2-unity">
+                              <p class="lead">
+                                <input type="image" src="Assets/images/4EOS_layout_Inside_term1.png" align="center" width="100%" height="80%">
+                              </p>
+                            </div>
+                            <div class="card-text text-secondary" id = "term3">
+                              <p class="lead">Please select out the Collector Duct at below:
+                            </div>
+                            <div class="card-text text-secondary" id = "term3-unity">
+                              <p class="lead">
+                                <input type="image" src="Assets/images/4EOS_layout_Inside_term1.png" align="center" width="100%" height="80%">
+                              </p>
+                            </div>
+                            <div class="card-text text-secondary" id = "term4">
+                              <p class="lead">Please select out the Dispenser duct at below:
+                            </div>
+                            <div class="card-text text-secondary" id = "term4-unity">
+                              <p class="lead">
+                                <input type="image" src="Assets/images/4EOS_layout_Inside_term1.png" align="center" width="100%" height="80%">
+                              </p>
+                            </div>
+                            <div class="card-text text-secondary" id = "term5">
+                              <p class="lead">Please select out the Rocket switches at below:
+                            </div>
+                            <div class="card-text text-secondary" id = "term5-unity">
+                              <p class="lead">
+                                <input type="image" src="Assets/images/4EOS_layout_Inside_term1.png" align="center" width="100%" height="80%">
+                              </p>
+                            </div>
+                            <div class="card-text text-secondary" id = "question1">
+                              <div class="row">
+                                <div class="col-sm-3">
+                                  <div class="row">
+                                    <div id="questionText" style="max-width:90%"></div>
+                                  </div>
+                                  <div class="row">
+                                    <ul id="sortable1" class="connectedSortable" style="max-width:90%">
+                                        <li class="ui-state-default" id="term1_selection"></li>
+                                        <li class="ui-state-default" id="term2_selection"></li>
+                                        <li class="ui-state-default" id="term3_selection"></li>
+                                        <li class="ui-state-default" id="term4_selection"></li>
+                                        <li class="ui-state-default" id="term5_selection"></li>
+                                    </ul> 
+                                  </div>
+                                </div>
+                                <div class="col-sm-2">
+                                  <div class="row">
+                                    <ul id="sortable2" class="connectedSortable" style="width:100%;min-height:5%; vertical-align: middle"></ul>
+                                  </div>
+                                  <div class="row" style="margin-top:50%">
+                                    <ul id="sortable3" class="connectedSortable" style="width:100%;min-height:5%"></ul>
+                                  </div>
+                                  <div class="row" style="margin-top:50%">
+                                    <ul id="rest_sortable1" style="width:80%;min-height:5%;">Collector duct</ul>
+                                  </div>
+                                </div>
+                                <div class="col-sm-5">
+                                  <div class="row">
+                                    <img id="layout" src="Assets/images/4EOS_layout_Inside_term1.png" style="width:90%;height:50%;">
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                  <div class="row" style="margin-top:60%">
+                                    <ul id="sortable4" class="connectedSortable" style="width:100%;min-height:5%; vertical-align: middle"></ul>
+                                </div>
+                                <div class="row" style="margin-top:50%">
+                                    <ul id="sortable5" class="connectedSortable" style="width:100%;min-height:5%; vertical-align: middle"></ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card-footer bg-transparent border-dark lead">
+                            <button type="button" class="btn btn-success float-right" id="next"style="font-size : 20px;">Next</button>
+                            <button type="button" class="btn btn-success" id="hint" style="font-size : 20px;">Hint</button>
+                            <div id = "hint_text"/>
+                          </div>
+                          </div>
+                          </div>
                           </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </form>
 
     <!-- ================================================== -->
     <!-- Placed at the end of the document so the pages load faster --> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="Assets/js/custom/EOSLayoutInside.js"></script>
@@ -211,7 +249,7 @@
                 receive: function(event, ui) {
                     console.log("this is a move");
                     // so if > 10
-                    if ($("#sortable2").children().length > 1||$("#sortable3").children().length > 1||$("#sortable4").children().length > 1||$("#sortable4").children().length > 1) {
+                    if ($("#sortable2").children().length > 1||$("#sortable3").children().length > 1||$("#sortable4").children().length > 1) {
                         //ui.sender: will cancel the change.
                         //Useful in the 'receive' callback.
                         $(ui.sender).sortable('cancel');
@@ -221,4 +259,4 @@
             }).disableSelection();
         });
     </script>
-  </body
+  </body>

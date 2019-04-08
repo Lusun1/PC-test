@@ -10,15 +10,16 @@ var text_dict = {
 
 // this need to be set according to each question success and buggy messages
 var messages = {
-  success_text:"Yes, you are correct. Red Extinguisher is not for powder. Yellow Extinguisher is for metal powder.",
-  buggy_text:"Sorry, you are wrong. Try it again."
+  success_text:"Yes, you are correct. Indicator is not PPE.",
+  buggy_text_indicator:"Sorry, you are wrong. Indicator is not PPE.",
+  buggy_text_less:"Sorry, you are wrong. You may want to select all that apply."
 };
 
 // this need to be set according to each question hint messages
 hint = new Array(
-  "General Hint: Try to think about the safety equipments and don’t forget that the extinguisher for metal powder is different from the general extinguisher",
-  "Specific Hint: Red Extinguisher is not for EOS lab safety, because it is not for metal powder. We should use yellow extinguisher instead.",
-  "Answer: Correct answer is a,b,d, because red Extinguisher is not for powder. Yellow Extinguisher is for metal powder.");
+  "General Hint: Try to think about PPE definition. PPE is for personal protection equipment",
+  "Specific Hint: Indicator is not PPE, because PPE is for personal protection equipment. Indicator cannot be used to pretect people",
+  "Answer: Correct answer is Respirators, Nitrile gloves and Closed toe shoes.");
 
 // set pages order
 sav = new Array(
@@ -139,15 +140,21 @@ $(document).on("ready",function () {
               console.log(indicator);
               if(component && "incorrect" == indicator.toLowerCase())
               {
-                // onIncorrectEventHandler();
-                if (cnt_buggy < 2){
-                  $('#hint_text').text(messages["buggy_text"]);
-                  cnt_buggy += 1;
+                if ($("input[name='checkGroup']")[1].checked == true){
+                  $('#hint_text').text(messages["buggy_text_indicator"])
                 }
                 else{
-                  $('#hint_text').text("Tutor's answer is "+sai.getInput().toString());
-                  console.log("Tutor's answer is "+sai.getInput().toString());
-                } 
+                  $('#hint_text').text(messages["buggy_text_less"])
+                }
+                // onIncorrectEventHandler();
+                // if (cnt_buggy < 2){
+                  // $('#hint_text').text(messages["buggy_text"]);
+                  // cnt_buggy += 1;
+                // }
+                // else{
+                //   $('#hint_text').text("Tutor's answer is "+sai.getInput().toString());
+                //   console.log("Tutor's answer is "+sai.getInput().toString());
+                // } 
               }
               if(component =="checkGroup"&& "correct" == indicator.toLowerCase())
               {
