@@ -19,7 +19,9 @@
     <!-- Custom styles for this template -->
     <link rel = "stylesheet" href = "Assets/css/custom.css">
     <!-- <link rel = "stylesheet" href = "Assets/css/custom.common.style.css"> -->
-
+    <script src="Assets/unity/TemplateData/UnityProgress.js"></script>
+    <script src="Assets/unity/Build/UnityLoader.js"></script>
+    <script src="Assets/js/custom/unity.js"></script>
   </head>
 
   <body>
@@ -95,7 +97,10 @@
                         <div class="card text-white border-dark mb-3 card-format1 lead">
                           <div class="card-header">PPE</div>
                           <div class="card-body border-dark">
-                            <div class="card-text text-secondary" id = "instruction1">
+                            <div class="webgl-content">
+                              <div id="gameContainer" style="width: 90%; height: 70%"></div>
+                            </div>
+                            <!-- <div class="card-text text-secondary" id = "instruction1">
                               <p class="lead">Before using EOS, there are basic prerequisite about safety:
                                 <ul class="lead"><li>Only qualified persons trained by EOS are allowed to operate the machine</li>
                                 <li>It is necessary to wear personal protective equipment(PPE) to prevent hazards.</li></ul>
@@ -112,7 +117,7 @@
                                   <li>Protecting clothing(flame-retardant)</li>
                                 </ol>
                               </p>
-                            </div>
+                            </div> -->
                             <div class="card-text text-secondary" id = "instruction2">
                               <p class="lead">Nitrile gloves:<br>Function: Protect the hands against skin contact with metal powders.</p>
                               <p class="lead">

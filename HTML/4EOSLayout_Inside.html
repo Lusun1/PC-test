@@ -19,7 +19,9 @@
     <!-- Custom styles for this template -->
     <link rel = "stylesheet" href = "Assets/css/custom.css">
     <!-- <link rel = "stylesheet" href = "Assets/css/custom.common.style.css"> -->
-
+    <script src="Assets/unity/TemplateData/UnityProgress.js"></script>
+    <script src="Assets/unity/Build/UnityLoader.js"></script>
+    <script src="Assets/js/custom/unity.js"></script>
   </head>
 
 <style>
@@ -121,16 +123,19 @@
                           </tbody>
                       </table>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-9" style = "padding:5px;">
                       <div clas ="row">
-                        <div class="card border-success text-white" width="100%" style="min-height:60%;border-radius: 0px;">
-                          <div class="card-header">EOS Layout</div>
-                          <div class="card-body bg-dark">
+                        <div class="card text-white border-dark mb-3 card-format1 lead">
+                          <div class="card-header">PPE</div>
+                          <div class="card-body border-dark">
                             <div class="card-text text-warning" id = "instruction1">
                               <p>The picture below shows the EOS chamber. In this chapter, you will learn to remember these parts and understand the function of each part. In the real operation, you will do operations in the chamber.</p>
-                              <p>
+                              <!-- <p>
                                 <input type="image" src="Assets/images/EOSLayout_chamber.png" align="center" width="70%" height="80%" style="padding:5%">
-                              </p>
+                              </p> -->
+                            </div>
+                            <div class="webgl-content">
+                              <div id="gameContainer" style="width: 90%; height: 70%"></div>
                             </div>
                             <div class="card-text text-warning" id = "question1">
                                 <div class="row">
@@ -182,6 +187,7 @@
                               <div class="card-body">
                                 <p class="card-text"><br>
                                   <button type="button" class="btn btn-success float-right" id="next">Next</button>
+                                  <button type="button" class="btn btn-success float-right" id="test" onclick="nextHandler()">Test</button>
                                   <button type="button" class="btn btn-success" id="hint">Hint</button>
                                   <div id = "hint_text"/>
                               </p>

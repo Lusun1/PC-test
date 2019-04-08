@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Week7</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/PC.json", {onProgress: UnityProgress});
+
+      function loadComplete() {
+        console.log("Connected to Unity");
+        setStep('5.1');
+      }
+
+      function setStep(stepId) {
+        gameInstance.SendMessage('JSManager', 'SetStep', stepId);
+      }
+
+      function clickObject(objectName) {
+        console.log("clickObject: " + objectName);
+        if (objectName == "HolderTrigger") {
+          document.getElementById("next").style.visibility = "visible";
+        }
+      }
+
+      function nextHandler() {
+        console.log("nextHandler");
+        document.getElementById("next").style.visibility = "hidden";
+        document.getElementById("p1").innerHTML = "Find Building Platform";
+        setStep('4.3');
+      }
+    </script>
+  </head>
+  <body>
+    <p id="p1">Find Recoater Housing.</p>
+    <button type="button" style="visibility:hidden" class="btn btn-success float-right" id="next" onclick="nextHandler()">Next</button>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 300px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">Week7</div>
+      </div>
+    </div>
+  </body>
+</html>
