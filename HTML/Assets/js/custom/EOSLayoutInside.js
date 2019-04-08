@@ -1,7 +1,7 @@
 // this need to be set according to each question content
 var text_dict = {
     questionId:"MFI Test",
-    questionText:"The picture on the right shows the process chamber interior. Drag the parts listed below to the correct boxes on the right.  Click submit button below to submit your answer.",
+    questionText:"The picture below shows the process chamber interior. Drag the parts listed on the left to the correct boxes on the right.  Click submit button below to submit your answer.",
     term1_selection:"Recoater",
     term2_selection:"Building platform",
     term3_selection:"Rocker switches",
@@ -11,8 +11,9 @@ var text_dict = {
 
 // this need to be set according to each question success and buggy messages
 var messages = {
-  success_text:"Yes, you are correct!",
-  buggy_text:"Sorry, you are wrong. Try it again."
+  next_text:"Press Next to continue",
+  success_text:"Yes, you are correct! Press Next to continue.",
+  buggy_text:"Sorry, you are wrong."
 };
 
 // this need to be set according to each question hint messages
@@ -48,9 +49,10 @@ let GetAnswer = function(){
 
 
 let CheckAnswer = function(){
-    result = $("#sortable2").children().attr("id") +":"+$("#sortable3").children().attr("id") +":"+$("#sortable4").children().attr("id") +":"+$("#sortable5").children().attr("id");
+    //result = $("#sortable2").children().attr("id") +":"+$("#sortable3").children().attr("id") +":"+$("#sortable4").children().attr("id") +":"+$("#sortable5").children().attr("id");
+    result = getDropSubmit();
     console.log(result)
-    if( result != "undefined:undefined:undefined:undefined") {
+    if( result != "undefined:undefined:undefined:undefined:undefined") {
         if(result.indexOf('undefined') > 0) {
             if(confirm(message_dict["confirm_skip"])) {
                 CTATCommShell.commShell.gradeSAI("termAnswers", "UpdateTextField", result);
@@ -65,6 +67,7 @@ let CheckAnswer = function(){
 
 // set id of the component
 var i = 0;
+var currentId;
 $('#next').on("click", function() {
   console.log("button pressed");
     if ($('#question1').css('display') == 'none' & $('#term5').css('display') == 'block') {
@@ -72,8 +75,10 @@ $('#next').on("click", function() {
       $('#term5-unity').hide();
       $('#question1').show();
       $('#next').text("Submit");
+      $('#next').attr("disabled", false);
       $('#hint').show();
       $('#hint_text').text("Answer the question and press submit to check your answer.");
+      nextHandler();
       return
     } else {
       if($('#question1').css('display') == 'none') {
@@ -83,11 +88,15 @@ $('#next').on("click", function() {
         i += 2;
         $(sav[i]).show();
         $(sav[i+1]).show();
+        currentId = sav[i];
+        nextHandler();
+        $('#next').attr("disabled", true);
+        $('#hint_text').text(messages.next_text);
       } else{
         $('#question1').show();
+        CheckAnswer();
       }
     }
-    CheckAnswer();
  });
 
 var cnt_hint = 0;
