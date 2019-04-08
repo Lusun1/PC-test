@@ -2,11 +2,11 @@
 var text_dict = {
     questionId:"MFI Test",
     questionText:"The picture on the right shows the process chamber interior. Drag the parts listed below to the correct boxes on the right.  Click submit button below to submit your answer.",
-    term1:"Recoater",
-    term2:"Building platform",
-    term3:"Rocker switches",
-    term4:"Dispenser duct",
-    term5:"Filling module",
+    term1_selection:"Recoater",
+    term2_selection:"Building platform",
+    term3_selection:"Rocker switches",
+    term4_selection:"Dispenser duct",
+    term5_selection:"Filling module",
 };
 
 // this need to be set according to each question success and buggy messages
@@ -17,9 +17,9 @@ var messages = {
 
 // this need to be set according to each question hint messages
 hint = new Array(
-  "General Hint: Please only select the items which is belongs to EOS layout. That does not include wearable facilities ",
-  "Specific Hint: EOS layout does not have indicator on that.",
-  "Answer: Correct answer is a,b");
+  "General Hint: Please recall each part's name and there is one distractot listed in the table",
+  "Specific Hint: The filling module is the distractor",
+  "Answer: Correct answer is a-Recoater, b-Building platform, c-Collector duct, d-Dispenser duct, e-Rocket switches");
 
 var message_dict = {
     warning_skip:"Are you sure you want to skip this problem?",
@@ -28,8 +28,13 @@ var message_dict = {
 
 // set pages order
 sav = new Array(
-  "#instruction1",
-  "#question1", 
+  "#instruction1","#instruction1-unity",
+  "#term1","#term1-unity", 
+  "#term2","#term2-unity", 
+  "#term3","#term3-unity", 
+  "#term4","#term4-unity",
+  "#term5","#term5-unity",
+  "#question1"
   );
 
 for(key in text_dict){
@@ -42,9 +47,9 @@ let GetAnswer = function(){
 }
 
 
-
 let CheckAnswer = function(){
     result = $("#sortable2").children().attr("id") +":"+$("#sortable3").children().attr("id") +":"+$("#sortable4").children().attr("id") +":"+$("#sortable5").children().attr("id");
+    console.log(result)
     if( result != "undefined:undefined:undefined:undefined") {
         if(result.indexOf('undefined') > 0) {
             if(confirm(message_dict["confirm_skip"])) {
@@ -61,8 +66,10 @@ let CheckAnswer = function(){
 // set id of the component
 var i = 0;
 $('#next').on("click", function() {
-    if ($('#question1').css('display') == 'none' & $('#instruction6').css('display') == 'block') {
-      $('#instruction1').hide();
+  console.log("button pressed");
+    if ($('#question1').css('display') == 'none' & $('#term5').css('display') == 'block') {
+      $('#term5').hide();
+      $('#term5-unity').hide();
       $('#question1').show();
       $('#next').text("Submit");
       $('#hint').show();
@@ -71,9 +78,11 @@ $('#next').on("click", function() {
     } else {
       if($('#question1').css('display') == 'none') {
         $(sav[i]).hide();
-        i += 1;
+        $(sav[i+1]).hide();
         console.log(sav[i]);
+        i += 2;
         $(sav[i]).show();
+        $(sav[i+1]).show();
       } else{
         $('#question1').show();
       }
@@ -92,15 +101,6 @@ $('#hint').on("click",function(){
   } else{
     $('#hint_text').text(hint[2]);
   }
-//   var XML_hint = assocrules.getXMLString();
-//   console.log(XML_hint);
-//   xmlDoc = $.parseXML(XML_hint);
-//   $xml = $( xmlDoc);
-//   if($xml.find("Indicator").text() == "Hint"){
-//   var hint_text = $xml.find("TutorAdvice").text();
-//   console.log(hint_text);
-//   $('#hint_text').text(hint_text);
-// }
 })
 
 //set component
@@ -136,8 +136,9 @@ $(document).on("ready",function () {
                   cnt_buggy += 1;
                 }
                 else{
-                  $('#hint_text').text("Tutor's answer is "+sai.getInput().toString());
-                  console.log("Tutor's answer is "+sai.getInput().toString());
+                  $('#hint_text').text(messages["Please use hints to help you!"]);
+                  // $('#hint_text').text("Tutor's answer is "+sai.getInput().toString());
+                  // console.log("Tutor's answer is "+sai.getInput().toString());
                 } 
               }
               if(component =="termAnswers"&& "correct" == indicator.toLowerCase())

@@ -405,7 +405,7 @@
                         <value>UpdateCheckBox</value>
                     </Action>
                     <Input>
-                        <value>Respirators: true;Indicator: true;Nitrile gloves: false;Closed toe shoes: false</value>
+                        <value>Respirators: true;Indicator: false;Nitrile gloves: true;Closed toe shoes: true</value>
                     </Input>
                 </properties>
             </message>
@@ -434,7 +434,7 @@
                 <Input>
                     <matcher>
                         <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">Respirators: true;Indicator: true;Nitrile gloves: false;Closed toe shoes: false</matcherParameter>
+                        <matcherParameter name="single">Respirators: true;Indicator: false;Nitrile gloves: true;Closed toe shoes: true</matcherParameter>
                     </matcher>
                 </Input>
                 <Actor linkTriggered="false">Student</Actor>
