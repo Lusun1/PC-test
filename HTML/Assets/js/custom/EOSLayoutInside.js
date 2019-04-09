@@ -20,7 +20,7 @@ var messages = {
 hint = new Array(
   "General Hint: Please recall each part's name and there is one distractot listed in the table",
   "Specific Hint: The filling module is the distractor",
-  "Answer: Correct answer is a-Recoater, b-Building platform, c-Collector duct, d-Dispenser duct, e-Rocket switches");
+  "Answer: Correct answer is 1-Recoater, 2-Building platform, 3-Collector duct, 4-Dispenser duct, 5-Rocket switches");
 
 var message_dict = {
     warning_skip:"Are you sure you want to skip this problem?",
