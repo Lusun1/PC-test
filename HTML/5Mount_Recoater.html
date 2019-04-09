@@ -22,36 +22,6 @@
 
   </head>
 
-<style>
-  #sortable1, #sortable2, #sortable3,#sortable4,#sortable5 {
-    border: 2px solid white;
-    width: 250px;
-    min-height: 20px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0 0 0 0;
-    float: left;
-    margin-right: 10px;
-    font-size: 0.9em;
-  }
-  #rest_sortable1, #rest_sortable2{
-    border: 2px solid white;
-    width: 250px;
-    min-height: 20px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0 0 0 0;
-    float: left;
-    margin-right: 10px;
-    font-size: 0.9em;
-  }
-  #sortable1 li, #sortable2 li, #sortable3 li,#sortable4 li,#sortable5 li {
-    border: 1px solid #eee;
-    margin: 0 5px 5px 5px;
-    padding: 5px;
-    font-size: 0.9em;
-  }
-</style>
 
   <body>
     <form class="testItemContainer" id="form1">
@@ -127,48 +97,26 @@
                           <div class="card-header">Mount Recoater Blade</div>
                           <div class="card-body border-dark">
                             <div class="card-text text-secondary" id = "instruction1">
-                              <p class="lead">Before start build, there are several preparation steps: Mount the recoater blade, mount and level the building platform, clean lens and double check all set up conditions. In this chapter, we will introduce how to mount the recoater blade. The recoater blade is important in the building process, since it helps the recoater apply the bed of powder evenly.
-                              </p>
+                              <p class="lead">Before start build, there are several preparation steps: Mount the recoater blade, mount and level the building platform, clean lens and double check all set up conditions. In this chapter, we will introduce how to mount the recoater blade. The recoater blade is important in the building process, since it helps the recoater apply the bed of powder evenly.</p>
+                              <ol>There are 3 different types of recoater blades. According to different condition, you need to select different recoater blades to mount.
+                                <li>HSS or High Speed Steel blade</li>
+                                <li>Brush recoater blade</li>
+                                <li>Ceramic recoater blade</li>
                             </div>
                             <div class="card-text text-secondary" id = "term1">
-                              <p class="lead">Please select out the Recoater at below:
-                            </div>
-                            <div class="card-text text-secondary" id = "term1-unity">
-                              <p class="lead">
-                                <input type="image" src="Assets/images/4EOS_layout_Inside_term1.png" align="center" width="100%" height="80%">
+                              <p class="lead">HSS or High Speed Steel is used most often, tough blade that will hold up a long time.</p>
+                              <div>
+                                <input type="image" src="Assets/images/5Mount_recoater_brush.png" align="center" width="70%" height="10%">
+                              </div>
+                              <p class="lead">Brush recoater blade is used on thin wall or delicate builds so the soft brushes go across the build instead of a hard steel blade.</p>
+                              <div>
+                                <input type="image" src="Assets/images/5Mount_recoater_brush.png" align="center" width="70%" height="10%">
+                              </div>
+                              <p class="lead">Ceramic recoater blade is used if the powder has a magnetic charge to it. The magnetic powder will not stick to the ceramic
                               </p>
-                            </div>
-                            <div class="card-text text-secondary" id = "term2">
-                              <p class="lead">Please select out the Building platform at below:
-                            </div>
-                            <div class="card-text text-secondary" id = "term2-unity">
-                              <p class="lead">
-                                <input type="image" src="Assets/images/4EOS_layout_Inside_term1.png" align="center" width="100%" height="80%">
-                              </p>
-                            </div>
-                            <div class="card-text text-secondary" id = "term3">
-                              <p class="lead">Please select out the Collector Duct at below:
-                            </div>
-                            <div class="card-text text-secondary" id = "term3-unity">
-                              <p class="lead">
-                                <input type="image" src="Assets/images/4EOS_layout_Inside_term1.png" align="center" width="100%" height="80%">
-                              </p>
-                            </div>
-                            <div class="card-text text-secondary" id = "term4">
-                              <p class="lead">Please select out the Dispenser duct at below:
-                            </div>
-                            <div class="card-text text-secondary" id = "term4-unity">
-                              <p class="lead">
-                                <input type="image" src="Assets/images/4EOS_layout_Inside_term1.png" align="center" width="100%" height="80%">
-                              </p>
-                            </div>
-                            <div class="card-text text-secondary" id = "term5">
-                              <p class="lead">Please select out the Rocket switches at below:
-                            </div>
-                            <div class="card-text text-secondary" id = "term5-unity">
-                              <p class="lead">
-                                <input type="image" src="Assets/images/4EOS_layout_Inside_term1.png" align="center" width="100%" height="80%">
-                              </p>
+                              <div>
+                                <input type="image" src="Assets/images/5Mount_recoater_ceremic.png" align="center" width="70%" height="10%">
+                              </div>
                             </div>
                             <div class="card-text text-secondary" id = "question1">
                               <div class="row">
@@ -212,6 +160,22 @@
                               </div>
                             </div>
                           </div>
+                          <div class="card-text text-secondary" id = "term2">
+                            <p>Set up Recoater(I think here, we need the side view in Unity) <br>
+                                Step1. Ride the recoater blade on recoater housing<br>
+                                Step2. Place blade holder on recoater housing<br>
+                                Step3. Find screw and screw the blade holder<br>
+                              </p>
+                              <div>
+                                <input type="image" src="Assets/images/4EOS_layout_Inside_term1.png" align="center" width="90%" height="80%">
+                              </div>
+                          </div>
+                          <div class="card-text text-secondary" id = "term3">Unity Step1
+                            </div>
+                          <div class="card-text text-secondary" id = "term4">Unity Step2
+                            </div>
+                          <div class="card-text text-secondary" id = "term4">Unity Step3
+                            </div>
                           <div class="card-footer bg-transparent border-dark lead">
                             <button type="button" class="btn btn-success float-right" id="next"style="font-size : 20px;">Next</button>
                             <button type="button" class="btn btn-success" id="hint" style="font-size : 20px;">Hint</button>
@@ -229,26 +193,6 @@
     <!-- ================================================== -->
     <!-- Placed at the end of the document so the pages load faster --> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="Assets/js/custom/EOSLayoutInside.js"></script>
-    <script>
-        $(function() {
-            $("#sortable1, #sortable2, #sortable3,#sortable4,#sortable5").sortable({
-                connectWith: '.connectedSortable',
-                //receive: This event is triggered when a
-                //connected sortable list has received an item from another list.
-                receive: function(event, ui) {
-                    console.log("this is a move");
-                    // so if > 10
-                    if ($("#sortable2").children().length > 1||$("#sortable3").children().length > 1||$("#sortable4").children().length > 1) {
-                        //ui.sender: will cancel the change.
-                        //Useful in the 'receive' callback.
-                        $(ui.sender).sortable('cancel');
-                    }
-
-                }
-            }).disableSelection();
-        });
+    <script src="Assets/js/custom/Mount_Recoater.js"></script>
     </script>
   </body>
