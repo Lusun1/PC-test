@@ -78,6 +78,8 @@ $('#next').on("click", function() {
       $('#next').attr("disabled", false);
       $('#hint').show();
       $('#hint_text').text("Answer the question and press submit to check your answer.");
+      i++;
+      currentId = sav[i];
       nextHandler();
       return
     } else {

@@ -67,7 +67,6 @@ function clickObject(objectName) {
     if (objectName == 'RockerA' || objectName == 'RockerC')
         objectName = 'Rocker';
     //CTATCommShell.commShell.processComponentAction(new CTATSAI(objectName, "nextState", 1));
-    CTATCommShell.commShell.gradeSAI(termToId[currentId], "nextState", objectName);
     assocRulesListener =
       {
         processCommShellEvent: function(evt, msg)
@@ -104,6 +103,8 @@ function clickObject(objectName) {
       }
     };
     CTATCommShell.commShell.addGlobalEventListener(assocRulesListener);
+    if (termToId[currentId] != '' && termToId[currentId] != null)
+        CTATCommShell.commShell.gradeSAI(termToId[currentId], "nextState", objectName);
 }
 
 function nextHandler() {
