@@ -11,7 +11,6 @@ $("input[name='confidenceValues']").change(function() {
     $("#btnDone").removeClass('hiddenElement');
 });
 
-
 /** 
  * Once the done button is clicked, disables the question,
  * tells CTAT the problem is done, and disables the done button. 

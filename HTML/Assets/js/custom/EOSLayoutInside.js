@@ -13,14 +13,14 @@ var text_dict = {
 var messages = {
   next_text:"Press Next to continue",
   success_text:"Yes, you are correct! Press Next to continue.",
-  buggy_text:"Sorry, you are wrong."
+  buggy_text:"Sorry, but this answer is incorrect."
 };
 
 // this need to be set according to each question hint messages
 hint = new Array(
-  "General Hint: Please recall each part's name and there is one distractot listed in the table",
-  "Specific Hint: The filling module is the distractor",
-  "Answer: Correct answer is 1-Recoater, 2-Building platform, 3-Collector duct, 4-Dispenser duct, 5-Rocket switches");
+  "Please recall each part's name and there is one distractot listed in the table",
+  "The filling module is the distractor",
+  "Correct answer is 1-Recoater, 2-Building platform, 3-Collector duct, 4-Dispenser duct, 5-Rocket switches");
 
 var message_dict = {
     warning_skip:"Are you sure you want to skip this problem?",
