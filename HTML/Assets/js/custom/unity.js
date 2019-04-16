@@ -7,6 +7,8 @@ function loadComplete() {
     setStep(currentScene);
     if (currentScene == '4.1') {
         $('#next').attr("disabled", false);
+    } else {
+        $('#next').attr("disabled", true);
     }
 }
 
