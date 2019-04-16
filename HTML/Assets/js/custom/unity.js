@@ -1,9 +1,13 @@
-var gameInstance = UnityLoader.instantiate("gameContainer", "Assets/unity/Build/unity.json", {onProgress: UnityProgress});
+//var gameInstance = UnityLoader.instantiate("gameContainer", "Assets/unity/Build/unity.json", {onProgress: UnityProgress});
+var gameInstance;
+var currentScene = 'none';
 
 function loadComplete() {
     console.log("Connected to Unity");
-    setStep('4.1');
-    $('#next').attr("disabled", false);
+    setStep(currentScene);
+    if (currentScene == '4.1') {
+        $('#next').attr("disabled", false);
+    }
 }
 
 function setStep(stepId) {
@@ -59,6 +63,41 @@ var termToId = {
     "#term3": 'CollectorBinModel',
     "#term4": 'DispenserModel',
     "#term5": 'Rocker'
+}
+
+function dragOnItem(itemName) {
+    console.log('dragOnItem: ' + itemName);
+    assocRulesListener =
+      {
+        processCommShellEvent: function(evt, msg)
+            {
+                var events = ["AssociatedRules", "BuggyMessage"];
+                if( events.indexOf(evt) == -1  || !msg)
+                {
+                    return;
+                }
+                if("BuggyMessage" == evt)
+                  {
+                    console.log("this is the wrong answer");
+                    processIncorrectMessage(msg.getBuggyMsg())}
+              window.assocrules = msg;
+              var indicator = msg.getIndicator();
+              var sai = msg.getSAI();
+              var component = sai.getSelection();
+              console.log(sai.getSelection() + ';' + sai.getAction() + ';' + sai.getInput() + ';' + indicator);
+              if (component == 'recoaterBlade') {
+                if ("correct" == indicator.toLowerCase()) {
+                    $('#hint_text').text(messages.success_text);
+                    $('#hint_text').css('color', 'white');
+                    $('#next').attr("disabled", false);
+                } else {
+                    $('#next').attr("disabled", true);
+                }
+              }
+      }
+    };
+    CTATCommShell.commShell.addGlobalEventListener(assocRulesListener);
+    CTATCommShell.commShell.gradeSAI("recoaterBlade", "dragOnItem", itemName);
 }
 
 function clickObject(objectName) {

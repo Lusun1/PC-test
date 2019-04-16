@@ -2,11 +2,19 @@ body {
     font-size: 15em !important; 
 }
 
+#scrim{
+    display:none!important;
+}
+
 .card-format1{
     width:"100%";
     padding-left:0px;
     min-height:60%;
     border-radius: 0px;
+}
+
+#unity {
+    display: none;
 }
 
 #instruction6 {

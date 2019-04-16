@@ -1,5 +1,7 @@
 // this need to be set according to each question content
 
+currentScene = '5.1';
+
 var text_dict = {
     questionId:"MFI Test",
     questionText:"In the following, match the descriptions with the types of recoater blade by drag descriptions from the bottom list to the correct blade types.",
@@ -32,7 +34,7 @@ var message_dict = {
 sav = new Array(
   "#instruction1",
   "#instruction2", 
-  "#instruction3",
+  "#unity",
   "#question1",
   "#instruction4", 
   "#instruction5",
@@ -41,6 +43,11 @@ sav = new Array(
 
 for(key in text_dict){
     $("#" + key).html(text_dict[key]);    
+}
+
+function processIncorrectMessage(answer){
+  $("#hint_text").css("color","red");
+  $('#hint_text').text(answer);
 }
 
 let CheckAnswer = function(){
@@ -77,9 +84,14 @@ $('#next').on("click", function() {
         $(sav[i]).show();
       } else{
         $('#question1').show();
+        CheckAnswer();
       }
     }
-    CheckAnswer();
+    if (sav[i] == '#unity') {
+      console.log('load unity');
+      //$('.webgl-content').append('<div id="gameContainer" style="width: 90%; height: 70%"></div>');
+      gameInstance = UnityLoader.instantiate("gameContainer", "Assets/unity/Build/unity.json", {onProgress: UnityProgress});
+    }
  });
 
 var cnt_hint = 0;
