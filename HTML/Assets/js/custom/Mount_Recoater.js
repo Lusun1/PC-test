@@ -69,6 +69,23 @@ let CheckAnswer = function(){
 // set id of the component
 var i = 0;
 $('#next').on("click", function() {
+    if ($('#instruction3').css('display') == 'block') {
+      setStep();
+    } else {
+      if($('#question1').css('display') == 'none') {
+        $(sav[i]).hide();
+        i += 1;
+        console.log(sav[i]);
+        $(sav[i]).show();
+      } else{
+        $('#question1').show();
+      }
+    }
+    CheckAnswer();
+ });
+
+
+$('#next').on("click", function() {
     if ($('#question1').css('display') == 'none' & $('#instruction3').css('display') == 'block') {
       $('#instruction3').hide();
       $('#question1').show();

@@ -1,24 +1,24 @@
 // this need to be set according to each question content
 var text_dict = {
     questionId:"MFI Test",
-    questionText:"(this problme could embed with Unity where let learners to select out the corresponding item in Unity)Which of the following items is not belongs to EOS machine? Select all that apply.",
+    questionText:"Which of the following items is not belongs to EOS machine? Select all that apply.",
     checkA:"Process chamber",
     checkB:"Service Network",
     checkC:"Indicator",
-    checkD:"PPE"
+    checkD:"Personal Protective Equipment"
 };
 
 // this need to be set according to each question success and buggy messages
 var messages = {
   success_text:"Yes, you are correct!",
-  buggy_text:"Sorry, you are wrong. Try it again."
+  buggy_text:"Sorry, but this answer is incorrect. Try it again."
 };
 
 // this need to be set according to each question hint messages
 hint = new Array(
-  "General Hint: Please only select the items which is belongs to EOS layout. That does not include wearable facilities ",
-  "Specific Hint: EOS layout does not have indicator on that.",
-  "Answer: Correct answer is a,b");
+  "Please only select the items which is belongs to EOS layout. That does not include wearable facilities ",
+  "EOS layout does not have indicator on that.",
+  "Correct answer is a,b");
 
 // set pages order
 sav = new Array(
@@ -160,6 +160,5 @@ $(document).on("ready",function () {
     };
     CTATCommShell.commShell.addGlobalEventListener(assocRulesListener);
 });
-
 
 
