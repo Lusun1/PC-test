@@ -16,7 +16,8 @@ var text_dict = {
 // this need to be set according to each question success and buggy messages
 var messages = {
   success_text:"Yes, you are correct!",
-  buggy_text:"Sorry, but this answer is incorrect."
+  buggy_text:"Sorry, but this answer is incorrect.",
+  question_text:"Press Next to continue."
 };
 
 // this need to be set according to each question hint messages
@@ -34,16 +35,18 @@ var message_dict = {
 sav = new Array(
   "#instruction1",
   "#instruction2", 
-  "#unity",
   "#question1",
-  "#instruction3"
+  "#instruction3",
+  "#instruction4",
+  "#instruction5",
+  "#instruction6"
   );
 
 for(key in text_dict){
     $("#" + key).html(text_dict[key]);    
 }
 
-function processIncorrectMessage(answer){
+function processIncorrectMessageMountRecoater(answer){
   $("#hint_text").css("color","red");
   $('#hint_text').text(answer);
 }
@@ -65,23 +68,37 @@ let CheckAnswer = function(){
 }
 
 function processUnity(){
-  $('#question1').hide();
-  $('#instruction3').show();
-  CTATCommShell.commShell.gradeSAI("unity_recoater_blade", "grabOnItem", "HSS")
+  $('#unity').show();
+  //CTATCommShell.commShell.gradeSAI("unity_recoater_blade", "grabOnItem", "HSS")
+  console.log('load unity');
+  //$('.webgl-content').append('<div id="gameContainer" style="width: 90%; height: 70%"></div>');
+  gameInstance = UnityLoader.instantiate("gameContainer", "Assets/unity/Build/unity.json", {onProgress: UnityProgress});
+  $('#hint_text').text(messages.question_text);
 }
 
 // set id of the component
 var i = 0;
 $('#next').on("click", function() {
+    if (sav[i] == '#instruction3') {
+      processUnity();
+    } else if (sav[i] == '#instruction4' || sav[i] == '#instruction5') {
+      $('#next').attr("disabled", true);
+      nextHandler();
+      $('#hint_text').text(messages.question_text);
+    } else if (sav[i] == '#instruction6') {
+      CTATCommShell.commShell.processDoneContinue(7);
+    }
     if ($('#question1').css('display') == 'none' & $('#instruction2').css('display') == 'block') {
       $('#instruction2').hide();
       $('#question1').show();
       $('#next').text("Submit");
       $('#hint').show();
       $('#hint_text').text("Answer the question and press submit to check your answer.");
+      i += 1;
       return
     } else {
       if($('#question1').css('display') == 'none' ) {
+        console.log(sav[i]);
         $(sav[i]).hide();
         i += 1;
         $(sav[i]).show();
@@ -94,11 +111,6 @@ $('#next').on("click", function() {
         else{
           $('#question1').show();
         }
-      }
-      if (sav[i] == '#unity') {
-        console.log('load unity');
-        //$('.webgl-content').append('<div id="gameContainer" style="width: 90%; height: 70%"></div>');
-        gameInstance = UnityLoader.instantiate("gameContainer", "Assets/unity/Build/unity.json", {onProgress: UnityProgress});
       }
     }
  });
@@ -172,7 +184,10 @@ $(document).on("ready",function () {
                 $('#hint_text').text(messages["success_text"]); 
                 $('#next').text("Next");
                 $('#hint').hide();
-                processUnity();
+                //processUnity();
+                $('#question1').hide();
+                $('#instruction3').show();
+                i += 1;
               }
               // console.trace(msg);
       }

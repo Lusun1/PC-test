@@ -67,6 +67,8 @@ var termToId = {
     "#term5": 'Rocker'
 }
 
+var isComplete = false;
+var screwCount = 0;
 function dragOnItem(itemName) {
     console.log('dragOnItem: ' + itemName);
     assocRulesListener =
@@ -81,7 +83,7 @@ function dragOnItem(itemName) {
                 if("BuggyMessage" == evt)
                   {
                     console.log("this is the wrong answer");
-                    processIncorrectMessage(msg.getBuggyMsg())}
+                    processIncorrectMessageMountRecoater(msg.getBuggyMsg())}
               window.assocrules = msg;
               var indicator = msg.getIndicator();
               var sai = msg.getSAI();
@@ -91,9 +93,19 @@ function dragOnItem(itemName) {
                 if ("correct" == indicator.toLowerCase()) {
                     $('#hint_text').text(messages.success_text);
                     $('#hint_text').css('color', 'white');
-                    $('#next').attr("disabled", false);
+                    if (sav[i] == '#instruction6') {
+                        screwCount++;
+                        if (screwCount == 7) {
+                            $('#next').attr("disabled", false);
+                            isComplete = true; 
+                        }
+                    } else {
+                        $('#next').attr("disabled", false);
+                        isComplete = true;
+                    }
                 } else {
-                    $('#next').attr("disabled", true);
+                    if (!isComplete)
+                        $('#next').attr("disabled", true);
                 }
               }
       }
@@ -154,4 +166,5 @@ function nextHandler() {
     //document.getElementById("p1").innerHTML = "Find Building Platform";
     //setStep('4.3');
     nextStep();
+    isComplete = false;
 }
