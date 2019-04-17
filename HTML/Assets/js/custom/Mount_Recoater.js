@@ -7,8 +7,8 @@ var text_dict = {
     blade2:"Ceramic",
     blade3:"Brush",
     choiceAText:"It is used most of the time and it could hold up well.",
-    choiceBText:"It is used when the powder is magnetic.",
-    choiceCText:"It is used when you build small thin walls or fine delicate parts.",
+    choiceBText:"It is used when you build small thin walls or fine delicate parts.",
+    choiceCText:"It is used when the powder is magnetic.",
     input_submitButtonLabel:"Submit"
 };
 // this need to be set according to each question success and buggy messages
@@ -32,11 +32,8 @@ var message_dict = {
 sav = new Array(
   "#instruction1",
   "#instruction2", 
-  "#instruction3",
   "#question1",
-  "#instruction4", 
-  "#instruction5",
-  "#instruction6",
+  "#instruction3"
   );
 
 for(key in text_dict){
@@ -59,45 +56,50 @@ let CheckAnswer = function(){
     } 
 }
 
+function processUnity(){
+  $('#question1').hide();
+  $('#instruction3').show();
+  CTATCommShell.commShell.gradeSAI("unity_recoater_blade", "grabOnItem", "HSS")
+}
+
 // set id of the component
 var i = 0;
 $('#next').on("click", function() {
-    if ($('#instruction3').css('display') == 'block') {
-      setStep();
-    } else {
-      if($('#question1').css('display') == 'none') {
-        $(sav[i]).hide();
-        i += 1;
-        console.log(sav[i]);
-        $(sav[i]).show();
-      } else{
-        $('#question1').show();
-      }
-    }
-    CheckAnswer();
- });
-
-
-$('#next').on("click", function() {
-    if ($('#question1').css('display') == 'none' & $('#instruction3').css('display') == 'block') {
-      $('#instruction3').hide();
+    if ($('#question1').css('display') == 'none' & $('#instruction2').css('display') == 'block') {
+      $('#instruction2').hide();
       $('#question1').show();
       $('#next').text("Submit");
       $('#hint').show();
       $('#hint_text').text("Answer the question and press submit to check your answer.");
       return
     } else {
-      if($('#question1').css('display') == 'none') {
+      if($('#question1').css('display') == 'none' ) {
         $(sav[i]).hide();
         i += 1;
-        console.log(sav[i]);
         $(sav[i]).show();
       } else{
+        $(sav[i]).hide();
         $('#question1').show();
+        if ($("#next").text() == "Submit"){
+          CheckAnswer();
+        }
+        else{
+          $('#question1').show();
+        }
       }
     }
-    CheckAnswer();
  });
+
+function processIncorrectMessage(answer){
+  $("#hint_text").css("color","red");
+  if (answer =="Sorry, but this answer is incorrect. The item Indicator is not PPE in EOS"){
+    $("#checkB").css("color","red");
+  }
+  else{
+    $("#checkB").css("color","white");
+  }
+  $('#hint_text').text(answer);
+}
 
 var cnt_hint = 0;
 $('#hint').on("click",function(){
@@ -123,10 +125,25 @@ $(document).on("ready",function () {
   assocRulesListener =
       {
         processCommShellEvent: function(evt, msg)
+          {
+            var events = ["AssociatedRules", "BuggyMessage"];
+            if( events.indexOf(evt) == -1  || !msg)
             {
-              if("AssociatedRules" != evt || !msg)
+                return;
+            }
+            if("BuggyMessage" == evt)
               {
-                  return;
+                console.log("this is the wrong answer");
+                cnt_buggy += 1;
+                if (cnt_buggy >3){
+                  cnt_buggy += 0;
+                  if(confirm(messages["reload_page"])) {
+                      window.location.href=window.location.href;
+                  } else {
+                      processIncorrectMessage(msg.getBuggyMsg())
+                  }
+                } else{
+                processIncorrectMessage(msg.getBuggyMsg())}
               }
               window.assocrules = msg;
               var indicator = msg.getIndicator();
@@ -137,24 +154,12 @@ $(document).on("ready",function () {
               var component = sai.getSelection();
               console.log(component);
               console.log(indicator);
-              if(component && "incorrect" == indicator.toLowerCase())
-              {
-                if (cnt_buggy < 2){
-                  $('#hint_text').text(messages["buggy_text"]);
-                  cnt_buggy += 1;
-                }
-                else{
-                  $('#hint_text').text(messages["Please use hints to help you!"]);
-                  // $('#hint_text').text("Tutor's answer is "+sai.getInput().toString());
-                  // console.log("Tutor's answer is "+sai.getInput().toString());
-                } 
-              }
               if(component =="termAnswers"&& "correct" == indicator.toLowerCase())
               {
                 $('#hint_text').text(messages["success_text"]); 
                 $('#next').text("Next");
                 $('#hint').hide();
-                CTATCommShell.commShell.processDoneContinue(7);
+                processUnity();
               }
               // console.trace(msg);
       }
