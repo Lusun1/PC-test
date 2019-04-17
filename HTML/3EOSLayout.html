@@ -4,7 +4,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-      <!-- Standard CTAT libraries    -->
+       <!-- Standard CTAT libraries     -->
     <link rel="stylesheet" href="https://cdn.ctat.cs.cmu.edu/releases/latest/CTAT.min.css"/>
     <link rel="shortcut icon" href="">
     <script src="https://cdn.ctat.cs.cmu.edu/releases/latest/jquery.min.js"></script>
@@ -19,16 +19,17 @@
     <!-- Custom styles for this template -->
     <link rel = "stylesheet" href = "Assets/css/custom.css">
     <!-- <link rel = "stylesheet" href = "Assets/css/custom.common.style.css"> -->
-
+    <script src="Assets/unity/TemplateData/UnityProgress.js"></script>
+    <script src="Assets/unity/Build/UnityLoader.js"></script>
+    <script src="Assets/js/custom/unity.js"></script>
   </head>
 
   <body>
     <form class="testItemContainer" id="form1">
         <div class="form-group">
-          <div class="card border-success mb-3 text-warning" id = "card1" style="margin:10px;border-radius: 0px;">
-                <div class="row">
-                    <div class="col-sm-3">
-                      <table class="table table-hover text-success">
+          <div class="row">
+                    <div class="col-sm-2" style = "padding-right:5px;">
+                      <table class="table table-hover text-grey">
                           <thead>
                             <tr>
                               <th scope="col">Table of Content</th>
@@ -91,24 +92,24 @@
                           </tbody>
                       </table>
                     </div>
-                     <div class="col-sm-10" style = "padding:5px;">
+                    <div class="col-sm-10" style = "padding:5px;">
                       <div clas ="row">
                         <div class="card text-white border-dark mb-3 card-format1 lead">
                           <div class="card-header">EOS layout</div>
                           <div class="card-body bg-dark">
-                            <div class="card-text text-warning" id = "instruction1">
+                            <div class="card-text text-secondary" id = "instruction1">
                               <p>The picture below shows the EOS layout. In this chapter, you will learn to remember these parts and understand the function of each part.</p>
                               <p>
-                                <input type="image" src="Assets/images/EOSLayout_outside.png" align="center" width="75%" height="70%" style="padding:5%">
+                                <img src="Assets/images/3EOSLayout_outside.png" align="center" width="75%" height="70%" style="padding:5%" alt="EOSLayout outside">
                               </p>
                             </div>
-                            <div class="card-text text-warning" id = "instruction2">
+                            <div class="card-text text-secondary" id = "instruction2">
                               <p>
                                 <font color="white">Recirculating filter system - fine filter stage</font> Maybe use Unit Model to represent the model<br>Function: The Recirculating filter system draws particle laden inert gas from the process chamber, filters it and then feeds it back to the process chamber.
                               </p>
                               <div class = "row">
-                                <div class = "col-sm-8">
-                                  <input type="image" src="Assets/images/EOSLayout_filter.png" align="right" width="70%" height="80%" style="padding:5%"><br>
+                                <div class = "col-sm-6">
+                                  <img src="Assets/images/3EOSLayout_filter.png" align="right" width="70%" height="80%" style="padding:5%" alt="filter"><br>
                                 </div>
                                 <div class = "col-sm-4">
                                   <br>
@@ -127,10 +128,10 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="card-text text-warning" id = "instruction3">
+                            <div class="card-text text-secondary" id = "instruction3">
                               <p>
                                 <font color="white">Touch sensitive monitor</font> Maybe use Unit Model to represent the model<br>
-                                The following operations will be useful in your using of monitor:<br>
+                                This touch sensitive screen is on the right side of the machine, which could be used to control the machine and establish the build. The following operations will be useful in your using of monitor:<br>
                                 <ul>
                                     <li>Establish process conditions Start button</li>
                                     <li>Pick the job</li>
@@ -139,34 +140,37 @@
                                   </ul> 
                               </p>
                               <p>
-                                <input type="image" src="Assets/images/EOSLayout_screen.jpg" align="center" width="70%" height="80%" style="padding:5%"><br>
+                                <img src="Assets/images/3EOSLayout_screen.jpg" align="center" width="70%" height="80%" style="padding:5%" alt="layout screen"><br>
                               </p>
                             </div>
-                            <div class="card-text text-warning" id = "instruction4">
+                            <div class="card-text text-secondary" id = "instruction4">
                               <p>
                                 <font color="white">Emergency stop circuit</font> Maybe use Unit Model to represent the model
                               </p>
+                              <p>By pressing the EMERGENCY STOP button on the machine all axis movements are stopped, the laser shut down and the process chamber door unlocked. Building platform heating, compressed air supply and Cooling system are also shut down. The operation of the Recirculating filter system is also stopped. If the emergency stop circuit is triggered an error message is displayed on the monitor.</p>
                               <p>
-                                <input type="image" src="Assets/images/EOSLayout_emergency.png" align="center" width="30%" height="30%" style="padding:5%"><br>
+                                <img src="Assets/images/3EOSLayout_emergency.png" align="center" width="30%" height="50%" style="padding:5%" alt="Layout emergency"><br>
                               </p>
                             </div>
-                            <div class="card-text text-warning" id = "instruction5">
+                            <div class="card-text text-secondary" id = "instruction5">
                               <p>
-                                <font color="white">Process chamber</font> Maybe use Unit Model to represent the model
+                                <font color="white">Process chamber</font>
                               </p>
+                              <p>Building process and operations happen inside the chamber. </p>
                               <p>
-                                <input type="image" src="Assets/images/EOSLayout_chamber.png" align="center" width="70%" height="80%" style="padding:5%"><br>
-                              </p>
-                            </div>
-                            <div class="card-text text-warning" id = "instruction6">
-                              <p>
-                                <font color="white">Inert gas selection switch</font> Maybe use Unit Model to represent the model
-                              </p>
-                              <p>
-                                <input type="image" src="Assets/images/EOSLayout_inertgas.png" align="center" width="30%" height="30%" style="padding:5%"><br>
+                                <img src="Assets/images/4EOS_layout_Inside_Overview.png" align="center" width="90%" height="80%" style="padding:5%" alt="LayoutInside overview"><br>
                               </p>
                             </div>
-                            <div class="card-text text-warning" id = "question1">
+                            <div class="card-text text-secondary" id = "instruction6">
+                              <p>
+                                <font color="white">Inert gas selection switch</font> 
+                              </p>
+                              <p>The inert gas monitoring ensures the appropriate inert gas for the material selected in the building task has been selected. If the wrong inert gas has been selected, it is not possible to start the building process.</p>
+                              <p>
+                                <img src="Assets/images/3EOSLayout_inertgas.png" align="center" width="20%" height="30%" style="padding:5%" alt="EOS layout inert gass"><br>
+                              </p>
+                            </div>
+                            <div class="card-text text-secondary" id = "question1">
                               <div>Answer the question below:</div>
                                 <div id="questionText"></div>
                                 <div class="form-check">
@@ -191,22 +195,16 @@
                                 </div>
                               </div>
                           </div>
+                          <div class="card-footer bg-transparent border-dark lead">
+                            <button type="button" class="btn btn-success float-right" id="next"style="font-size : 20px;">Next</button>
+                            <button type="button" class="btn btn-success" id="hint" style="font-size : 20px;">Hint</button>
+                            <div id = "hint_text"/>
                           </div>
                           </div>
-                            <div class="card border-success text-white" width="100%;"style = "border-radius: 0px;">
-                              <div class="card-body">
-                                <p class="card-text"><br>
-                                  <button type="button" class="btn btn-success float-right" id="next">Next</button>
-                                  <button type="button" class="btn btn-success" id="hint">Hint</button>
-                                  <div id = "hint_text"/>
-                              </p>
-                              </div> 
-                            </div> 
                           </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </form>
 
@@ -214,4 +212,4 @@
     <!-- Placed at the end of the document so the pages load faster --> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="Assets/js/custom/EOSLayout.js"></script>
-  </body
+  </body>

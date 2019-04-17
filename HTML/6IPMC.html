@@ -1,0 +1,277 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+       <!-- Standard CTAT libraries     -->
+    <link rel="stylesheet" href="https://cdn.ctat.cs.cmu.edu/releases/latest/CTAT.min.css"/>
+    <link rel="shortcut icon" href="">
+    <script src="https://cdn.ctat.cs.cmu.edu/releases/latest/jquery.min.js"></script>
+    <script src="https://cdn.ctat.cs.cmu.edu/releases/latest/ctat.min.js"></script>
+    <script src="https://cdn.ctat.cs.cmu.edu/releases/latest/ctatloader.js"></script>
+
+    <title>Instruction</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-8nq3OiMMgrVFAHyRMMO+DTfMEciSY+c3Awhj/5ljQ1xck1Uv2BUtMjsjLD8GT5Er" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link rel = "stylesheet" href = "Assets/css/custom.css">
+    <!-- <link rel = "stylesheet" href = "Assets/css/custom.common.style.css"> -->
+
+  </head>
+
+<style>
+  #sortable1, #sortable2, #sortable3,#sortable4,#sortable5 {
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 250px;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 0;
+    float: left;
+    margin-right: 10px;
+    font-size: 0.9em;
+  }
+  #rest_sortable1, #rest_sortable2{
+    border: 2px solid white;
+    width: 250px;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 0;
+    float: left;
+    margin-right: 10px;
+    font-size: 0.9em;
+  }
+  #sortable1 li, #sortable2 li, #sortable3 li,#sortable4 li,#sortable5 li {
+    border-radius: 5px;
+    border: 1px solid #eee;
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 0.9em;
+  }
+</style>
+  <body>
+    <form class="testItemContainer" id="form1">
+        <div class="form-group">
+          <div class="row">
+                    <div class="col-sm-2" style = "padding-right:5px;">
+                      <table class="table table-hover text-grey">
+                          <thead>
+                            <tr>
+                              <th scope="col">Table of Content</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>01 PPE Safety</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>02 Safety</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>03 EOS Layout Outside</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>04 EOS Layout Inside</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>05 IPMC</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active  text-white">
+                              <td>06 Mounting of Recoater Blade</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>07 Leveling of Build Plate</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>08 Set Up Conditions</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>09 Start Build</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>10 Laser Sintering Process</td>
+                            </tr>
+                          </tbody>
+                          <tbody>
+                            <tr class="table-active">
+                              <td>11 Monitor and Take out Build</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                    </div>
+                    <div class="col-sm-10" style = "padding:5px;">
+                      <div clas ="row">
+                        <div class="card text-white border-dark mb-3 card-format1 lead">
+                          <div class="card-header">Mount Recoater Blade</div>
+                          <div class="card-body border-dark">
+                            <div class="card-text text-secondary" id = "instruction1">
+                              <p class="lead">Before start build, there are several preparation steps: Mount the recoater blade, mount and level the building platform, clean lens and double check all set up conditions. In this chapter, we will introduce how to mount the recoater blade. The recoater blade is important in the building process, since it helps the recoater apply the bed of powder evenly.</p>
+                              <ol>There are 3 different types of recoater blades. According to different condition, you need to select different recoater blades to mount.
+                                <li>HSS or High Speed Steel blade</li>
+                                <li>Brush recoater blade</li>
+                                <li>Ceramic recoater blade</li>
+                            </div>
+                            <div class="card-text text-secondary" id = "instruction2">
+                              <div class = "row">
+                                <div class = "col-4">
+                                  <p class="lead"><font color="white">HSS or High Speed Steel</font> is used most often, tough blade that will hold up a long time.</p>
+                                </div>
+                                <div class = "col-8">
+                                  <div>
+                                    <img src="Assets/images/5Mount_recoater_high_speed.png" align="center" width="80%" height="10%" alt="recoater high speed">
+                                  </div>
+                                </div>
+                              </div>
+                              <br>
+                              <div class = "row">
+                                <div class = "col-4">
+                                  <p class="lead"><font color="white">Brush recoater blade</font> is used on thin wall or delicate builds so the soft brushes go across the build instead of a hard steel blade.</p>
+                                </div>
+                                <div class = "col-8">
+                                  <div>
+                                    <img src="Assets/images/5Mount_recoater_brush.png" align="center" width="80%" height="10%" alt="recoater brush">
+                                  </div>
+                                </div>
+                              </div>
+                              <br>
+                              <div class = "row">
+                                <div class = "col-4">
+                                  <p class="lead"><font color="white">Ceramic recoater blade </font> is used if the powder has a magnetic charge to it. The magnetic powder will not stick to the ceramic</p>
+                                </div>
+                                <div class = "col-8">
+                                  <div>
+                                    <img src="Assets/images/5Mount_recoater_ceremic.png" align="center" width="80%" height="10%" alt="recoater ceremic">
+                                  </div>
+                                </div>
+                              </div>
+                              <p class = "text-warning">Set up Recoater(Unity Side view) <br>
+                                Step1. Ride the recoater blade on recoater housing<br>
+                                Step2. Place blade holder on recoater housing<br>
+                                Step3. Find screw and screw the blade holder<br>
+                              </p>
+                            </div>
+                            <div class="card-text text-secondary" id = "question1">
+                        <div class="row always-top-row">
+                            <div class="col-sm-9 offset-sm-1 margin-bottom-5px">
+                                <div id="questionText">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row margin-bottom-5px">
+                            <div class="col-sm-3" style="padding:0;">
+                                <div id="blade1" class="text-white" style="text-align:right;padding-top:6%;"></div>
+                            </div>
+                            <div class="col-sm-8">
+                                <ul id="sortable2" class="connectedSortable" style="width:90%;min-height:10%;"></ul>
+                            </div>
+                        </div>
+                        <div class="row margin-bottom-5px">
+                            <div class="col-sm-3" style="padding:0;">
+                                <div id="blade2" class="text-white" style="text-align:right;padding-top:6%;"></div>
+                            </div>
+                            <div class="col-sm-8">
+                                <ul id="sortable3" class="connectedSortable" style="width:90%;min-height:10%;"></ul>
+                            </div>
+                        </div>
+                        <div class="row margin-bottom-5px">
+                            <div class="col-sm-3" style="padding:0;">
+                                <div id="blade3" class="text-white" style="text-align:right;padding-top:6%;"></div>
+                            </div>
+                            <div class="col-sm-8">
+                                <ul id="sortable4" class="connectedSortable" style="width:90%;min-height:10%;"></ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <br>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-9 offset-sm-1">
+                                <div class="text-white margin-bottom-5px">Descriptions:</div>
+                                <ul id="sortable1" class="connectedSortable" style="width:100%;min-height:10%;">
+                                    <li class="ui-state-default" id="choiceAText"></li>
+                                    <li class="ui-state-default" id="choiceBText"></li>
+                                    <li class="ui-state-default" id="choiceCText"></li>
+                                </ul> 
+                            </div>
+                        </div>
+                          </div>
+                          <div class="card-text text-secondary" id = "instruction3">
+                            <p>Set up Recoater(I think here, we need the side view in Unity) <br>
+                                Step1. Ride the recoater blade on recoater housing<br>
+                                Step2. Place blade holder on recoater housing<br>
+                                Step3. Find screw and screw the blade holder<br>
+                              </p>
+                              <div>
+                                <input type="image" src="Assets/images/4EOS_layout_Inside_term1.png" align="center" width="90%" height="80%">
+                              </div>
+                          </div>
+                          <div class="card-text text-secondary" id = "instruction4">Unity Step1
+                            </div>
+                          <div class="card-text text-secondary" id = "instruction5">Unity Step2
+                            </div>
+                          <div class="card-text text-secondary" id = "instruction6">Unity Step3
+                            </div>
+                          <div class="card-footer bg-transparent border-dark lead">
+                            <button type="button" class="btn btn-success float-right" id="next"style="font-size : 20px;">Next</button>
+                            <button type="button" class="btn btn-success" id="hint" style="font-size : 20px;">Hint</button>
+                            <div id = "hint_text"/>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </form>
+
+    <!-- ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="Assets/js/custom/Mount_Recoater.js"></script>
+    </script>
+      <script>
+        $(function() {
+            $("#sortable1, #sortable2, #sortable3,#sortable4").sortable({
+                connectWith: '.connectedSortable',
+                //receive: This event is triggered when a
+                //connected sortable list has received an item from another list.
+                receive: function(event, ui) {
+                    console.log("this is a move");
+                    // so if > 10
+                    if ($("#sortable2").children().length > 1||$("#sortable3").children().length > 1||$("#sortable4").children().length > 1||$("#sortable4").children().length > 1) {
+                        //ui.sender: will cancel the change.
+                        //Useful in the 'receive' callback.
+                        $(ui.sender).sortable('cancel');
+                    }
+
+                }
+            }).disableSelection();
+        });
+    </script>
+  </body>

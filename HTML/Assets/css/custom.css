@@ -2,6 +2,18 @@ body {
     font-size: 15em !important; 
 }
 
+#scrim{
+    display:none!important;
+}
+.container-class {
+    background-image: url(path/to/image.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 400px;
+    height: 400px;
+    border: 2px dashed #333;
+}
+
 .card-format1{
     width:"100%";
     padding-left:0px;

@@ -73,8 +73,8 @@ let CheckAnswer = function(){
 // set id of the component
 var i = 0;
 $('#next').on("click", function() {
-    if ($('#question1').css('display') == 'none' & $('#instruction6').css('display') == 'block') {
-      $('#instruction6').hide();
+    if ($('#question1').css('display') == 'none' & $('#instruction2').css('display') == 'block') {
+      $('#instruction2').hide();
       $('#question1').show();
       $('#next').text("Submit");
       $('#hint').show();
@@ -82,11 +82,14 @@ $('#next').on("click", function() {
       return
     } else {
       if($('#question1').css('display') == 'none') {
+        console.log(sav[i]);
+        console.log("then show");
         $(sav[i]).hide();
         i += 1;
         console.log(sav[i]);
         $(sav[i]).show();
       } else{
+        $(sav[i]).hide();
         $('#question1').show();
         CheckAnswer();
       }
