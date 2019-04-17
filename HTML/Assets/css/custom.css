@@ -21,6 +21,10 @@ body {
     border-radius: 0px;
 }
 
+#unity {
+    display: none;
+}
+
 #instruction6 {
     display: none;
 }

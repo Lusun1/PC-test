@@ -1,3 +1,5 @@
+currentScene = '4.1';
+
 // this need to be set according to each question content
 var text_dict = {
     questionId:"MFI Test",
