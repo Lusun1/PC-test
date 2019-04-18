@@ -114,6 +114,14 @@ function dragOnItem(itemName) {
     CTATCommShell.commShell.gradeSAI("recoaterBlade", "dragOnItem", itemName);
 }
 
+var dropNameToId = {
+    Recoater: 'RecoaterText',
+    'Building Platform': 'BuildingPlatformText',
+    'Collector Duct': 'CollectorDuctText',
+    'Dispenser Duct': 'DispenserDuctText',
+    'Rocker Swithches': 'RockerSwitchesText'
+}
+
 function clickObject(objectName) {
     console.log("clickObject: " + objectName);
     console.log("currentId: " + currentId);
@@ -136,9 +144,19 @@ function clickObject(objectName) {
               if (component == 'termAnswers') {
                 if ("correct" == indicator.toLowerCase()) {
                     $('#hint_text').text(messages.success_text);
+                    for (let key in dropObject) {
+                        gameInstance.SendMessage('JSManager', 'SetNormalLabel', dropNameToId[key]);
+                    }
                 }
                 if ("incorrect" == indicator.toLowerCase()) {
                     $('#hint_text').text(messages.buggy_text);
+                    for (let key in dropObject) {
+                        if (dropObject[key] != key) {
+                            gameInstance.SendMessage('JSManager', 'SetErrorLabel', dropNameToId[key]);
+                        } else {
+                            gameInstance.SendMessage('JSManager', 'SetNormalLabel', dropNameToId[key]);
+                        }
+                    }
                 }
               }
               else {
