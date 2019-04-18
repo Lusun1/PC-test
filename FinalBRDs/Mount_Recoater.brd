@@ -60,24 +60,24 @@
         <text>state13</text>
         <uniqueID>14</uniqueID>
         <dimension>
-            <x>294</x>
-            <y>716</y>
+            <x>222</x>
+            <y>718</y>
         </dimension>
     </node>
     <node locked="false" doneState="true">
         <text>Done</text>
         <uniqueID>15</uniqueID>
         <dimension>
-            <x>764</x>
-            <y>1288</y>
+            <x>692</x>
+            <y>1290</y>
         </dimension>
     </node>
     <node locked="false" doneState="false">
         <text>state15</text>
         <uniqueID>16</uniqueID>
         <dimension>
-            <x>125</x>
-            <y>584</y>
+            <x>40</x>
+            <y>572</y>
         </dimension>
     </node>
     <node locked="false" doneState="false">
@@ -100,56 +100,80 @@
         <text>state18</text>
         <uniqueID>19</uniqueID>
         <dimension>
-            <x>341</x>
-            <y>936</y>
+            <x>269</x>
+            <y>938</y>
         </dimension>
     </node>
     <node locked="false" doneState="false">
         <text>state19</text>
         <uniqueID>20</uniqueID>
         <dimension>
-            <x>485</x>
-            <y>605</y>
+            <x>486</x>
+            <y>704</y>
         </dimension>
     </node>
     <node locked="false" doneState="false">
         <text>state21</text>
         <uniqueID>22</uniqueID>
         <dimension>
-            <x>472</x>
-            <y>882</y>
+            <x>400</x>
+            <y>884</y>
         </dimension>
     </node>
     <node locked="false" doneState="false">
         <text>state23</text>
         <uniqueID>24</uniqueID>
         <dimension>
-            <x>731</x>
-            <y>832</y>
+            <x>659</x>
+            <y>834</y>
         </dimension>
     </node>
     <node locked="false" doneState="false">
         <text>state24</text>
         <uniqueID>25</uniqueID>
         <dimension>
-            <x>357</x>
-            <y>1030</y>
+            <x>285</x>
+            <y>1032</y>
         </dimension>
     </node>
     <node locked="false" doneState="false">
         <text>state25</text>
         <uniqueID>26</uniqueID>
         <dimension>
-            <x>316</x>
-            <y>1153</y>
+            <x>244</x>
+            <y>1155</y>
         </dimension>
     </node>
     <node locked="false" doneState="false">
         <text>state27</text>
         <uniqueID>28</uniqueID>
         <dimension>
-            <x>268</x>
-            <y>1278</y>
+            <x>196</x>
+            <y>1280</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="false">
+        <text>state29</text>
+        <uniqueID>30</uniqueID>
+        <dimension>
+            <x>84</x>
+            <y>646</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="false">
+        <text>state31</text>
+        <uniqueID>32</uniqueID>
+        <dimension>
+            <x>51</x>
+            <y>480</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="false">
+        <text>state33</text>
+        <uniqueID>34</uniqueID>
+        <dimension>
+            <x>612</x>
+            <y>640</y>
         </dimension>
     </node>
     <edge>
@@ -591,12 +615,12 @@
                         <value>UpdateCheckBox</value>
                     </Action>
                     <Input>
-                        <value>choiceAText:choiceBText:choiceCText</value>
+                        <value>choiceBText:choiceCText:choiceAText</value>
                     </Input>
                     <transaction_id>Ta89a1e33-f3fd-4081-abae-46dd3b9161a6</transaction_id>
                 </properties>
             </message>
-            <buggyMessage>Sorry, this is not correct. You selected the wrong answer for the second and third blade.</buggyMessage>
+            <buggyMessage>Sorry, this is not correct. You selected the wrong answer for HSS and brush recoater blade.</buggyMessage>
             <successMessage></successMessage>
             <hintMessage>Please provide your answer 'No_Value' in the highlighted element.</hintMessage>
             <callbackFn></callbackFn>
@@ -619,7 +643,7 @@
                 <Input>
                     <matcher>
                         <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">choiceAText:choiceBText:choiceCText</matcherParameter>
+                        <matcherParameter name="single">choiceBText:choiceCText:choiceAText</matcherParameter>
                     </matcher>
                 </Input>
                 <Actor linkTriggered="false">Student</Actor>
@@ -656,7 +680,7 @@
                     <transaction_id>f229d499-b111-40c1-c29b-d58c0d4fd5b6</transaction_id>
                 </properties>
             </message>
-            <buggyMessage>Sorry, this is not correct. You selected the wrong answer for the first, second and third blade.</buggyMessage>
+            <buggyMessage>Sorry, this is not correct. You selected the wrong answer for HSS, ceramic and brush blade.</buggyMessage>
             <successMessage></successMessage>
             <hintMessage>Please provide your answer 'No_Value' in the highlighted element.</hintMessage>
             <callbackFn></callbackFn>
@@ -1112,6 +1136,186 @@
         </rule>
         <sourceID>28</sourceID>
         <destID>15</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="false" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>109</uniqueID>
+            <message>
+                <verb>SendNoteProperty</verb>
+                <properties>
+                    <MessageType>CorrectAction</MessageType>
+                    <Selection>
+                        <value>termAnswers</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateCheckBox</value>
+                    </Action>
+                    <Input>
+                        <value>choiceAText:choiceBText:choiceCText</value>
+                    </Input>
+                    <transaction_id>Ta89a1e33-f3fd-4081-abae-46dd3b9161a6</transaction_id>
+                </properties>
+            </message>
+            <buggyMessage>Sorry, this is not correct. You selected the wrong answer for ceramic and brush recoater blade.</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Please provide your answer 'No_Value' in the highlighted element.</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Buggy Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">termAnswers</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">UpdateCheckBox</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">choiceAText:choiceBText:choiceCText</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>unnamed</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>6</sourceID>
+        <destID>30</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="false" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>113</uniqueID>
+            <message>
+                <verb>SendNoteProperty</verb>
+                <properties>
+                    <MessageType>CorrectAction</MessageType>
+                    <Selection>
+                        <value>termAnswers</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateCheckBox</value>
+                    </Action>
+                    <Input>
+                        <value>choiceCText:choiceAText:choiceBText</value>
+                    </Input>
+                    <transaction_id>Ta89a1e33-f3fd-4081-abae-46dd3b9161a6</transaction_id>
+                </properties>
+            </message>
+            <buggyMessage>Sorry, this is not correct. You selected the wrong answer for HSS and ceramic recoater blade.</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Please provide your answer 'No_Value' in the highlighted element.</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Buggy Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">termAnswers</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">UpdateCheckBox</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">choiceCText:choiceAText:choiceBText</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>unnamed</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>6</sourceID>
+        <destID>32</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="false" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>115</uniqueID>
+            <message>
+                <verb>SendNoteProperty</verb>
+                <properties>
+                    <MessageType>CorrectAction</MessageType>
+                    <Selection>
+                        <value>termAnswers</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateCheckBox</value>
+                    </Action>
+                    <Input>
+                        <value>choiceCText:choiceBText:choiceAText</value>
+                    </Input>
+                    <transaction_id>f229d499-b111-40c1-c29b-d58c0d4fd5b6</transaction_id>
+                </properties>
+            </message>
+            <buggyMessage>Sorry, this is not correct. You selected the wrong answer for HSS, ceramic and brush blade.</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Please provide your answer 'No_Value' in the highlighted element.</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Buggy Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">termAnswers</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">UpdateCheckBox</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">choiceCText:choiceBText:choiceAText</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>unnamed</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>6</sourceID>
+        <destID>34</destID>
         <traversalCount>0</traversalCount>
     </edge>
     <EdgesGroups ordered="true"></EdgesGroups>

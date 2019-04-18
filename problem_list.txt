@@ -8,6 +8,3 @@ EOSLayout_Inside EOSLayout_Inside EOSLayout_Inside EOSLayout_Inside.brd 4EOSLayo
 
 Mount_Recoater Mount_Recoater Mount_Recoater Mount_Recoater.brd 5Mount_Recoater.html
 
-Leveling_Build_Plate Leveling_Build_Plate Leveling_Build_Plate Leveling_Build_Plate.brd 7Leveling_Build_Plate.html
-
-Setup_Condition Setup_Condition Setup_Condition Setup_Condition.brd 8Setup_Condition.html

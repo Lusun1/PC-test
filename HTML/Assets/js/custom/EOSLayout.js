@@ -31,26 +31,38 @@ sav = new Array(
   "#question1", 
   );
 
+
 for(key in text_dict){
     $("#" + key).html(text_dict[key]);    
 }
 
 
 let CheckAnswer = function(){
+    var input = []
+    var answerText = ["A","B","C","D"]
     check1=$("input[name='checkGroup']")[0].checked;
     check2=$("input[name='checkGroup']")[1].checked;
     check3=$("input[name='checkGroup']")[2].checked;
     check4=$("input[name='checkGroup']")[3].checked;
-    check1Text = $("#checkA").text()
-    check2Text = $("#checkB").text()
-    check3Text = $("#checkC").text()
-    check4Text = $("#checkD").text()
     if(check1 || check2 || check3 || check4) {
+      var response = '';
+      for (i = 0; i < 4; i++) {
+        if($("input[name='checkGroup']")[i].checked == true){
+          response = response + answerText[i]   
+        }
+      }
         // response = "Respirators: " + check1 + ";Closed toe shoes: " + check2 + ";nitrile gloves: " + check3 + ";metal powder: " + check4;
-        response = check1Text+": "+check1+";"+check2Text+": "+check2+";"+check3Text+": "+check3+";"+check4Text+": "+check4;
-        console.log(response);
-        CTATCommShell.commShell.gradeSAI("checkGroup", "UpdateCheckBox", response);
-        return response;
+        // response = {"checkA":check1, "checkB":check2,"checkC":check3,"checkD":check4}
+      console.log(response);
+      CTATCommShell.commShell.gradeSAI("checkGroup", "UpdateCheckBox", response);
+      return response;
+    }
+    else {
+        if(confirm(messages["warning_skip"])) {
+            CTATCommShell.commShell.gradeSAI("termAnswers", "UpdateTextField", "Student skipped question.");
+        } else {
+            return;
+        }
     }
 }
 
@@ -66,15 +78,16 @@ $('#next').on("click", function() {
       return
     } else {
       if($('#question1').css('display') == 'none') {
+        console.log(sav[i]);
+        console.log("then show");
         $(sav[i]).hide();
         i += 1;
         console.log(sav[i]);
         $(sav[i]).show();
       } else{
-        $('#question1').show();
+        CheckAnswer();
       }
     }
-    CheckAnswer();
  });
 
 var cnt_hint = 0;
@@ -90,6 +103,12 @@ $('#hint').on("click",function(){
   }
 })
 
+
+function processIncorrectMessage(answer){
+  $("#hint_text").css("color","red");
+  $('#hint_text').text(answer);
+}
+
 //set component
 var cnt_buggy =0;
 $(document).on("ready",function () {
@@ -102,32 +121,34 @@ $(document).on("ready",function () {
       {
         processCommShellEvent: function(evt, msg)
             {
-              if("AssociatedRules" != evt || !msg)
+              var events = ["AssociatedRules", "BuggyMessage"];
+              if( events.indexOf(evt) == -1  || !msg)
               {
                   return;
               }
+              if("BuggyMessage" == evt)
+                {
+                  console.log("this is the wrong answer");
+                  cnt_buggy += 1;
+                  if (cnt_buggy >3){
+                    cnt_buggy += 0;
+                    if(confirm(messages["reload_page"])) {
+                        window.location.href=window.location.href;
+                    } else {
+                        processIncorrectMessage(msg.getBuggyMsg())
+                    }
+                  } else{
+                  processIncorrectMessage(msg.getBuggyMsg())}
+                }
               window.assocrules = msg;
               var indicator = msg.getIndicator();
               var sai = msg.getSAI();                               // selection-action-input from tutor engine
               var selection = (sai ? sai.getSelection() : "_noSuchComponent_");
-              // var comps = CTATShellTools.findComponent(selection);  // array of components with this name
-              // var component = (comps && comps.length ? comps[0] : null); // ?? it returns null 
               var component = sai.getSelection();
-              console.log(component);
-              console.log(indicator);
-              if(component && "incorrect" == indicator.toLowerCase())
-              {
-                if (cnt_buggy < 2){
-                  $('#hint_text').text(messages["buggy_text"]);
-                  cnt_buggy += 1;
-                }
-                else{
-                  $('#hint_text').text("Tutor's answer is "+sai.getInput().toString());
-                  console.log("Tutor's answer is "+sai.getInput().toString());
-                } 
-              }
               if(component =="checkGroup"&& "correct" == indicator.toLowerCase())
               {
+                $("#hint_text").css("color","white");
+                // onCorrectEventHandler();
                 $('#hint_text').text(messages["success_text"]); 
                 $('#next').text("Next");
                 $('#hint').hide();
@@ -138,5 +159,3 @@ $(document).on("ready",function () {
     };
     CTATCommShell.commShell.addGlobalEventListener(assocRulesListener);
 });
-
-

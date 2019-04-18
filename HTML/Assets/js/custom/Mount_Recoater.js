@@ -80,8 +80,11 @@ function processUnity(){
 var i = 0;
 $('#next').on("click", function() {
     if (sav[i] == '#instruction3') {
+      $('#question1').hide();
+      $('#instruction3').show();
       processUnity();
     } else if (sav[i] == '#instruction4' || sav[i] == '#instruction5') {
+      $("#hint_text").css("color","white");
       $('#next').attr("disabled", true);
       nextHandler();
       $('#hint_text').text(messages.question_text);
@@ -181,13 +184,13 @@ $(document).on("ready",function () {
               console.log(indicator);
               if(component =="termAnswers"&& "correct" == indicator.toLowerCase())
               {
-                $('#hint_text').text(messages["success_text"]); 
+                $("#hint_text").css("color","green");
+                $('#hint_text').text("Yes, you are correct. Please press next to continue.");
+                // $('#hint_text').text(messages["success_text"]); 
                 $('#next').text("Next");
                 $('#hint').hide();
-                //processUnity();
-                $('#question1').hide();
-                $('#instruction3').show();
                 i += 1;
+                //processUnity();
               }
               // console.trace(msg);
       }
