@@ -35,18 +35,6 @@ for(key in text_dict){
     $("#" + key).html(text_dict[key]);    
 }
 
-let GetAnswer = function(){
-  check1=$("input[name='checkGroup']")[0].checked;
-  check2=$("input[name='checkGroup']")[1].checked;
-  check3=$("input[name='checkGroup']")[2].checked;
-  check4=$("input[name='checkGroup']")[3].checked;
-  check1Text = $("#checkA").text()
-  check2Text = $("#checkB").text()
-  check3Text = $("#checkC").text()
-  check4Text = $("#checkD").text()
-  response = check1Text+": "+check1+";"+check2Text+": "+check2+";"+check3Text+": "+check3+";"+check4Text+": "+check4;
-  return response;
-}
 
 let CheckAnswer = function(){
     check1=$("input[name='checkGroup']")[0].checked;
@@ -100,15 +88,6 @@ $('#hint').on("click",function(){
   } else{
     $('#hint_text').text(hint[2]);
   }
-//   var XML_hint = assocrules.getXMLString();
-//   console.log(XML_hint);
-//   xmlDoc = $.parseXML(XML_hint);
-//   $xml = $( xmlDoc);
-//   if($xml.find("Indicator").text() == "Hint"){
-//   var hint_text = $xml.find("TutorAdvice").text();
-//   console.log(hint_text);
-//   $('#hint_text').text(hint_text);
-// }
 })
 
 //set component
@@ -134,7 +113,6 @@ $(document).on("ready",function () {
               // var comps = CTATShellTools.findComponent(selection);  // array of components with this name
               // var component = (comps && comps.length ? comps[0] : null); // ?? it returns null 
               var component = sai.getSelection();
-              var response = GetAnswer();
               console.log(component);
               console.log(indicator);
               if(component && "incorrect" == indicator.toLowerCase())

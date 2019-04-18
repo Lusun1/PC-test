@@ -79,6 +79,7 @@ $('#next').on("click", function() {
       $('#next').text("Submit");
       $('#next').attr("disabled", false);
       $('#hint').show();
+      $("#hint_text").css("color","white");
       $('#hint_text').text("Answer the question and press submit to check your answer.");
       i++;
       currentId = sav[i];
@@ -95,6 +96,7 @@ $('#next').on("click", function() {
         currentId = sav[i];
         nextHandler();
         $('#next').attr("disabled", true);
+        $("#hint_text").css("color","white");
         $('#hint_text').text(messages.next_text);
       } else{
         $('#question1').show();
@@ -119,6 +121,7 @@ $('#hint').on("click",function(){
 //set component
 var cnt_buggy =0;
 $(document).on("ready",function () {
+  $("#hint_text").css("color","white");
   $('#hint_text').text("Press Next to continue"); 
   console.log("pucca")
   let OnIncorrect = function(stu_input){
@@ -145,10 +148,12 @@ $(document).on("ready",function () {
               if(component && "incorrect" == indicator.toLowerCase())
               {
                 if (cnt_buggy < 2){
+                  $("#hint_text").css("color","red");
                   $('#hint_text').text(messages["buggy_text"]);
                   cnt_buggy += 1;
                 }
                 else{
+                  $("#hint_text").css("color","white");
                   $('#hint_text').text(messages["Please use hints to help you!"]);
                   // $('#hint_text').text("Tutor's answer is "+sai.getInput().toString());
                   // console.log("Tutor's answer is "+sai.getInput().toString());
@@ -156,6 +161,7 @@ $(document).on("ready",function () {
               }
               if(component =="termAnswers"&& "correct" == indicator.toLowerCase())
               {
+                $("#hint_text").css("color","green");
                 $('#hint_text').text(messages["success_text"]); 
                 $('#next').text("Next");
                 $('#hint').hide();

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Package name="Lu-MFI-PC" label="Lu-MFI-PC" description="Lu-MFI-PC" tutor_type="javascript">
+<Package name="410MFI-PC-410" label="410MFI-PC-410" description="410MFI-PC-410" tutor_type="javascript">
   <Problems>
     <Problem name="PPE" label="PPE" description="PPE" tutor_flag="tutor" problem_file="PPE.brd" selection_features="()" student_interface="1PPE.html">
       <Skills>
@@ -9,20 +9,37 @@
       <Skills>
       </Skills>
     </Problem>
-    <Problem name="EOSLayout" label="EOSLayout" description="EOSLayout" tutor_flag="tutor" problem_file="EOSLayout.brd" selection_features="()" student_interface="2EOSLayout.html">
+    <Problem name="EOSLayout" label="EOSLayout" description="EOSLayout" tutor_flag="tutor" problem_file="EOSLayout.brd" selection_features="()" student_interface="3EOSLayout.html">
       <Skills>
       </Skills>
     </Problem>
-    <Problem name="EOSLayout_Inside" label="EOSLayout_Inside" description="EOSLayout_Inside" tutor_flag="tutor" problem_file="EOSLayout_Inside.brd" selection_features="()" student_interface="2EOSLayout_Inside.html">
+    <Problem name="EOSLayout_Inside" label="EOSLayout_Inside" description="EOSLayout_Inside" tutor_flag="tutor" problem_file="EOSLayout_Inside.brd" selection_features="()" student_interface="4EOSLayout_Inside.html">
+      <Skills>
+      </Skills>
+    </Problem>
+    <Problem name="Mount_Recoater" label="Mount_Recoater" description="Mount_Recoater" tutor_flag="tutor" problem_file="Mount_Recoater.brd" selection_features="()" student_interface="5Mount_Recoater.html">
+      <Skills>
+      </Skills>
+    </Problem>
+    <Problem name="Leveling_Build_Plate" label="Leveling_Build_Plate" description="Leveling_Build_Plate" tutor_flag="tutor" problem_file="Leveling_Build_Plate.brd" selection_features="()" student_interface="7Leveling_Build_Plate.html">
+      <Skills>
+      </Skills>
+    </Problem>
+    <Problem name="Setup_Condition" label="Setup_Condition" description="Setup_Condition" tutor_flag="tutor" problem_file="Setup_Condition.brd" selection_features="()" student_interface="8Setup_Condition.html">
       <Skills>
       </Skills>
     </Problem>
   </Problems>
   <ProblemSets>
-    <ProblemSet name="Lu-MFI-PC" label="Lu-MFI-PC" description="Lu-MFI-PC" status="Active" team_size="1" selection_algorithm="sequential" max_count="1000" max_repeat="1" initial_sequence="0">
+    <ProblemSet name="410MFI-PC-410" label="410MFI-PC-410" description="410MFI-PC-410" status="Active" team_size="1" selection_algorithm="sequential" max_count="1000" max_repeat="1" initial_sequence="0">
       <Problems>
         <Problem name="PPE" position="1" role="0"/>
-        <Problem name="Safety" position="5" role="0"/>
+        <Problem name="Safety" position="2" role="0"/>
+        <Problem name="EOSLayout" position="3" role="0"/>
+        <Problem name="EOSLayout_Inside" position="4" role="0"/>
+        <Problem name="Mount_Recoater" position="5" role="0"/>
+        <Problem name="Leveling_Build_Plate" position="5" role="0"/>
+        <Problem name="Setup_Condition" position="5" role="0"/>
       </Problems>
       <Skills>
       </Skills>
@@ -41,11 +58,25 @@
     <!-- HTML files -->
     <Asset name="1PPE.html" label="1PPE.html" description="1PPE.html" asset_locator="HTML/1PPE.html"/>
     <Asset name="2Safety.html" label="2Safety.html" description="2Safety.html" asset_locator="HTML/2Safety.html"/>
+    <Asset name="3EOSLayout.html" label="3EOSLayout.html" description="3EOSLayout.html" asset_locator="HTML/3EOSLayout.html"/>
+    <Asset name="4EOSLayout_Inside.html" label="4EOSLayout_Inside.html" description="4EOSLayout_Inside.html" asset_locator="HTML/4EOSLayout_Inside.html"/>
+    <Asset name="5Mount_Recoater.html" label="5Mount_Recoater.html" description="5Mount_Recoater.html" asset_locator="HTML/5Mount_Recoater.html"/>
+    <Asset name="7Leveling_Build_Plate.html" label="7Leveling_Build_Plate.html" description="7Leveling_Build_Plate.html" asset_locator="HTML/7Leveling_Build_Plate.html"/>
+    <Asset name="8Setup_Condition.html" label="8Setup_Condition.html" description="8Setup_Condition.html" asset_locator="HTML/8Setup_Condition.html"/>
     <!-- BRD files -->
     <Asset name="PPE.brd" label="PPE.brd" description="PPE.brd" asset_locator="FinalBRDs/PPE.brd"/>
     <Asset name="Safety.brd" label="Safety.brd" description="Safety.brd" asset_locator="FinalBRDs/Safety.brd"/>
+    <Asset name="EOSLayout.brd" label="EOSLayout.brd" description="EOSLayout.brd" asset_locator="FinalBRDs/EOSLayout.brd"/>
+    <Asset name="EOSLayout_Inside.brd" label="EOSLayout_Inside.brd" description="EOSLayout_Inside.brd" asset_locator="FinalBRDs/EOSLayout_Inside.brd"/>
+    <Asset name="Mount_Recoater.brd" label="Mount_Recoater.brd" description="Mount_Recoater.brd" asset_locator="FinalBRDs/Mount_Recoater.brd"/>
+    <Asset name="Leveling_Build_Plate.brd" label="Leveling_Build_Plate.brd" description="Leveling_Build_Plate.brd" asset_locator="FinalBRDs/Leveling_Build_Plate.brd"/>
+    <Asset name="Setup_Condition.brd" label="Setup_Condition.brd" description="Setup_Condition.brd" asset_locator="FinalBRDs/Setup_Condition.brd"/>
     <!-- Javascript files -->
     <Asset name="PPE.js" label="PPE.js" description="PPE.js" asset_locator="HTML/Assets/js/custom/PPE.js"/>
     <Asset name="Safety.js" label="Safety.js" description="Safety.js" asset_locator="HTML/Assets/js/custom/Safety.js"/>
+    <Asset name="EOSLayout.js" label="EOSLayout.js" description="EOSLayout.js" asset_locator="HTML/Assets/js/custom/EOSLayout.js"/>
+    <Asset name="EOSLayoutInside.js" label="EOSLayoutInside.js" description="EOSLayoutInside.js" asset_locator="HTML/Assets/js/custom/EOSLayoutInside.js"/>
+    <Asset name="Mount_Recoater.js" label="Mount_Recoater.js" description="Mount_Recoater.js" asset_locator="HTML/Assets/js/custom/Mount_Recoater.js"/>
+    <Asset name="unity.js" label="unity.js" description="unity.js" asset_locator="HTML/Assets/js/custom/unity.js"/>
   </Assets>
 </Package>

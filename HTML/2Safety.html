@@ -19,9 +19,12 @@
     <!-- Custom styles for this template -->
     <link rel = "stylesheet" href = "Assets/css/safety.custom.css">
     <!-- <link rel = "stylesheet" href = "Assets/css/custom.common.style.css"> -->
-
-  </head>
-
+</head>
+<style>
+#scrim{
+    display:none!important;
+}
+</style>
   <body>
     <form class="testItemContainer" id="form1">
         <div class="form-group">
@@ -90,7 +93,7 @@
                           </tbody>
                       </table>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-10">
                       <div clas ="row">
                         <div class="card text-white border-dark mb-3 card-format1 lead">
                           <div class="card-header">Safety</div>
@@ -117,18 +120,21 @@
                               </p>
                             </div>
                             <div class="card-text text-secondary" id = "instruction3">
-                              <p><font color="white">Fire Fighting</font>
-                                <ul>
-                                  <li>Wire suitable protective equipment</li>
-                                  <li>In case of a fire in the machine, closing the process chamber door can help to prevent the fire spreading</li>
-                                  <li>For metal fires only use a suitable special fire extinguisher of fire class D.</li>
-                                  <li>Do not extinguish using water. Due to the reactivity of the metal powder with the water there is a risk of explosion.</li>
-                                  <li>Do not clean up burning metal powder using the Web separator, since using the Wet separator to clean up the burning metal powder can result in a deflagration.</li>
-                                </ul>
-                              </p>
-                              <p>
-                                <img src="Assets/images/2Safety1_extinguisher.png" align="center" width="25%" height="35%" style="padding:5%" alt="extinguisher">
-                              </p>
+                              <div class ="row">
+                                <div class = "col-sm-8">
+                                  <p><font color="white">Fire Fighting</font></p>
+                                    <ul>
+                                      <li>Wire suitable protective equipment</li>
+                                      <li>In case of a fire in the machine, closing the process chamber door can help to prevent the fire spreading</li>
+                                      <li>For metal fires only use a suitable special fire extinguisher of fire class D.</li>
+                                      <li>Do not extinguish using water. Due to the reactivity of the metal powder with the water there is a risk of explosion.</li>
+                                      <li>Do not clean up burning metal powder using the Web separator, since using the Wet separator to clean up the burning metal powder can result in a deflagration.</li>
+                                    </ul>
+                                  </div>
+                                  <div class = "col-sm-4">
+                                      <img src="Assets/images/2Safety1_extinguisher.png" align="center" width="90%" height="50%" style="padding:5%" alt="extinguisher">
+                                  </div>
+                              </div>
                             </div>
                             <div class="card-text text-secondary" id = "instruction4">
                               <ul>Process Chamber Issue: 
@@ -142,7 +148,7 @@
                                   <p><font color ="white">Low Oxygen Alarm:</font><br>The installation of low oxygen alarms in all rooms where argon could escape in the case of a leak from the supply pipe or the waste gas pipe.</p>
                                 </div>
                                 <div class = "col-sm-5">
-                                  <img src="Assets/images/2Safety2_LowOxygenAlarms.png" align="center" width="90%" height="40%" style="padding:5%" alt="oxygen alarms">
+                                  <img src="Assets/images/2Safety2_LowOxygenAlarms.png" align="center" width="90%" height="30%" style="padding:5%" alt="oxygen alarms">
                                 </div>
                               </div>
                               <div class ="row">
@@ -150,7 +156,7 @@
                                   <p><font color ="white">Emergency Stop Circuit:</font><br>By pressing the EMERGENCY STOP button on the machine all axis movements are stopped, the laser shut down and the process chamber door unlocked.</p>
                                 </div>
                                 <div class = "col-sm-5">
-                                  <img src="Assets/images/2Safety3_EmergencyStopCircuit.png" align="center" width="30%" height="25%" style="padding:5%" alt="emergency stop circuit">
+                                  <img src="Assets/images/2Safety3_EmergencyStopCircuit.png" align="center" width="30%" height="21%" style="padding:5%" alt="emergency stop circuit">
                                 </div>
                               </div>
                               <div class ="row">
@@ -158,15 +164,21 @@
                                   <p><font color ="white">Inert gas monitoring:</font><br>The inert gas monitoring ensures the appropriate inert gas for the material selected in the building task has been selected. If the wrong inert gas has been selected, it is not possible to start the building process.</p>
                                 </div>
                                 <div class = "col-sm-5">
-                                  <input type="image" src="Assets/images/2Safety4_InertGasMonitoring.png" align="center" width="35%" height="30%" style="padding:5%">
+                                  <input type="image" src="Assets/images/2Safety4_InertGasMonitoring.png" align="center" width="35%" height="27%" style="padding:5%">
                                 </div>
                               </div>
                             </div>
                             <div class="card-text text-secondary" id = "instruction6">
-                              <p>Wet Seperator<br>The wet separator is used to cleaned up metal powder and metal condensates. But do not clean up burning metal powder using the Web separator.</p>
-                              <img src="Assets/images/2Safety5_WetSeparator.png" align="center" width="30%" height="80%" style="padding:5%" alt="wet separator">
-                            </div>
-                            <div class="card-text text-secondary" id = "question1">
+                                <div class ="row">
+                                  <div class = "col-sm-6">
+                                      <p>Wet Seperator<br>The wet separator is used to cleaned up metal powder and metal condensates. But do not clean up burning metal powder using the Web separator.</p>
+                                  </div>
+                                    <div class = "col-sm-6">
+                                        <img src="Assets/images/2Safety5_WetSeparator.png" align="center" width="50%" height="80%" style="padding:5%" alt="wet separator">
+                                    </div>
+                                </div>
+                              </div>
+                            <div class="card-text text-white" id = "question1">
                               <div>Answer the question below:</div>
                                 <div id="questionText"></div>
                                 <div class="form-check">
@@ -195,7 +207,7 @@
                             <button type="button" class="btn btn-success float-right" id="next"style="font-size : 20px;">Next</button>
                             <button type="button" class="btn btn-success" id="hint" style="font-size : 20px;">Hint</button>
                             <div id = "hint_text"/>
-                          </div> 
+                            </div> 
                           </div>
                           </div>
                         </div>

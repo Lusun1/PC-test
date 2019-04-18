@@ -38,8 +38,6 @@ for(key in text_dict){
     $("#" + key).html(text_dict[key]);    
 }
 
-let GetAnswer = function(){
-}
 
 let CheckAnswer = function(){
     var input = []
@@ -73,8 +71,8 @@ let CheckAnswer = function(){
 // set id of the component
 var i = 0;
 $('#next').on("click", function() {
-    if ($('#question1').css('display') == 'none' & $('#instruction2').css('display') == 'block') {
-      $('#instruction2').hide();
+    if ($('#question1').css('display') == 'none' & $('#instruction6').css('display') == 'block') {
+      $('#instruction6').hide();
       $('#question1').show();
       $('#next').text("Submit");
       $('#hint').show();
@@ -107,15 +105,6 @@ $('#hint').on("click",function(){
   } else{
     $('#hint_text').text(hint[2]);
   }
-//   var XML_hint = assocrules.getXMLString();
-//   console.log(XML_hint);
-//   xmlDoc = $.parseXML(XML_hint);
-//   $xml = $( xmlDoc);
-//   if($xml.find("Indicator").text() == "Hint"){
-//   var hint_text = $xml.find("TutorAdvice").text();
-//   console.log(hint_text);
-//   $('#hint_text').text(hint_text);
-// }
 })
 
 
