@@ -1,4 +1,6 @@
 currentScene = '4.1';
+gameInstance = UnityLoader.instantiate("gameContainer", "Assets/unity/Build/unity.json", {onProgress: UnityProgress});
+$('#unity').show();
 
 // this need to be set according to each question content
 var text_dict = {
