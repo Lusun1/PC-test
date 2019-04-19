@@ -55,8 +55,14 @@ currentURL = CTATConfiguration.get('run_problem_url');
 $('.chapter').on("click", function() {
   id = $(this).attr("id");
   console.log(id);
-  newURL = currentURL + "/" + chapterToId[id];
-  parent.location.replace(newURL);
+  if (id in chapterToId){
+    newURL = currentURL + "/" + chapterToId[id];
+    parent.location.replace(newURL);
+  } else{
+    return;
+  }
+})
+
   // CTATCommShell.commShell.getLoggingLibrary().then(
   //   // success
   //   function () {
@@ -67,7 +73,6 @@ $('.chapter').on("click", function() {
   //    alert("Cannot jump to the other chapter");
   //   }
   //  );
-})
 
 for(key in text_dict){
     $("#" + key).html(text_dict[key]);    

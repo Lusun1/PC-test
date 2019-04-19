@@ -18,7 +18,7 @@ var messages = {
 hint = new Array(
   "Please only select the items which is belongs to EOS layout. That does not include wearable facilities ",
   "EOS layout does not have indicator on that.",
-  "Correct answer is a,b");
+  "Correct answer is Process chamber, Service Network.");
 
 // set pages order
 sav = new Array(
@@ -42,8 +42,12 @@ currentURL = CTATConfiguration.get('run_problem_url');
 $('.chapter').on("click", function() {
   id = $(this).attr("id");
   console.log(id);
-  newURL = currentURL + "/" + chapterToId[id];
-  parent.location.replace(newURL);
+  if (id in chapterToId){
+    newURL = currentURL + "/" + chapterToId[id];
+    parent.location.replace(newURL);
+  } else{
+    return;
+  }
 })
 
 for(key in text_dict){

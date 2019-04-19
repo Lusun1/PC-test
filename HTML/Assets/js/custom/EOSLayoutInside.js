@@ -24,7 +24,7 @@ var messages = {
 hint = new Array(
   "Please recall each part's name and there is one distractot listed in the table",
   "The filling module is the distractor",
-  "Correct answer is 1-Recoater, 2-Building platform, 3-Collector duct, 4-Dispenser duct, 5-Rocket switches");
+  "Correct answer is 1-Recoater, 2-Building platform, 3-Collector duct, 4-Dispenser duct, 5-Rocker switches");
 
 var message_dict = {
     warning_skip:"Are you sure you want to skip this problem?",
@@ -42,9 +42,14 @@ currentURL = CTATConfiguration.get('run_problem_url');
 $('.chapter').on("click", function() {
   id = $(this).attr("id");
   console.log(id);
-  newURL = currentURL + "/" + chapterToId[id];
-  parent.location.replace(newURL);
+  if (id in chapterToId){
+    newURL = currentURL + "/" + chapterToId[id];
+    parent.location.replace(newURL);
+  } else{
+    return;
+  }
 })
+
 
 // set pages order
 sav = new Array(

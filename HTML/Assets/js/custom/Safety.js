@@ -41,9 +41,14 @@ currentURL = CTATConfiguration.get('run_problem_url');
 $('.chapter').on("click", function() {
   id = $(this).attr("id");
   console.log(id);
-  newURL = currentURL + "/" + chapterToId[id];
-  parent.location.replace(newURL);
+  if (id in chapterToId){
+    newURL = currentURL + "/" + chapterToId[id];
+    parent.location.replace(newURL);
+  } else{
+    return;
+  }
 })
+
 
 for(key in text_dict){
   $("#" + key).html(text_dict[key]);    
