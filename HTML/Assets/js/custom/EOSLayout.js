@@ -31,6 +31,20 @@ sav = new Array(
   "#question1", 
   );
 
+var chapterToId = {
+  "PPE":1,
+  "Safety":2,
+  "EOS_Layout_Outside":3,
+}
+
+currentURL = CTATConfiguration.get('run_problem_url');
+  
+$('.chapter').on("click", function() {
+  id = $(this).attr("id");
+  console.log(id);
+  newURL = currentURL + "/" + chapterToId[id];
+  parent.location.replace(newURL);
+})
 
 for(key in text_dict){
     $("#" + key).html(text_dict[key]);    

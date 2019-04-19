@@ -22,13 +22,14 @@ var messages = {
 
 // this need to be set according to each question hint messages
 hint = new Array(
-  "Please recall each part's name and there is one distractot listed in the table",
-  "The filling module is the distractor",
-  "Correct answer is a-Recoater, b-Building platform, c-Collector duct, d-Dispenser duct, e-Rocket switches");
+  "Please recall each part's different function",
+  "Correct answer is: HSS is used most of the time and it could hold up well; Brush recoater blade is used when you build small thin walls or fine delicate parts; Ceramic recoater blade is used when the powder is magnetic.",
+  "Correct answer is: HSS is used most of the time and it could hold up well; Brush recoater blade is used when you build small thin walls or fine delicate parts; Ceramic recoater blade is used when the powder is magnetic.");
 
 var message_dict = {
     warning_skip:"Are you sure you want to skip this problem?",
-    confirm_skip:"Are you sure you complete the problem?"
+    confirm_skip:"Are you sure you complete the problem?",
+    confirm_done:"Do you want to complete the whole learning session and continue to the post test?"
 }
 
 // set pages order
@@ -41,6 +42,32 @@ sav = new Array(
   "#instruction5",
   "#instruction6"
   );
+
+var chapterToId = {
+    "PPE":1,
+    "Safety":2,
+    "EOS_Layout_Outside":3,
+    "EOS_Layout_Inside":4,
+    "Mount_Recoater_Blade":5
+}
+currentURL = CTATConfiguration.get('run_problem_url');
+  
+$('.chapter').on("click", function() {
+  id = $(this).attr("id");
+  console.log(id);
+  newURL = currentURL + "/" + chapterToId[id];
+  parent.location.replace(newURL);
+  // CTATCommShell.commShell.getLoggingLibrary().then(
+  //   // success
+  //   function () {
+  //    parent.location.replace(newURL);
+  //   },
+  //   // error
+  //   function() {
+  //    alert("Cannot jump to the other chapter");
+  //   }
+  //  );
+})
 
 for(key in text_dict){
     $("#" + key).html(text_dict[key]);    
@@ -89,7 +116,11 @@ $('#next').on("click", function() {
       nextHandler();
       $('#hint_text').text(messages.question_text);
     } else if (sav[i] == '#instruction6') {
-      CTATCommShell.commShell.processDoneContinue(7);
+      if(confirm(message_dict["confirm_done"])) {
+        CTATCommShell.commShell.processDoneContinue(7);
+      } else {
+          return;
+      }
     }
     if ($('#question1').css('display') == 'none' & $('#instruction2').css('display') == 'block') {
       $('#instruction2').hide();
@@ -145,6 +176,7 @@ $('#hint').on("click",function(){
 //set component
 var cnt_buggy =0;
 $(document).on("ready",function () {
+  $("#hint_text").css("color","white");
   $('#hint_text').text("Press Next to continue"); 
   console.log("pucca")
   let OnIncorrect = function(stu_input){

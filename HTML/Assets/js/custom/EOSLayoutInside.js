@@ -31,6 +31,21 @@ var message_dict = {
     confirm_skip:"Are you sure you complete the problem?"
 }
 
+var chapterToId = {
+  "PPE":1,
+  "Safety":2,
+  "EOS_Layout_Outside":3,
+  "EOS_Layout_Inside":4,
+}
+currentURL = CTATConfiguration.get('run_problem_url');
+
+$('.chapter').on("click", function() {
+  id = $(this).attr("id");
+  console.log(id);
+  newURL = currentURL + "/" + chapterToId[id];
+  parent.location.replace(newURL);
+})
+
 // set pages order
 sav = new Array(
   "#instruction1","#instruction1-unity",

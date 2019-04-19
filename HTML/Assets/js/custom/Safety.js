@@ -2,10 +2,10 @@
 var text_dict = {
   questionId:"MFI Test",
   questionText:"Consider the risk and safety, which of these are apply for EOS machine? Select all that apply.",
-  checkA:"The metal powders may cause irritation to eyes and skin.",
-  checkB:"If the fire occurs in the build chamber(a small risk), it can be extinguished by closing chamber door and flood the chamber with water",
-  checkC:"By pressing the EMERGENCY STOP button on the machine all axis movements are stopped, the laser shut down and the process chamber door unlocked.",
-  checkD:"In order to reduce the likelihood of a spark, users should wear anti-static safety shoes and stand on the anti-static floor and boot straps"
+  checkA:"A. The metal powders may cause irritation to eyes and skin.",
+  checkB:"B. If the fire occurs in the build chamber(a small risk), it can be extinguished by closing chamber door and flood the chamber with water",
+  checkC:"C. By pressing the EMERGENCY STOP button on the machine all axis movements are stopped, the laser shut down and the process chamber door unlocked.",
+  checkD:"D. In order to reduce the likelihood of a spark, users should wear anti-static safety shoes and stand on the anti-static floor and boot straps"
 };
 
 // this need to be set according to each question success and buggy messages
@@ -18,7 +18,7 @@ var messages = {
 // this need to be set according to each question hint messages
 hint = new Array(
 "The metal powder could have reactivity with water.  ",
-"Flood the chamber with water will cause the reactivity of the metal powder with water.",
+"Flood the chamber with water will cause the reactivity of the metal powder with water, so B is incorrect.",
 "Correct answer is a,c,d");
 
 // set pages order
@@ -31,6 +31,19 @@ sav = new Array(
 "#instruction6",
 "#question1", 
 );
+
+var chapterToId = {
+  "PPE":1,
+  "Safety":2
+}
+currentURL = CTATConfiguration.get('run_problem_url');
+
+$('.chapter').on("click", function() {
+  id = $(this).attr("id");
+  console.log(id);
+  newURL = currentURL + "/" + chapterToId[id];
+  parent.location.replace(newURL);
+})
 
 for(key in text_dict){
   $("#" + key).html(text_dict[key]);    

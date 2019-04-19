@@ -38,31 +38,6 @@ for(key in text_dict){
     $("#" + key).html(text_dict[key]);    
 }
 
-var chapterToId = {
-  "PPE":1,
-  "Safety":2,
-  "EOS_Layout_Outside":3,
-  "EOS_Layout_Inside":4
-}
-currentURL = CTATConfiguration.get('run_problem_url');
-
-$('.chapter').on("click", function() {
-  id = $(this).attr("id");
-  console.log(id);
-  newURL = currentURL + "/" + chapterToId[id];
-  parent.location.replace(newURL);
-  // CTATCommShell.commShell.getLoggingLibrary().then(
-  //   // success
-  //   function () {
-  //    parent.location.replace(newURL);
-  //   },
-  //   // error
-  //   function() {
-  //    alert("Cannot jump to the other chapter");
-  //   }
-  //  );
-})
-
 let CheckAnswer = function(){
     var input = []
     var answerText = ["A","B","C","D"]
