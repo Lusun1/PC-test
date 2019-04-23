@@ -3,6 +3,8 @@ var gameInstance;
 var currentScene = 'none';
 
 function loadComplete() {
+    $("#hint_text").css("color","white");
+    $('#hint_text').text("Press Next to continue.");
     console.log("Connected to Unity");
     setStep(currentScene);
     if (currentScene == '4.1') {
@@ -91,8 +93,8 @@ function dragOnItem(itemName) {
               console.log(sai.getSelection() + ';' + sai.getAction() + ';' + sai.getInput() + ';' + indicator);
               if (component == 'recoaterBlade') {
                 if ("correct" == indicator.toLowerCase()) {
+                    $('#hint_text').css('color', 'green');
                     $('#hint_text').text(messages.success_text);
-                    $('#hint_text').css('color', 'white');
                     if (sav[i] == '#instruction6') {
                         screwCount++;
                         if (screwCount == 7) {
@@ -106,6 +108,13 @@ function dragOnItem(itemName) {
                 } else {
                     if (!isComplete)
                         $('#next').attr("disabled", true);
+                }
+                if("incorrect" == indicator.toLowerCase())
+                {
+                    $("#hint_text").css("color","red");
+                    $('#hint_text').text("Sorry, you are incorrect. Please try another recoater blade.");
+                    // $('#hint_text').text(messages["success_text"]); 
+                    //processUnity();
                 }
               }
       }
@@ -143,12 +152,14 @@ function clickObject(objectName) {
               console.log(sai.getSelection() + ';' + sai.getAction() + ';' + sai.getInput() + ';' + indicator);
               if (component == 'termAnswers') {
                 if ("correct" == indicator.toLowerCase()) {
+                    $('#hint_text').css('color', 'green');
                     $('#hint_text').text(messages.success_text);
                     for (let key in dropObject) {
                         gameInstance.SendMessage('JSManager', 'SetNormalLabel', dropNameToId[key]);
                     }
                 }
                 if ("incorrect" == indicator.toLowerCase()) {
+                    $('#hint_text').css('color', 'red');
                     $('#hint_text').text(messages.buggy_text);
                     for (let key in dropObject) {
                         if (dropObject[key] != key) {
@@ -162,12 +173,14 @@ function clickObject(objectName) {
               else {
                 if(component && "correct" == indicator.toLowerCase())
                 {
+                    $('#hint_text').css('color', 'green');
                     $('#hint_text').text(messages.success_text);
                     $('#next').attr("disabled", false);
                 }
                 if(component && "incorrect" == indicator.toLowerCase())
                 {
-                    $('#hint_text').text(messages.buggy_text + ' You selected ' + idToName[objectName]);
+                    $('#hint_text').css('color', 'red');
+                    $('#hint_text').text('Sorry, you selected ' + idToName[objectName]);
                     $('#next').attr("disabled", true);
                 }
             }

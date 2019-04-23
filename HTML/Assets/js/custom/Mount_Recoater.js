@@ -4,7 +4,7 @@ currentScene = '5.1';
 
 var text_dict = {
     questionId:"MFI Test",
-    questionText:"In the following, match the descriptions with the types of recoater blade by drag descriptions from the bottom list to the correct blade types.",
+    // questionText:"In the following, match the descriptions with the types of recoater blade by drag descriptions from the bottom list to the correct blade types.",
     blade1:"High speed steel",
     blade2:"Ceramic",
     blade3:"Brush",
@@ -23,13 +23,13 @@ var messages = {
 // this need to be set according to each question hint messages
 hint = new Array(
   "Please recall each part's different function",
-  "Correct answer is: HSS is used most of the time and it could hold up well; Brush recoater blade is used when you build small thin walls or fine delicate parts; Ceramic recoater blade is used when the powder is magnetic.",
-  "Correct answer is: HSS is used most of the time and it could hold up well; Brush recoater blade is used when you build small thin walls or fine delicate parts; Ceramic recoater blade is used when the powder is magnetic.");
+  "HSS is used most of the time; Brush blade is for small thin walls or fine delicate parts; Ceramic blade is for magnetic powder",
+  "HSS is used most of the time; Brush blade is for small thin walls or fine delicate parts; Ceramic blade is for magnetic powder");
 
 var message_dict = {
     warning_skip:"Are you sure you want to skip this problem?",
     confirm_skip:"Are you sure you complete the problem?",
-    confirm_done:"Do you want to complete the whole learning session and continue to the post test?"
+    confirm_done:"Do you want to complete the whole learning session and continue to the VR Tutorial?"
 }
 
 // set pages order
@@ -42,6 +42,11 @@ sav = new Array(
   "#instruction5",
   "#instruction6"
   );
+
+intro = new Array(
+    "#introduction1",
+    "#introduction2"
+    );
 
 var chapterToId = {
     "PPE":1,
@@ -105,6 +110,7 @@ function processUnity(){
   console.log('load unity');
   //$('.webgl-content').append('<div id="gameContainer" style="width: 90%; height: 70%"></div>');
   gameInstance = UnityLoader.instantiate("gameContainer", "Assets/unity/Build/unity.json", {onProgress: UnityProgress});
+  $("#hint_text").css("color","white");
   $('#hint_text').text(messages.question_text);
 }
 
@@ -113,6 +119,10 @@ var i = 0;
 $('#next').on("click", function() {
     if (sav[i] == '#instruction3') {
       $('#question1').hide();
+      $('#questionText').hide();
+      $('#next').attr("disabled", true);
+      $("#hint_text").css("color","white");
+      $("#hint_text").text("Answer the question and press next to continue");
       $('#instruction3').show();
       processUnity();
     } else if (sav[i] == '#instruction4' || sav[i] == '#instruction5') {
@@ -129,20 +139,27 @@ $('#next').on("click", function() {
     }
     if ($('#question1').css('display') == 'none' & $('#instruction2').css('display') == 'block') {
       $('#instruction2').hide();
+      $('#introduction2').hide();
       $('#question1').show();
+      $('#questionText').show();
       $('#next').text("Submit");
       $('#hint').show();
-      $('#hint_text').text("Answer the question and press submit to check your answer.");
+      $("#hint_text").css("color","white");
+      $('#hint_text').text("Press submit to check your answer.");
       i += 1;
       return
     } else {
       if($('#question1').css('display') == 'none' ) {
         console.log(sav[i]);
         $(sav[i]).hide();
+        $(intro[i]).hide();
         i += 1;
         $(sav[i]).show();
+        $(intro[i]).show();
       } else{
         $(sav[i]).hide();
+        $(intro[i]).hide();
+        $('#questionText').show();
         $('#question1').show();
         if ($("#next").text() == "Submit"){
           CheckAnswer();
@@ -168,6 +185,7 @@ function processIncorrectMessage(answer){
 var cnt_hint = 0;
 $('#hint').on("click",function(){
   console.log(assocrules.getIndicator())
+  $("#hint_text").css("color","white");
   CTATCommShell.commShell.processComponentAction(new CTATSAI("hint", "ButtonPressed", -1));
   console.log(cnt_hint);
   if (cnt_hint < 3){
@@ -202,11 +220,7 @@ $(document).on("ready",function () {
                 cnt_buggy += 1;
                 if (cnt_buggy >3){
                   cnt_buggy += 0;
-                  if(confirm(messages["reload_page"])) {
-                      window.location.href=window.location.href;
-                  } else {
-                      processIncorrectMessage(msg.getBuggyMsg())
-                  }
+                  processIncorrectMessage(msg.getBuggyMsg())
                 } else{
                 processIncorrectMessage(msg.getBuggyMsg())}
               }
@@ -227,6 +241,13 @@ $(document).on("ready",function () {
                 $('#next').text("Next");
                 $('#hint').hide();
                 i += 1;
+                //processUnity();
+              }
+              if(component =="termAnswers"&& "incorrect" == indicator.toLowerCase())
+              {
+                $("#hint_text").css("color","red");
+                $('#hint_text').text("Sorry, you are incorrect. Please try other solution.");
+                // $('#hint_text').text(messages["success_text"]); 
                 //processUnity();
               }
               // console.trace(msg);

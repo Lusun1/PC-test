@@ -22,9 +22,9 @@ var messages = {
 
 // this need to be set according to each question hint messages
 hint = new Array(
-  "Please recall each part's name and there is one distractot listed in the table",
-  "The filling module is the distractor",
-  "Correct answer is 1-Recoater, 2-Building platform, 3-Collector duct, 4-Dispenser duct, 5-Rocker switches");
+  "Please recall each part's name and there is one distractot listed in the table.",
+  "The filling module is the distractor.",
+  "Correct answer is 1-Recoater, 2-Building platform, 3-Collector duct, 4-Dispenser duct, 5-Rocker switches.");
 
 var message_dict = {
     warning_skip:"Are you sure you want to skip this problem?",
@@ -102,7 +102,7 @@ $('#next').on("click", function() {
       $('#next').attr("disabled", false);
       $('#hint').show();
       $("#hint_text").css("color","white");
-      $('#hint_text').text("Answer the question and press submit to check your answer.");
+      $('#hint_text').text("Press submit to check your answer.");
       i++;
       currentId = sav[i];
       nextHandler();
@@ -133,22 +133,24 @@ $('#hint').on("click",function(){
   CTATCommShell.commShell.processComponentAction(new CTATSAI("hint", "ButtonPressed", -1));
   console.log(cnt_hint);
   if (cnt_hint < 3){
+    $("#hint_text").css("color","white");
     $('#hint_text').text(hint[cnt_hint]);
     cnt_hint += 1;
   } else{
+    $("#hint_text").css("color","white");
     $('#hint_text').text(hint[2]);
   }
 })
 
 //set component
 var cnt_buggy =0;
+
 $(document).on("ready",function () {
+  $('[data-toggle="tooltip"]').tooltip({
+    placement : 'right'
+  });
   $("#hint_text").css("color","white");
   $('#hint_text').text("Press Next to continue"); 
-  console.log("pucca")
-  let OnIncorrect = function(stu_input){
-    console.log(stu_input);
-  }
   assocRulesListener =
       {
         processCommShellEvent: function(evt, msg)

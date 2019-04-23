@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Package name="New419-PC-Test" label="New419-PC-Test" description="New419-PC-Test" tutor_type="javascript">
+<Package name="421-Test-PC" label="421-Test-PC" description="421-Test-PC" tutor_type="javascript">
   <Problems>
     <Problem name="PPE" label="PPE" description="PPE" tutor_flag="tutor" problem_file="PPE.brd" selection_features="()" student_interface="1PPE.html">
       <Skills>
@@ -23,13 +23,10 @@
     </Problem>
   </Problems>
   <ProblemSets>
-    <ProblemSet name="New419-PC-Test" label="New419-PC-Test" description="New419-PC-Test" status="Active" team_size="1" selection_algorithm="sequential" max_count="1000" max_repeat="1" initial_sequence="0">
+    <ProblemSet name="421-Test-PC" label="421-Test-PC" description="421-Test-PC" status="Active" team_size="1" selection_algorithm="sequential" max_count="1000" max_repeat="1" initial_sequence="0">
       <Problems>
-        <Problem name="PPE" position="1" role="0"/>
-        <Problem name="Safety" position="2" role="0"/>
-        <Problem name="EOSLayout" position="3" role="0"/>
-        <Problem name="EOSLayout_Inside" position="4" role="0"/>
-        <Problem name="Mount_Recoater" position="5" role="0"/>
+        <Problem name="EOSLayout_Inside" position="1" role="0"/>
+        <Problem name="Mount_Recoater" position="2" role="0"/>
       </Problems>
       <Skills>
       </Skills>

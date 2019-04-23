@@ -1,10 +1,3 @@
-PPE PPE PPE PPE.brd 1PPE.html
-
-Safety Safety Safety Safety.brd 2Safety.html
-
-EOSLayout EOSLayout EOSLayout EOSLayout.brd 3EOSLayout.html
-
 EOSLayout_Inside EOSLayout_Inside EOSLayout_Inside EOSLayout_Inside.brd 4EOSLayout_Inside.html
 
 Mount_Recoater Mount_Recoater Mount_Recoater Mount_Recoater.brd 5Mount_Recoater.html
-
