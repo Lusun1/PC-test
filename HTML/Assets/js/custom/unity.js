@@ -71,6 +71,7 @@ var termToId = {
 
 var isComplete = false;
 var screwCount = 0;
+var dragOnItemRegistered = false;
 function dragOnItem(itemName) {
     console.log('dragOnItem: ' + itemName);
     assocRulesListener =
@@ -96,6 +97,7 @@ function dragOnItem(itemName) {
                     $('#hint_text').css('color', 'green');
                     $('#hint_text').text(messages.success_text);
                     if (sav[i] == '#instruction6') {
+                        console.log("screwCount++");
                         screwCount++;
                         if (screwCount == 7) {
                             $('#next').attr("disabled", false);
@@ -119,7 +121,10 @@ function dragOnItem(itemName) {
               }
       }
     };
-    CTATCommShell.commShell.addGlobalEventListener(assocRulesListener);
+    if (!dragOnItemRegistered) {
+        dragOnItemRegistered = true;
+        CTATCommShell.commShell.addGlobalEventListener(assocRulesListener);
+    }
     CTATCommShell.commShell.gradeSAI("recoaterBlade", "dragOnItem", itemName);
 }
 
