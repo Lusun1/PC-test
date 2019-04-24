@@ -32,14 +32,25 @@
     background-size: auto 100%;
     /*border: 2px solid red;*/
 }
-.container-class-inside {
-    background-color:white;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 705px;
-    height: 438px;
-    background-size: auto 90%;
-    /*border: 2px solid red;*/
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color:white;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 705px;
+  height: 438px;
+  padding: 10px;
+  border-radius: 10px;
+  background-size: auto 90%;
+  /*border: 2px solid red; */
+}
+.item {
+  background-color: #80cbc4;
+  border: 1px solid #fff;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
 }
 
 </style>
@@ -47,153 +58,217 @@
 
   <body>
     <form class="testItemContainer" id="form1">
-        <div class="form-group">
-          <div class="row">
-                    <div class="col-sm-2" style = "padding-right:5px;">
-                      <table class="table table-hover text-grey">
-                          <thead>
-                            <tr>
-                              <th scope="col">Table of Content</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr class="table-active">
-                              <td>01 PPE Safety</td>
-                            </tr>
-                          </tbody>
-                          <tbody>
-                            <tr class="table-active">
-                              <td>02 Safety</td>
-                            </tr>
-                          </tbody>
-                          <tbody>
-                            <tr class="table-active">
-                              <td>03 EOS Layout Outside</td>
-                            </tr>
-                          </tbody>
-                          <tbody>
-                            <tr class="table-active">
-                              <td>04 EOS Layout Inside</td>
-                            </tr>
-                          </tbody>
-                          <tbody>
-                            <tr class="table-active">
-                              <td>05 IPMC</td>
-                            </tr>
-                          </tbody>
-                          <tbody>
-                            <tr class="table-active">
-                              <td>06 Mounting of Recoater Blade</td>
-                            </tr>
-                          </tbody>
-                          <tbody>
-                            <tr class="table-active text-white">
-                              <td>07 Leveling of Build Plate</td>
-                            </tr>
-                          </tbody>
-                          <tbody>
-                            <tr class="table-active">
-                              <td>08 Set Up Conditions</td>
-                            </tr>
-                          </tbody>
-                          <tbody>
-                            <tr class="table-active">
-                              <td>09 Start Build</td>
-                            </tr>
-                          </tbody>
-                          <tbody>
-                            <tr class="table-active">
-                              <td>10 Laser Sintering Process</td>
-                            </tr>
-                          </tbody>
-                          <tbody>
-                            <tr class="table-active">
-                              <td>11 Monitor and Take out Build</td>
-                            </tr>
-                          </tbody>
-                      </table>
-                    </div>
-                    <div class="col-sm-10">
-                      <div clas ="row">
-                        <div class="card text-white border-dark mb-3 card-format1 lead">
-                          <div class="card-header">Safety</div>
-                          <div class="card-body bg-dark">
-                            <div class="container-class" align = "center">
-                                <div class="container-class-inside">
-                                this is container 2
-                                </div>
-                            </div>
-                            <div class="card-text text-secondary" id = "instruction1">
-                              <p>
-                                <ul>Leveling of Build Plate(video + interaction)<br>
-                                1. put the build plate on the building platform<br>
-                                2. pick the bolts to tight<br>
-                                3. low the build plate<br>
-                                4. move the recoater blade to the area above the build plate<br>
-                                5. pick the indicator on the recoater housing <br>
-                                6. Move the Indicator back and forth in Y-axis<br>
-                                7. Adjust Level Rocker Switches until the Indicator's value is stable while moving <br>
-                                8. Close the Process Chamber Door<br>
-                                9. Move the Recoater left to right with Buttons on monitor<br>
-                                10. Adjust Level Rocker Switches until the Indicator's value is stable while moving<br>
-                                11. Find Feeler Gauges<br>
-                                12. Use the 0.50mm Ruler to check the distance between Recoater and Buld Plate<br>
-                                13. Use the 0.60mm Ruler to check the distance between Recoater and Buld Plate<br>
-                                14. Use the 0.55mm Ruler to check the distance between Recoater and Buld Plate<br>
-                                Enter the distance Number on Monitor -web<br>
-                                press the button to confirm - web<br>
-                                15. remove indicator<br>
-                                </ul>
-                              </p>
-                            </div>
-                            <div class="card-text text-secondary" id = "instruction2">
-                            </div>
-                            <div class="card-text text-secondary" id = "instruction3">
-                            </div>
-                            <div class="card-text text-secondary" id = "instruction4">
-                            </div>
-                            <div class="card-text text-secondary" id = "instruction5">
-                            </div>
-                            <div class="card-text text-secondary" id = "instruction6">
-                            </div>
-                            <div class="card-text text-secondary" id = "question1">
-                              <div>Answer the question below:</div>
-                                <div id="questionText"></div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheckA" name ="checkGroup">
-                                    <label id="checkA" for="defaultCheckA">
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheckB" name ="checkGroup">
-                                    <label id="checkB" for="defaultCheckB">
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheckC" name ="checkGroup">
-                                    <label id="checkC" for="defaultCheckC">
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheckD" name ="checkGroup">
-                                    <label id="checkD" for="defaultCheckD">
-                                    </label>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="card-footer bg-transparent border-dark lead">
-                            <button type="button" class="btn btn-success float-right" id="next"style="font-size : 20px;">Next</button>
-                            <button type="button" class="btn btn-success" id="hint" style="font-size : 20px;">Hint</button>
-                            <div id = "hint_text"/>
-                          </div> 
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-2" style = "padding-right:5px;">
+            <table class="table table-hover text-grey">
+                <thead>
+                  <tr>
+                    <th scope="col">Table of Content</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-active">
+                    <td class="chapter" id ="PPE">01 PPE Safety</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr class="table-active ">
+                    <td class="chapter" id ="Safety">02 Safety</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr class="table-active">
+                    <td class="chapter" id ="EOS_Layout_Outside">03 EOS Layout Outside</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr class="table-active">
+                    <td class="chapter" id="EOS_Layout_Outside">04 EOS Layout Inside</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr class="table-active">
+                    <td class="chapter" id="EOS_Layout_Outside">05 IPMC</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr class="table-active">
+                    <td class="chapter" id ="Mount_Recoater_Blade">06 Mounting of Recoater Blade</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr class="table-active  text-white">
+                    <td>07 Leveling of Build Plate</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr class="table-active">
+                    <td>08 Set Up Conditions</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr class="table-active">
+                    <td>09 Start Build</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr class="table-active">
+                    <td>10 Laser Sintering Process</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr class="table-active">
+                    <td>11 Monitor and Take out Build</td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
+          <div class="col-sm-10" style = "padding:5px;">
+              <div class="card text-white border-dark mb-3 card-format1 lead">
+                <div class="card-header">EOS Layout Inside</div>
+                <div class="card-body border-dark">
+                  <div class="row" style="min-height:20%">
+                    <div class="col-sm-7">
+                      <div class="card bg-transparent border-white" style="min-height:20%">
+                        <div class="card-body">
+                          <div class="card-text text-white" id = "introduction1">
+                            <p class ="lead">Leveling the Build</p>
                           </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-5" style="padding-left:0px;padding-right:15px;">
+                      <div class="card text-white bg-dark mb-3" style="border:#1f4349;min-height:20%">
+                        <div class="card-body" id="Hint-Window">
+                          <div class="card-text text-white">
+                            <div id = "hint_text"></div>
+                            <button type="button" class="btn btn-success float-right" id="next">Next</button>
+                            <button type="button" class="btn btn-success" id="hint">Hint</button>
                           </div>
                         </div>
                     </div>
                 </div>
+              </div>
+              <div class="row-12">
+                  <div class="card-border-0 bg-transparent">
+                      <div class="card-body">
+                        <div class="card-text text-white" id = "instruction1">
+                           <div class="container-class" align = "center">
+                              <div class="container">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                                <div class="item">6</div>
+                              </div>
+                          </div>
+                          <div class="card-text text-secondary" id = "instruction1">
+                            <p>
+                              <ul>Leveling of Build Plate(video + interaction)<br>
+                              1. put the build plate on the building platform<br>
+                              2. pick the bolts to tight<br>
+                              3. low the build plate<br>
+                              4. move the recoater blade to the area above the build plate<br>
+                              5. pick the indicator on the recoater housing <br>
+                              6. Move the Indicator back and forth in Y-axis<br>
+                              7. Adjust Level Rocker Switches until the Indicator's value is stable while moving <br>
+                              8. Close the Process Chamber Door<br>
+                              Move the Recoater left to right with Buttons on monitor<br>
+                              9. Adjust Level Rocker Switches until the Indicator's value is stable while moving<br>
+                              10. Find Feeler Gauges<br>
+                              11. Use the 0.55mm Ruler to check the distance between Recoater and Buld Plate<br>
+                              12. Enter the distance Number on Monitor -web<br>
+                              press the button to confirm - web<br>
+                              13. remove indicator<br>
+                              </ul>
+                            </p>
+                          </div>
+                        </div>
+                        <div class="card-text text-white" id = "instruction2">
+                          <div class = "row">
+                            <div class = "col-4">
+                              <p class="lead"><font color="white">HSS or High Speed Steel</font> is used most often, tough blade that will hold up a long time.</p>
+                            </div>
+                            <div class = "col-8">
+                              <div>
+                                <img src="Assets/images/5Mount_recoater_HSS.png" align="center" width="100%" height="25%">
+                              </div>
+                            </div>
+                          </div>
+                          <br>
+                          <div class = "row">
+                            <div class = "col-4">
+                              <p class="lead"><font color="white">Brush recoater blade</font> is used on thin wall or delicate builds so the soft brushes go across the build instead of a hard steel blade.</p>
+                            </div>
+                            <div class = "col-8">
+                              <div>
+                                <img src="Assets/images/5Mount_recoater_brush.png" align="center" width="100%" height="25%">
+                              </div>
+                            </div>
+                          </div>
+                          <br>
+                          <div class = "row">
+                            <div class = "col-4">
+                              <p class="lead"><font color="white">Ceramic recoater blade </font> is used if the powder has a magnetic charge to it. The magnetic powder will not stick to the ceramic</p>
+                            </div>
+                            <div class = "col-8">
+                              <div>
+                                <img src="Assets/images/5Mount_recoater_ceramic.png" align="center" width="100%" height="25%">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-text text-white" id = "question1">
+                          <div class="row margin-bottom-5px" style="font-size: 1.1rem;">
+                              <div class="col-sm-3" style="padding:0;">
+                                  <div id="blade1" class="text-white" style="text-align:right;padding-top:6%;"></div>
+                              </div>
+                              <div class="col-sm-8">
+                                  <ul id="sortable2" class="connectedSortable" style="width:90%;min-height:10%;"></ul>
+                              </div>
+                          </div>
+                          <div class="row margin-bottom-5px">
+                              <div class="col-sm-3" style="padding:0;">
+                                  <div id="blade2" class="text-white" style="text-align:right;padding-top:6%;"></div>
+                              </div>
+                              <div class="col-sm-8">
+                                  <ul id="sortable3" class="connectedSortable" style="width:90%;min-height:10%;"></ul>
+                              </div>
+                          </div>
+                          <div class="row margin-bottom-5px">
+                              <div class="col-sm-3" style="padding:0;">
+                                  <div id="blade3" class="text-white" style="text-align:right;padding-top:6%;"></div>
+                              </div>
+                              <div class="col-sm-8">
+                                  <ul id="sortable4" class="connectedSortable" style="width:90%;min-height:10%;"></ul>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-9 offset-sm-1">
+                                  <div class="text-white margin-bottom-5px">Descriptions:</div>
+                                  <ul id="sortable1" class="connectedSortable" style="width:100%;min-height:10%;">
+                                      <li class="ui-state-default" id="choiceAText"></li>
+                                      <li class="ui-state-default" id="choiceBText"></li>
+                                      <li class="ui-state-default" id="choiceCText"></li>
+                                  </ul> 
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card-text text-white" id = "unity">
+                        <div class="webgl-content">
+                          <div id="gameContainer" style="width: 100%; height: 65%"></div>
+                        </div>
+                      </div>
+                      </div>
+                      </div>
+                </div>
+              </div>
             </div>
-        </div>
-    </form>
+          </div>
+      </div>
+  </form>
 
     <!-- ================================================== -->
     <!-- Placed at the end of the document so the pages load faster --> 
