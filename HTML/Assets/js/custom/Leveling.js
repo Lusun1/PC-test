@@ -1,3 +1,83 @@
+$('#unity').show();
+
+var gameInstance = UnityLoader.instantiate("gameContainer", "Assets/unity/Build/unity.json", {onProgress: UnityProgress});
+var currentScene = '6.1';
+
+function loadComplete() {
+    $("#hint_text").css("color","white");
+    $('#hint_text').text("Press Next to continue.");
+    console.log("Connected to Unity");
+    setStep(currentScene);
+    if (currentScene == '4.1') {
+        $('#next').attr("disabled", false);
+    } else {
+        $('#next').attr("disabled", true);
+    }
+}
+
+function setStep(stepId) {
+    gameInstance.SendMessage('JSManager', 'SetStep', stepId);
+}
+
+function nextStep() {
+    gameInstance.SendMessage('JSManager', 'NextStep');
+}
+
+var dragOnItemRegistered = false;
+var screwCount = 0;
+var isComplete = false;
+function dragOnItem(itemName) {
+  console.log('dragOnItem: ' + itemName);
+  assocRulesListener =
+    {
+      processCommShellEvent: function(evt, msg)
+          {
+              var events = ["AssociatedRules", "BuggyMessage"];
+              if( events.indexOf(evt) == -1  || !msg)
+              {
+                  return;
+              }
+            window.assocrules = msg;
+            var indicator = msg.getIndicator();
+            var sai = msg.getSAI();
+            var component = sai.getSelection();
+            console.log(sai.getSelection() + ';' + sai.getAction() + ';' + sai.getInput() + ';' + indicator);
+            if ("correct" == indicator.toLowerCase()) {
+                if (sav[i] == '#introduction2') {
+                    console.log("screwCount++");
+                    screwCount++;
+                    if (screwCount == 4) {
+                        $('#next').attr("disabled", false);
+                        isComplete = true; 
+                        $('#hint_text').css('color', 'green');
+                        $('#hint_text').text(messages.success_text);
+                    }
+                } else {
+                    $('#next').attr("disabled", false);
+                    isComplete = true;
+                    $('#hint_text').css('color', 'green');
+                    $('#hint_text').text(messages.success_text);
+                }
+            } else {
+                if (!isComplete)
+                    $('#next').attr("disabled", true);
+            }
+            if("incorrect" == indicator.toLowerCase())
+            {
+                $("#hint_text").css("color","red");
+                $('#hint_text').text("Sorry, you are incorrect. Please try another recoater blade.");
+                // $('#hint_text').text(messages["success_text"]); 
+                //processUnity();
+            }
+    }
+  };
+  if (!dragOnItemRegistered) {
+      dragOnItemRegistered = true;
+      CTATCommShell.commShell.addGlobalEventListener(assocRulesListener);
+  }
+  CTATCommShell.commShell.gradeSAI("UnityObject", "dragOnItem", itemName);
+}
+
 // this need to be set according to each question content
 var text_dict = {
     questionId:"MFI Test",
@@ -11,7 +91,8 @@ var text_dict = {
 // this need to be set according to each question success and buggy messages
 var messages = {
   success_text:"Yes, you are correct!",
-  buggy_text:"Sorry, but this answer is incorrect. Try it again."
+  buggy_text:"Sorry, but this answer is incorrect. Try it again.",
+  question_text:"Press Next to continue."
 };
 
 // this need to be set according to each question hint messages
@@ -23,7 +104,6 @@ hint = new Array(
 // set pages order
 sav = new Array(
   "#introduction0",
-  "#introduction1",
   "#introduction2",
   "#introduction3",
   "#introduction4",
@@ -94,6 +174,11 @@ $('#next').on("click", function() {
   i += 1;
   $(sav[i]).show();
   // CheckAnswer();
+  console.log(222222222222222222)
+  $('#hint_text').text(messages.question_text);
+  $("#hint_text").css("color","white");
+  $('#next').attr("disabled", true);
+  nextStep();
  });
 
 var cnt_hint = 0;
