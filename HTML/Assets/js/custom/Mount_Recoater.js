@@ -124,12 +124,15 @@ $('#next').on("click", function() {
       $("#hint_text").css("color","white");
       $("#hint_text").text("Answer the question and press next to continue");
       $('#instruction3').show();
+      $('#hint').show();
       processUnity();
     } else if (sav[i] == '#instruction4' || sav[i] == '#instruction5') {
       $("#hint_text").css("color","white");
       $('#next').attr("disabled", true);
       nextHandler();
       $('#hint_text').text(messages.question_text);
+      $('#hint').show();
+      gameInstance.SendMessage('JSManager', 'ToggleHint', 0);
     } else if (sav[i] == '#instruction6') {
       if(confirm(message_dict["confirm_done"])) {
         CTATCommShell.commShell.processDoneContinue(7);
@@ -184,15 +187,20 @@ function processIncorrectMessage(answer){
 
 var cnt_hint = 0;
 $('#hint').on("click",function(){
-  console.log(assocrules.getIndicator())
-  $("#hint_text").css("color","white");
-  CTATCommShell.commShell.processComponentAction(new CTATSAI("hint", "ButtonPressed", -1));
-  console.log(cnt_hint);
-  if (cnt_hint < 3){
-    $('#hint_text').text(hint[cnt_hint]);
-    cnt_hint += 1;
-  } else{
-    $('#hint_text').text(hint[2]);
+  if (sav[i] == '#question1') {
+    console.log(assocrules.getIndicator())
+    $("#hint_text").css("color","white");
+    CTATCommShell.commShell.processComponentAction(new CTATSAI("hint", "ButtonPressed", -1));
+    console.log(cnt_hint);
+    if (cnt_hint < 3){
+      $('#hint_text').text(hint[cnt_hint]);
+      cnt_hint += 1;
+    } else{
+      $('#hint_text').text(hint[2]);
+    }
+  }
+  else {
+    gameInstance.SendMessage('JSManager', 'ToggleHint', 1);
   }
 })
 

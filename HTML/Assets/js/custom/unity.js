@@ -12,6 +12,9 @@ function loadComplete() {
     } else {
         $('#next').attr("disabled", true);
     }
+    if (currentScene == '5.1') {
+        gameInstance.SendMessage('JSManager', 'ToggleHint', 0);
+    }
 }
 
 function setStep(stepId) {
