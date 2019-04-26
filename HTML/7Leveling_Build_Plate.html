@@ -4,12 +4,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-      <!-- Standard CTAT libraries    
+      <!-- Standard CTAT libraries    -->
     <link rel="stylesheet" href="https://cdn.ctat.cs.cmu.edu/releases/latest/CTAT.min.css"/>
     <link rel="shortcut icon" href="">
     <script src="https://cdn.ctat.cs.cmu.edu/releases/latest/jquery.min.js"></script>
     <script src="https://cdn.ctat.cs.cmu.edu/releases/latest/ctat.min.js"></script>
-    <script src="https://cdn.ctat.cs.cmu.edu/releases/latest/ctatloader.js"></script> -->
+    <script src="https://cdn.ctat.cs.cmu.edu/releases/latest/ctatloader.js"></script> 
 
     <title>Instruction</title>
 
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-8nq3OiMMgrVFAHyRMMO+DTfMEciSY+c3Awhj/5ljQ1xck1Uv2BUtMjsjLD8GT5Er" crossorigin="anonymous">
     <!-- Custom styles for this template -->
-    <link rel = "stylesheet" href = "Assets/css/safety.custom.css">
+    <link rel = "stylesheet" href = "Assets/css/custom.css">
     <!-- <link rel = "stylesheet" href = "Assets/css/custom.common.style.css"> -->
 
   </head>
@@ -126,14 +126,47 @@
           </div>
           <div class="col-sm-10" style = "padding:5px;">
               <div class="card text-white border-dark mb-3 card-format1 lead">
-                <div class="card-header">EOS Layout Inside</div>
+                <div class="card-header">Leveling Building Platform</div>
                 <div class="card-body border-dark">
                   <div class="row" style="min-height:20%">
                     <div class="col-sm-7">
                       <div class="card bg-transparent border-white" style="min-height:20%">
                         <div class="card-body">
+                          <div class="card-text text-white" id = "introduction0">
+                            <p class ="lead">After mounting the recoater blade, next preparation step is to leveling the building plate. The build will tilt or broke if the building plate is not flat. If the height of building plate is not correct, the recoater on the machine will crash. In this chapter, you will learn how to level the building platform.</p>
+                          </div>
                           <div class="card-text text-white" id = "introduction1">
-                            <p class ="lead">Leveling the Build</p>
+                              <p class ="lead">Step1: put the build plate on the building platform. </p>
+                          </div>
+                          <div class="card-text text-white" id = "introduction2">
+                              <p class ="lead">Step2: pick the bolts to tight. </p>
+                          </div>
+                          <div class="card-text text-white" id = "introduction3">
+                              <p class ="lead">Step3: low the build plate to make sure that when you move the recoater above the build plate, it will not crash with the build plate.</p>
+                          </div>
+                          <div class="card-text text-white" id = "introduction4">
+                              <p class ="lead">Step4: put the build plate on the building platform. </p>
+                          </div>
+                          <div class="card-text text-white" id = "introduction5">
+                              <p class ="lead">Step5: pick the indicator on the recoater housing</p>
+                          </div>
+                          <div class="card-text text-white" id = "introduction6">
+                              <p class ="lead">Step6: Move the Indicator back and forth in Y-axis</p>
+                          </div>
+                          <div class="card-text text-white" id = "introduction7">
+                              <p class ="lead">Step7: Adjust Level Rocker Switches until the Indicator's value is stable while moving</p>
+                          </div>
+                          <div class="card-text text-white" id = "introduction8">
+                              <p class ="lead">Step8: In the real operation, you need to close the Process Chamber door in order to move the recoater from left to the right. But in our simulation, you could press the button on the screen to move the recoater left or right.</p>
+                          </div>
+                          <div class="card-text text-white" id = "introduction9">
+                              <p class ="lead">Step9: Adjust Level Rocker Switches until the Indicator's value is stable while moving.</p>
+                          </div>
+                          <div class="card-text text-white" id = "introduction10">
+                              <p class ="lead">Step10: Find 0.55mm Feeler Gauges to check the distance between Recoater and Buld Plate.</p>
+                          </div>
+                          <div class="card-text text-white" id = "introduction11">
+                              <p class ="lead">Step11: remove indicator.</p>
                           </div>
                         </div>
                       </div>
@@ -166,6 +199,7 @@
                           </div>
                           <div class="card-text text-secondary" id = "instruction1">
                             <p>
+                              This is for Unity.
                               <ul>Leveling of Build Plate(video + interaction)<br>
                               1. put the build plate on the building platform<br>
                               2. pick the bolts to tight<br>
@@ -273,4 +307,7 @@
     <!-- ================================================== -->
     <!-- Placed at the end of the document so the pages load faster --> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="Assets/js/custom/Leveling.js"></script>
   </body
