@@ -20,7 +20,22 @@ function setStep(stepId) {
 }
 
 function nextStep() {
+  isComplete = false;
     gameInstance.SendMessage('JSManager', 'NextStep');
+}
+
+function reachLimit(type) {
+  if (!isComplete) {
+    isComplete = true;
+    onCorrect();
+    CTATCommShell.commShell.gradeSAI("UnityObject", "reachLimit", type);
+  }
+}
+
+function onCorrect() {
+  $('#next').attr("disabled", false);
+  $('#hint_text').css('color', 'green');
+  $('#hint_text').text(messages.success_text);
 }
 
 var dragOnItemRegistered = false;
@@ -47,16 +62,12 @@ function dragOnItem(itemName) {
                     console.log("screwCount++");
                     screwCount++;
                     if (screwCount == 4) {
-                        $('#next').attr("disabled", false);
                         isComplete = true; 
-                        $('#hint_text').css('color', 'green');
-                        $('#hint_text').text(messages.success_text);
+                        onCorrect();
                     }
                 } else {
-                    $('#next').attr("disabled", false);
                     isComplete = true;
-                    $('#hint_text').css('color', 'green');
-                    $('#hint_text').text(messages.success_text);
+                    onCorrect();
                 }
             } else {
                 if (!isComplete)
@@ -166,19 +177,56 @@ let CheckAnswer = function(){
     }
 }
 
+$('#down').mousedown(function() {
+  gameInstance.SendMessage('JSManager', 'BuildPlateDown');
+});
+
+$('#down').mouseup(function() {
+  gameInstance.SendMessage('JSManager', 'BuildPlateStop');
+});
+
+$('#up').mousedown(function() {
+  gameInstance.SendMessage('JSManager', 'BuildPlateUp');
+});
+
+$('#up').mouseup(function() {
+  gameInstance.SendMessage('JSManager', 'BuildPlateStop');
+});
+
+$('#left').mousedown(function() {
+  gameInstance.SendMessage('JSManager', 'RecoaterLeft');
+});
+
+$('#left').mouseup(function() {
+  gameInstance.SendMessage('JSManager', 'RecoaterStop');
+});
+
+$('#right').mousedown(function() {
+  gameInstance.SendMessage('JSManager', 'RecoaterRight');
+});
+
+$('#right').mouseup(function() {
+  gameInstance.SendMessage('JSManager', 'RecoaterStop');
+});
+
 // set id of the component
 var i = 0;
 $('#next').on("click", function() {
-  console.log(sav[i]);
-  $(sav[i]).hide();
-  i += 1;
-  $(sav[i]).show();
-  // CheckAnswer();
-  console.log(222222222222222222)
-  $('#hint_text').text(messages.question_text);
-  $("#hint_text").css("color","white");
-  $('#next').attr("disabled", true);
-  nextStep();
+  if (sav[i] == '#introduction7') {
+    CTATCommShell.commShell.processDoneContinue(7);
+  }
+  else {
+    console.log(sav[i]);
+    $(sav[i]).hide();
+    i += 1;
+    $(sav[i]).show();
+    // CheckAnswer();
+    console.log(222222222222222222)
+    $('#hint_text').text(messages.question_text);
+    $("#hint_text").css("color","white");
+    $('#next').attr("disabled", true);
+    nextStep();
+  }
  });
 
 var cnt_hint = 0;
