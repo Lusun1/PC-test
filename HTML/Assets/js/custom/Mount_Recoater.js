@@ -134,11 +134,12 @@ $('#next').on("click", function() {
       $('#hint').show();
       gameInstance.SendMessage('JSManager', 'ToggleHint', 0);
     } else if (sav[i] == '#instruction6') {
-      if(confirm(message_dict["confirm_done"])) {
-        CTATCommShell.commShell.processDoneContinue(7);
-      } else {
-          return;
-      }
+      CTATCommShell.commShell.processDoneContinue(7);
+      // if(confirm(message_dict["confirm_done"])) {
+      //   CTATCommShell.commShell.processDoneContinue(7);
+      // } else {
+      //     return;
+      // }
     }
     if ($('#question1').css('display') == 'none' & $('#instruction2').css('display') == 'block') {
       $('#instruction2').hide();
