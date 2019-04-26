@@ -131,11 +131,12 @@ $('#next').on("click", function() {
       nextHandler();
       $('#hint_text').text(messages.question_text);
     } else if (sav[i] == '#instruction6') {
-      if(confirm(message_dict["confirm_done"])) {
-        CTATCommShell.commShell.processDoneContinue(7);
-      } else {
-          return;
-      }
+      CTATCommShell.commShell.processDoneContinue(7);
+      // if(confirm(message_dict["confirm_done"])) {
+      //   CTATCommShell.commShell.processDoneContinue(7);
+      // } else {
+      //     return;
+      // }
     }
     if ($('#question1').css('display') == 'none' & $('#instruction2').css('display') == 'block') {
       $('#instruction2').hide();

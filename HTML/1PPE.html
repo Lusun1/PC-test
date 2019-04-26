@@ -99,13 +99,61 @@ html {
                           </tbody>
                       </table>
                     </div>
-                    <div class="col-10">
-                      <div clas ="row">
+                    <div class="col-sm-10" style = "padding:5px;">
                         <div class="card text-white border-dark mb-3 card-format1 lead">
                           <div class="card-header">PPE</div>
                           <div class="card-body border-dark">
-                            <div class="card-text text-secondary" id = "instruction1">
-                              <p class="lead">Before using EOS, there are basic prerequisite about safety:
+                            <div class="row" style="min-height:20%">
+                              <div class="col-sm-7">
+                                <div class="card bg-transparent border-white" style="min-height:20%">
+                                  <div class="card-body">
+                                    <div class="card-text text-white" id = "introduction1">
+                                      <p class ="lead">Before start build, there are several preparation steps: Mount the recoater blade, mount and level the building platform, clean lens and double check all set up conditions. In this chapter, we will introduce how to mount the recoater blade.</p>
+                                    </div>
+                                    <div class="card-text text-white" id = "instruction2">
+                                      <p class="lead">Nitrile gloves:<br>Function: Protect the hands against skin contact with metal powders.</p>
+                                    </div>
+                                    <div class="card-text text-white" id = "instruction3">
+                                      <p class="lead">Safety glasses:<br>Function: Protect the eyes against the entry of metal powder.</p>
+                                    </div>
+                                    <div class="card-text text-white" id = "instruction4">
+                                      <p class="lead">Respirator: <br>Respirator needed if powder is being used.<br>Function: Protect against inhaling metal powder dusts and burns</p>
+                                      <p class="lead">
+                                        <img src="Assets/images/1PPE3_respirator.png" align="center" width="50%" height="60%" style="padding:5%" alt="respirator">
+                                      </p>
+                                    </div>
+                                    <div class="card-text text-white" id = "instruction5">
+                                      <p class="lead">Close toe shoes:<br>Function: Protect again crushing and falling parts. Due the protection against electrostatic charging they also protect against sparking.</p>
+                                      <p class="lead">
+                                        <img src="Assets/images/1PPE4_closeshoes.png" align="center" width="50%" height="60%" style="padding:5%" alt="closed shoes">
+                                      </p>
+                                    </div>
+                                    <div class="card-text text-white" id = "instruction6">
+                                      <p class="lead">Closed protective clothing made of flame-retardant material:<br>Function: Protects against direct skin contact with metal powders as well as burns.</p>
+                                      <p class="lead">
+                                        <img src="Assets/images/1PPE5_clothes.png" align="center" width="50%" height="60%" style="padding:5%" alt="clothes">
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-5" style="padding-left:0px;padding-right:15px;">
+                                <div class="card text-white bg-dark mb-3" style="border:#1f4349;min-height:20%">
+                                  <div class="card-body" id="Hint-Window">
+                                    <div class="card-text text-white">
+                                      <div id = "hint_text"></div>
+                                      <button type="button" class="btn btn-success float-right" id="next">Next</button>
+                                      <button type="button" class="btn btn-success" id="hint">Hint</button>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="row-12">
+                            <div class="card-border-0 bg-transparent">
+                                <div class="card-body">
+                                  <div class="card-text text-white" id = "instruction1">
+                                  <p class="lead">Before using EOS, there are basic prerequisite about safety:
                                 <ul class="lead"><li>Only qualified persons trained by EOS are allowed to operate the machine</li>
                                 <li>It is necessary to wear personal protective equipment(PPE) to prevent hazards.</li></ul>
                               </p>
@@ -123,31 +171,31 @@ html {
                                 We will introduce each PPE and their functions in the next few slides.
                               </p>
                             </div>
-                            <div class="card-text text-secondary" id = "instruction2">
+                            <div class="card-text text-white" id = "instruction2">
                               <p class="lead">Nitrile gloves:<br>Function: Protect the hands against skin contact with metal powders.</p>
                               <p class="lead">
                                 <img src="Assets/images/1PPE1_gloves.png" align="center" width="50%" height="60%" style="padding:5%" alt="gloves">
                               </p>
                             </div>
-                            <div class="card-text text-secondary" id = "instruction3">
+                            <div class="card-text text-white" id = "instruction3">
                               <p class="lead">Safety glasses:<br>Function: Protect the eyes against the entry of metal powder.</p>
                               <p class="lead">
                                 <img src="Assets/images/1PPE2_glasses.png" align="center" width="50%" height="60%" style="padding:5%" alt="safety-glasses">
                               </p>
                             </div>
-                            <div class="card-text text-secondary" id = "instruction4">
+                            <div class="card-text text-white" id = "instruction4">
                               <p class="lead">Respirator: <br>Respirator needed if powder is being used.<br>Function: Protect against inhaling metal powder dusts and burns</p>
                               <p class="lead">
                                 <img src="Assets/images/1PPE3_respirator.png" align="center" width="50%" height="60%" style="padding:5%" alt="respirator">
                               </p>
                             </div>
-                            <div class="card-text text-secondary" id = "instruction5">
+                            <div class="card-text text-white" id = "instruction5">
                               <p class="lead">Close toe shoes:<br>Function: Protect again crushing and falling parts. Due the protection against electrostatic charging they also protect against sparking.</p>
                               <p class="lead">
                                 <img src="Assets/images/1PPE4_closeshoes.png" align="center" width="50%" height="60%" style="padding:5%" alt="closed shoes">
                               </p>
                             </div>
-                            <div class="card-text text-secondary" id = "instruction6">
+                            <div class="card-text text-white" id = "instruction6">
                               <p class="lead">Closed protective clothing made of flame-retardant material:<br>Function: Protects against direct skin contact with metal powders as well as burns.</p>
                               <p class="lead">
                                 <img src="Assets/images/1PPE5_clothes.png" align="center" width="50%" height="60%" style="padding:5%" alt="clothes">
@@ -177,11 +225,6 @@ html {
                                     </label>
                                 </div>
                               </div>
-                          </div>
-                          <div class="card-footer bg-transparent border-dark lead">
-                            <button type="button" class="btn btn-success float-right" id="next"style="font-size : 20px;">Next</button>
-                            <button type="button" class="btn btn-success" id="hint" style="font-size : 20px;">Hint</button>
-                            <div id = "hint_text"/>
                           </div>
                           </div>
                           </div>

@@ -21,43 +21,122 @@
     <!-- <link rel = "stylesheet" href = "Assets/css/custom.common.style.css"> -->
     <script src="Assets/unity/TemplateData/UnityProgress.js"></script>
     <script src="Assets/unity/Build/UnityLoader.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
   </head>
 <style type="text/css">
 .container-class {
     background-image: url(Assets/images/tablet_border.png);
     background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    height: 200px;
-    padding: 15px;
-    background-size: auto 100%;
+    background-position: top;
+    padding:12px;
+    width: 320px;
+    height: 280px;
+    background-size: auto 90%;
     border: 0px solid red;
 }
 .container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   background-color:white;
   background-repeat: no-repeat;
   background-position: center;
-  width: 260px;
-  height: 165px;
-  background-size: auto 90%;
+  width: 280px;
+  height: 220px;
+  padding:0px;
+  background-size: auto 100%;
+  align-items: right;
   /*border: 2px solid red; */
 }
 .item {
   background-color:transparent;
   border: 1px solid grey;
-  /* padding: 20px;
-  font-size: 30px; */
-  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  /*font-size: 30px; */
+  text-align: right;
+  align-items: right;
 }
-.button-control {
+.button-control-left {
   border-radius:10px;
-  font:12px;
-  margin:10px;
+  font-size:10px;
+  margin:0px;
+  align:right;
+}
+.button-control-right {
+  border-radius:10px;
+  font-size:10px;
+  margin:0px;
+  align:left;
+}
+.block{
+  background-color:grey;
+  background-size: 90%;
 }
 
+#rectangle1 {
+      width: 138px;
+      height: 20px;
+      background: #D0E2F2;
+      border:1px solid grey;
+    }
+#rectangle2 {
+      width: 138px;
+      height: 35px;
+      border:1px solid grey;
+      background: #8698AF;
+    }
+#recoater {
+      position:absolute;
+      margin-left:110px;
+      margin-right:10px;
+      width: 15px;
+      height: 35px;
+      /* margin-left:10px; */
+      background: #59657B;
+      border:1px solid #251C13;
+    }
+#rectangle4 {
+      width: 138px;
+      height: 65px;
+      background: black;
+      border:1px solid grey;
+    }
+#conduct {
+  float:left; width: 18%;
+  /* width: 30px; */
+  height: 65px;
+  background: #404C64;
+  }
+#platform,#dispenser{
+  float:left; width: 40%;
+  margin-left:1px;
+  /* width: 34px; */
+  height: 65px;
+  background: #404C64;
+  }
+#plate1 {
+  width:100%;
+  margin-top:20px;
+  height: 5px;
+  background: #D0E2F2;
+  border:3px black;
+}
+
+#plate2 {
+  position:absolute;
+  width:39%;
+  margin-top:5px;
+  height: 5px;
+  background: #D0E2F2;
+}
+
+#plate3 {
+  width:100%;
+  margin-top:25px;
+  height: 5px;
+  background: #D0E2F2;
+}
 </style>
 
 
@@ -139,25 +218,25 @@
                         <div class="card-body">
                           <div class="card-text text-white" id = "introduction0">
                             <p class ="lead">After mounting the recoater blade, next preparation step is to leveling the building plate. The build will tilt or broke if the building plate is not flat. If the height of building plate is not correct, the recoater on the machine will crash. In this chapter, you will learn how to level the building platform.</p>
-                            <p class ="lead">Step1: put the build plate on the building platform. </p>
+                            <p class ="lead">Step1: you need to select the build plate on left and put it on the building platform highlighted below. </p>
                           </div>
                           <div class="card-text text-white" id = "introduction2">
-                              <p class ="lead">Step2: pick the bolts to tight. </p>
+                              <p class ="lead">Step2: pick the bolts to tight the build plate. This step fixes the build plate on the building platform. </p>
                           </div>
                           <div class="card-text text-white" id = "introduction3">
-                              <p class ="lead">Step3: low the build plate to make sure that when you move the recoater above the build plate, it will not crash with the build plate.</p>
+                              <p class ="lead">Step3: low the build plate using the 'move platform down' button on the right screen. This step helps you make sure that when you move the recoater above the build plate, it will not crash with the build plate.</p>
                           </div>
                           <div class="card-text text-white" id = "introduction4">
-                              <p class ="lead">Step4: move the recoater blade to the area above the build plate. </p>
+                              <p class ="lead">Step4: use the 'run recoater left' button on the monitor to move the recoater blade to the area above the build plate. This step helps you put the indicator on the recoater.</p>
                           </div>
                           <div class="card-text text-white" id = "introduction5">
-                              <p class ="lead">Step5: pick the indicator on the recoater housing</p>
+                              <p class ="lead">Step5: pick the indicator on the left and put it on the recoater housing. The magnetic under the indicator could make the indicator stay on the recoater housing.</p>
                           </div>
                           <div class="card-text text-white" id = "introduction6">
-                              <p class ="lead">Step6: Move the Indicator back and forth in Y-axis</p>
+                              <p class ="lead">Step6: Move the Indicator back and forth using your mouse in Y-axis. In this step, please pay attention to the value on the indicator. If the value changed, you need to adjust the build platform since the platform is not flat.</p>
                           </div>
                           <div class="card-text text-white" id = "introduction7">
-                              <p class ="lead">Step7: Adjust Level Rocker Switches until the Indicator's value is stable while moving</p>
+                              <p class ="lead">Step7: Adjust the building platform using the Rocker Switches on the bottom until the indicator's value is stable while moving back and force.</p>
                           </div>
                           <div class="card-text text-white" id = "introduction8">
                               <p class ="lead">Step8: In the real operation, you need to close the Process Chamber door in order to move the recoater from left to the right. But in our simulation, you could press the button on the screen to move the recoater left or right.</p>
@@ -191,39 +270,60 @@
                       <div class="card-body">
                         <div class="card-text text-white" id = "instruction1">
                           <div class ="row">
-                            <div class ="col-9">
+                            <div class ="col-8" style="padding:0px;">
                                 <div id ="unity">
                                     <div class="webgl-content">
                                         <div id="gameContainer" style="width: 100%; height: 65%"></div>
                                       </div>
                                 </div>
                             </div>
-                            <div class="col-3">
-                                <div class="container-class" align = "center">
+                            <div class="col-4">
+                              <br>
+                              <br>
+                                <div class="container-class">
                                     <div class="container">
-                                      <div class ="row">
-                                        <div class="col">
-                                            <button type="button" class="button-control" id="left">Move  left</button>
+                                        <div class="row" style="padding:0px;margin:2px;">
+                                            <div class ="col-12" style="padding:0px;">
+                                                <div class ="block" style="background-color:white">1</div>
+                                            </div>
+                                            <div class ="col-3" style="padding:0px; padding-top:20px; text-align:right;">
+                                                <button type="button" class="button-control-left" id="left">run<br>recoater<br>left</button>
+                                            </div>
+                                            <div class ="col-6" style="padding:0px;margin:0px;">
+                                                <div class ="block" style="padding:0px;margin:0px;height:100px;">
+                                                    <div id ="rectangle1"></div>
+                                                    <div id ="rectangle2">
+                                                        <div id ="recoater"></div>
+                                                    </div>
+                                                    <div id ="rectangle4">
+                                                        <div id ="conduct">
+                                                          <div id ="plate1"></div>
+                                                        </div>
+                                                        <div id ="platform">
+                                                            <div id ="plate2"></div>
+                                                        </div>
+                                                        <div id ="dispenser">
+                                                            <div id ="plate3"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class ="col-3" style="padding:0px;padding-top:20px; ">
+                                                <button type="button" class="button-control-right" id="right">run<br>recoater<br>right</button>
+                                            </div>
+                                            <div class ="col-6 offset-sm-3" style="padding:0px;padding-left:10px;padding-bottom:10px;">
+                                                <button type="button" class="button-control-left" id="up">move<br>plateform<br>up</button>
+                                                <button type="button" class="button-control-right" id="down">move<br>plateform<br>down</button>
+                                            </div>
                                         </div>
-                                        <div class="col">
-                                            <button type="button" class="button-control" id="up">Move  up</button>
-                                        </div>
-                                      </div>
-                                      <div class ="row">
-                                          <div class="col">
-                                              <button type="button" class="button-control" id="right">Move right</button>
-                                          </div>
-                                          <div class="col">
-                                              <button type="button" class="button-control" id="down">Move down</button>
-                                          </div>
-                                        </div>
-      
                                     </div>
                                 </div>
+                                <!-- <div style ="margin:2px;height:80%; width:80%;"><canvas id="foo"></canvas></div> -->
+                              </div>
                             </div>
                           </div>
-                      </div>
-                      </div>
+                        </div>
+                    </div>
                 </div>
               </div>
             </div>
@@ -236,5 +336,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- <script src="Assets/js/custom/gauge.min.js"></script> -->
     <script src="Assets/js/custom/Leveling.js"></script>
+    <script>
+      var data =30;
+      $('#right').mousedown(function() {
+        data -= 1;
+        console.log(data)
+        $('#recoater').animate({
+            left: "+=10"
+          }, 'slow');
+      });  
+      $('#left').mousedown(function() {
+        $('#recoater').animate({
+            left: "-=10"
+          }, 'slow');
+      }); 
+      $('#down').mousedown(function() {
+        $('#plate2').animate({
+            top: "+=10"
+          }, 'slow');
+      }); 
+      $('#up').mousedown(function() {
+        $('#plate2').animate({
+            top: "-=10"
+          }, 'slow');
+      }); 
+</script>
   </body
