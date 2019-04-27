@@ -132,7 +132,7 @@ $('#next').on("click", function() {
       nextHandler();
       $('#hint_text').text(messages.question_text);
       $('#hint').show();
-      gameInstance.SendMessage('JSManager', 'ToggleHint', 0);
+      //gameInstance.SendMessage('JSManager', 'ToggleHint', 0);
     } else if (sav[i] == '#instruction6') {
       CTATCommShell.commShell.processDoneContinue(7);
       // if(confirm(message_dict["confirm_done"])) {

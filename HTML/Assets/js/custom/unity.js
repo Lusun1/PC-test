@@ -13,7 +13,7 @@ function loadComplete() {
         $('#next').attr("disabled", true);
     }
     if (currentScene == '5.1') {
-        gameInstance.SendMessage('JSManager', 'ToggleHint', 0);
+        //gameInstance.SendMessage('JSManager', 'ToggleHint', 0);
     }
 }
 

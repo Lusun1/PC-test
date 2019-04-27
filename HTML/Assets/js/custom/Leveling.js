@@ -13,6 +13,8 @@ function loadComplete() {
     } else {
         $('#next').attr("disabled", true);
     }
+    //gameInstance.SendMessage('JSManager', 'ToggleHint', 0);
+    //$('#hint').show();
 }
 
 function setStep(stepId) {
@@ -106,12 +108,6 @@ var messages = {
   question_text:"Press Next to continue.",
   confirm_done:"Do you want to complete the whole learning session and continue to the VR Tutorial?"
 };
-
-// this need to be set according to each question hint messages
-hint = new Array(
-  "Please only select the items which is belongs to EOS layout. That does not include wearable facilities ",
-  "EOS layout does not have indicator on that.",
-  "Correct answer is Process chamber, Service Network.");
 
 // set pages order
 sav = new Array(
@@ -234,20 +230,13 @@ $('#next').on("click", function() {
     $("#hint_text").css("color","white");
     $('#next').attr("disabled", true);
     nextStep();
+    //gameInstance.SendMessage('JSManager', 'ToggleHint', 0);
   }
  });
 
 var cnt_hint = 0;
 $('#hint').on("click",function(){
-  console.log(assocrules.getIndicator())
-  CTATCommShell.commShell.processComponentAction(new CTATSAI("hint", "ButtonPressed", -1));
-  console.log(cnt_hint);
-  if (cnt_hint < 3){
-    $('#hint_text').text(hint[cnt_hint]);
-    cnt_hint += 1;
-  } else{
-    $('#hint_text').text(hint[2]);
-  }
+  gameInstance.SendMessage('JSManager', 'ToggleHint', 1);
 })
 
 
