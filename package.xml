@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Package name="426-Test-PC" label="426-Test-PC" description="426-Test-PC" tutor_type="javascript">
+<Package name="MFI_Edu_PC_Demo" label="MFI_Edu_PC_Demo" description="MFI_Edu_PC_Demo" tutor_type="javascript">
   <Problems>
     <Problem name="PPE" label="PPE" description="PPE" tutor_flag="tutor" problem_file="PPE.brd" selection_features="()" student_interface="1PPE.html">
       <Skills>
@@ -27,7 +27,7 @@
     </Problem>
   </Problems>
   <ProblemSets>
-    <ProblemSet name="426-Test-PC" label="426-Test-PC" description="426-Test-PC" status="Active" team_size="1" selection_algorithm="sequential" max_count="1000" max_repeat="1" initial_sequence="0">
+    <ProblemSet name="MFI_Edu_PC_Demo" label="MFI_Edu_PC_Demo" description="MFI_Edu_PC_Demo" status="Active" team_size="1" selection_algorithm="sequential" max_count="1000" max_repeat="1" initial_sequence="0">
       <Problems>
         <Problem name="EOSLayout_Inside" position="1" role="0"/>
         <Problem name="Mount_Recoater" position="2" role="0"/>

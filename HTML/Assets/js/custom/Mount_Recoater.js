@@ -8,7 +8,7 @@ var text_dict = {
     blade1:"High speed steel",
     blade2:"Ceramic",
     blade3:"Brush",
-    choiceAText:"It is used most of the time and it could hold up well.",
+    choiceAText:"It is used most of the time and usually works well.",
     choiceBText:"It is used when you build small thin walls or fine delicate parts.",
     choiceCText:"It is used when the powder is magnetic.",
     input_submitButtonLabel:"Submit"
@@ -22,8 +22,8 @@ var messages = {
 
 // this need to be set according to each question hint messages
 hint = new Array(
-  "Please recall each part's different function",
-  "HSS is used most of the time; Brush blade is for small thin walls or fine delicate parts; Ceramic blade is for magnetic powder",
+  "Please recall each blade's use.",
+  "HSS blade is used most of the time; Brush blade is for small thin walls or fine delicate parts; Ceramic blade is for magnetic powder",
   "HSS is used most of the time; Brush blade is for small thin walls or fine delicate parts; Ceramic blade is for magnetic powder");
 
 var message_dict = {
