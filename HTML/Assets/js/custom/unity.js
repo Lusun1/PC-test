@@ -142,7 +142,7 @@ var dropNameToId = {
 function clickObject(objectName) {
     console.log("clickObject: " + objectName);
     console.log("currentId: " + currentId);
-    if (objectName == 'RockerA' || objectName == 'RockerC')
+    if (objectName == 'Level Rocker Switchs A' || objectName == 'Level Rocker Switchs B')
         objectName = 'Rocker';
     //CTATCommShell.commShell.processComponentAction(new CTATSAI(objectName, "nextState", 1));
     assocRulesListener =

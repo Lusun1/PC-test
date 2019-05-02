@@ -34,6 +34,10 @@ function reachLimit(type) {
   }
 }
 
+function gaugeSetValue(val){
+  gauge.set(60-val);
+}
+
 function onCorrect() {
   $('#next').attr("disabled", false);
   $('#hint_text').css('color', 'green');
@@ -250,7 +254,7 @@ function loopLeft(trigger) {
   if (trigger == 1){
     if($("#recoater").position().left > -109){
       $('#recoater').animate ({
-        left: '-=2',
+        left: '-=1.3',
       }, 50, 'linear', function() {
         loopLeft(1)
       });
@@ -277,7 +281,7 @@ function loopRight(trigger) {
   if (trigger == 1){
     if($("#recoater").position().left < 10){
       $('#recoater').animate ({
-        left: '+=2',
+        left: '+=1.3',
       }, 50, 'linear', function() {
         loopRight(1)
       });
