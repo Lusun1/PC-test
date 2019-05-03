@@ -22,11 +22,11 @@ function setStep(stepId) {
 }
 
 function nextStep() {
-  isComplete = false;
     gameInstance.SendMessage('JSManager', 'NextStep');
 }
 
 function reachLimit(type) {
+  console.log("reachLimit type: " + type + " isComplete: " + isComplete);
   if (!isComplete) {
     isComplete = true;
     onCorrect();
@@ -36,6 +36,11 @@ function reachLimit(type) {
 
 function gaugeSetValue(val){
   gauge.set(60-val);
+}
+
+function dragOut(name){
+  console.log("dragOut name: " + name);
+  CTATCommShell.commShell.gradeSAI("UnityObject", "dragOut", name);
 }
 
 function onCorrect() {
@@ -72,8 +77,11 @@ function dragOnItem(itemName) {
                         onCorrect();
                     }
                 } else {
-                    isComplete = true;
-                    onCorrect();
+                    console.log("set isComplete false sav[i]: " + sav[i]);
+                    if (sav[i] != '#introduction12') {
+                      isComplete = true;
+                      onCorrect();
+                    }
                 }
             } else {
                 if (!isComplete)
@@ -82,7 +90,7 @@ function dragOnItem(itemName) {
             if("incorrect" == indicator.toLowerCase())
             {
                 $("#hint_text").css("color","red");
-                $('#hint_text').text("Sorry, you are incorrect. Please try another recoater blade.");
+                $('#hint_text').text("Sorry, you are incorrect. Please try another feeler gauge.");
                 // $('#hint_text').text(messages["success_text"]); 
                 //processUnity();
             }
@@ -125,7 +133,9 @@ sav = new Array(
   "#introduction8",
   "#introduction9",
   "#introduction10",
-  "#introduction11"
+  "#introduction11",
+  "#introduction12",
+  "#introduction13"
   );
 
 var chapterToId = {
@@ -216,7 +226,7 @@ $('#right').mouseup(function() {
 // set id of the component
 var i = 0;
 $('#next').on("click", function() {
-  if (sav[i] == '#introduction11') {
+  if (sav[i] == '#introduction13') {
     if(confirm(messages["confirm_done"])) {
       CTATCommShell.commShell.processDoneContinue(7);
     } else {
@@ -224,6 +234,9 @@ $('#next').on("click", function() {
     }
   }
   else {
+    if (sav[i] == '#introduction11') {
+      CTATCommShell.commShell.gradeSAI("inputText", "enterNumber", $('#inputText').val());
+    }
     console.log(sav[i]);
     $(sav[i]).hide();
     i += 1;
@@ -232,8 +245,12 @@ $('#next').on("click", function() {
     console.log(222222222222222222)
     $('#hint_text').text(messages.question_text);
     $("#hint_text").css("color","white");
-    $('#next').attr("disabled", true);
-    nextStep();
+    if (sav[i] != '#introduction11') {
+      $('#next').attr("disabled", true);
+      nextStep();
+    }
+    isComplete = false;
+    console.log("set isComplete: " + isComplete);
     //gameInstance.SendMessage('JSManager', 'ToggleHint', 0);
   }
  });
