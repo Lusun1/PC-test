@@ -82,7 +82,7 @@ function dragOnItem(itemName) {
             if("incorrect" == indicator.toLowerCase())
             {
                 $("#hint_text").css("color","red");
-                $('#hint_text').text("Sorry, you are incorrect. Please try another recoater blade.");
+                $('#hint_text').text("Sorry, you are incorrect. Please try another feeler gauge");
                 // $('#hint_text').text(messages["success_text"]); 
                 //processUnity();
             }
@@ -216,12 +216,15 @@ $('#right').mouseup(function() {
 // set id of the component
 var i = 0;
 $('#next').on("click", function() {
-  if (sav[i] == '#introduction11') {
+  if (sav[i] == '#introduction13') {
     if(confirm(messages["confirm_done"])) {
       CTATCommShell.commShell.processDoneContinue(7);
     } else {
         return;
     }
+  }
+  else if( sav[i]== "introduction11") {
+    CTATCommShell.commShell.gradeSAI("inputText", "input", inputText.val());
   }
   else {
     console.log(sav[i]);
