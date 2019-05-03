@@ -34,6 +34,10 @@ function reachLimit(type) {
   }
 }
 
+function gaugeSetValue(val){
+  gauge.set(60-val);
+}
+
 function onCorrect() {
   $('#next').attr("disabled", false);
   $('#hint_text').css('color', 'green');
@@ -212,7 +216,7 @@ $('#right').mouseup(function() {
 // set id of the component
 var i = 0;
 $('#next').on("click", function() {
-  if (sav[i] == '#introduction7') {
+  if (sav[i] == '#introduction11') {
     if(confirm(messages["confirm_done"])) {
       CTATCommShell.commShell.processDoneContinue(7);
     } else {
@@ -250,7 +254,7 @@ function loopLeft(trigger) {
   if (trigger == 1){
     if($("#recoater").position().left > -109){
       $('#recoater').animate ({
-        left: '-=2',
+        left: '-=1.3',
       }, 50, 'linear', function() {
         loopLeft(1)
       });
@@ -277,7 +281,7 @@ function loopRight(trigger) {
   if (trigger == 1){
     if($("#recoater").position().left < 10){
       $('#recoater').animate ({
-        left: '+=2',
+        left: '+=1.3',
       }, 50, 'linear', function() {
         loopRight(1)
       });
@@ -380,15 +384,6 @@ $(document).on("ready",function () {
               var sai = msg.getSAI();                               // selection-action-input from tutor engine
               var selection = (sai ? sai.getSelection() : "_noSuchComponent_");
               var component = sai.getSelection();
-              if(component =="checkGroup"&& "correct" == indicator.toLowerCase())
-              {
-                $("#hint_text").css("color","white");
-                // onCorrectEventHandler();
-                $('#hint_text').text(messages["success_text"]); 
-                $('#next').text("Next");
-                $('#hint').hide();
-                CTATCommShell.commShell.processDoneContinue(7);
-              }
               // console.trace(msg);
       }
     };

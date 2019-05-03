@@ -1,7 +1,7 @@
 var opts = {
   angle: -0.5, // The span of the gauge arc
-  lineWidth: 0.5, // The line thickness
-  radiusScale: 0.6, // Relative radius
+  lineWidth: 0.40, // The line thickness
+  radiusScale: 0.45, // Relative radius
   pointer: {
     length: 0.8, // // Relative to gauge radius
     strokeWidth: 0.033, // The thickness
@@ -27,7 +27,7 @@ var opts = {
   },
   staticLabels: {
   font: "10px sans-serif",  // Specifies font
-  labels: [40, 30, 20, 10, 0],  // Print labels at these values
+  labels: [45, 40, 35, 30, 25, 20, 15, 10, 5, 0],  // Print labels at these values
   color: "#000000",  // Optional: Label text color
   fractionDigits: 0  // Optional: Numerical precision. 0=round off.
 }
