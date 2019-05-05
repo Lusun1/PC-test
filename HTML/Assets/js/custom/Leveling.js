@@ -65,6 +65,7 @@ function dragOnItem(itemName) {
               }
             window.assocrules = msg;
             var indicator = msg.getIndicator();
+            console.log("this is the indicator" + indicator);
             var sai = msg.getSAI();
             var component = sai.getSelection();
             console.log(sai.getSelection() + ';' + sai.getAction() + ';' + sai.getInput() + ';' + indicator);
@@ -81,9 +82,6 @@ function dragOnItem(itemName) {
                     console.log("set isComplete false sav[i]: " + sav[i]);
                     if (sav[i] != '#introduction12') {
                       isComplete = true;
-                      onCorrect();
-                    }
-                    else{
                       onCorrect();
                     }
                 }
@@ -227,6 +225,12 @@ $('#right').mouseup(function() {
   gameInstance.SendMessage('JSManager', 'RecoaterStop');
 });
 
+$('#confirm').on("click", function() {
+  var distance = $("#text").val();
+  CTATCommShell.commShell.gradeSAI("inputText", "enterNumber", distance);
+  console.log(distance);
+});
+
 // set id of the component
 var i = 0;
 $('#next').on("click", function() {
@@ -238,13 +242,6 @@ $('#next').on("click", function() {
     }
   }
   else {
-    if (sav[i] == '#introduction11') {
-      $('#confirm').on("click", function() {
-        var distance = $("#text").val();
-        CTATCommShell.commShell.gradeSAI("inputText", "enterNumber", distance);
-        console.log(distance);
-      });
-    }
     console.log(sav[i]);
     $(sav[i]).hide();
     i += 1;
@@ -253,10 +250,8 @@ $('#next').on("click", function() {
     console.log(222222222222222222)
     $('#hint_text').text(messages.question_text);
     $("#hint_text").css("color","white");
-    if (sav[i] != '#introduction11') {
-      $('#next').attr("disabled", true);
-      nextStep();
-    }
+    $('#next').attr("disabled", true);
+    nextStep();
     isComplete = false;
     console.log("set isComplete: " + isComplete);
     //gameInstance.SendMessage('JSManager', 'ToggleHint', 0);
