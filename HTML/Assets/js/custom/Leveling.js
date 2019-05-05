@@ -251,7 +251,8 @@ $('#next').on("click", function() {
     $('#hint_text').text(messages.question_text);
     $("#hint_text").css("color","white");
     $('#next').attr("disabled", true);
-    nextStep();
+    if (sav[i] != '#introduction11')
+      nextStep();
     isComplete = false;
     console.log("set isComplete: " + isComplete);
     //gameInstance.SendMessage('JSManager', 'ToggleHint', 0);
