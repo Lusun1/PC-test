@@ -69,6 +69,7 @@ function dragOnItem(itemName) {
             var component = sai.getSelection();
             console.log(sai.getSelection() + ';' + sai.getAction() + ';' + sai.getInput() + ';' + indicator);
             if ("correct" == indicator.toLowerCase()) {
+                console.log("set isComplete false sav[i]: " + sav[i]);
                 if (sav[i] == '#introduction2') {
                     console.log("screwCount++");
                     screwCount++;
@@ -82,6 +83,9 @@ function dragOnItem(itemName) {
                       isComplete = true;
                       onCorrect();
                     }
+                    else{
+                      onCorrect();
+                    }
                 }
             } else {
                 if (!isComplete)
@@ -90,11 +94,7 @@ function dragOnItem(itemName) {
             if("incorrect" == indicator.toLowerCase())
             {
                 $("#hint_text").css("color","red");
-<<<<<<< HEAD
                 $('#hint_text').text("Sorry, you are incorrect. Please try another feeler gauge");
-=======
-                $('#hint_text').text("Sorry, you are incorrect. Please try another feeler gauge.");
->>>>>>> f2cee1df828cff421ffd2b56f45c85cabe884143
                 // $('#hint_text').text(messages["success_text"]); 
                 //processUnity();
             }
@@ -237,12 +237,13 @@ $('#next').on("click", function() {
         return;
     }
   }
-  else if( sav[i]== "introduction11") {
-    CTATCommShell.commShell.gradeSAI("inputText", "input", inputText.val());
-  }
   else {
     if (sav[i] == '#introduction11') {
-      CTATCommShell.commShell.gradeSAI("inputText", "enterNumber", $('#inputText').val());
+      $('#confirm').on("click", function() {
+        var distance = $("#text").val();
+        CTATCommShell.commShell.gradeSAI("inputText", "enterNumber", distance);
+        console.log(distance);
+      });
     }
     console.log(sav[i]);
     $(sav[i]).hide();
@@ -389,20 +390,20 @@ $(document).on("ready",function () {
               {
                   return;
               }
-              if("BuggyMessage" == evt)
-                {
-                  console.log("this is the wrong answer");
-                  cnt_buggy += 1;
-                  if (cnt_buggy >3){
-                    cnt_buggy += 0;
-                    if(confirm(messages["reload_page"])) {
-                        window.location.href=window.location.href;
-                    } else {
-                        processIncorrectMessage(msg.getBuggyMsg())
-                    }
-                  } else{
-                  processIncorrectMessage(msg.getBuggyMsg())}
-                }
+              // if("BuggyMessage" == evt)
+              //   {
+              //     console.log("this is the wrong answer");
+              //     cnt_buggy += 1;
+              //     if (cnt_buggy >3){
+              //       cnt_buggy += 0;
+              //       if(confirm(messages["reload_page"])) {
+              //           window.location.href=window.location.href;
+              //       } else {
+              //           processIncorrectMessage(msg.getBuggyMsg())
+              //       }
+              //     } else{
+              //     processIncorrectMessage(msg.getBuggyMsg())}
+              //   }
               window.assocrules = msg;
               var indicator = msg.getIndicator();
               var sai = msg.getSAI();                               // selection-action-input from tutor engine
