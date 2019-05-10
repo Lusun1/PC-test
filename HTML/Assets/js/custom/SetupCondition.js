@@ -35,15 +35,18 @@ var message_dict = {
 // set pages order
 sav = new Array(
   "#instruction1",
-  "#instruction2", 
+  "#instruction2",
   "#instruction3",
+  '#unity1',
+  "#unity2",
+  "#unity3",
+  "#unity4",
+  "#unity5",
+  "#unity6",
+  "#unity7",
+  "#unity8",
   "#instruction4",
-  "#instruction5",
-  "#instruction6",
-  "#instruction7",
-  "#instruction8",
-  "#instruction9",
-  "#instruction10"
+  "#instruction5"
   );
 
 intro = new Array(
@@ -55,7 +58,11 @@ intro = new Array(
     "#introduction6",
     "#introduction7",
     "#introduction8",
-    "#introduction9"
+    "#introduction9",
+    "#introduction10",
+    "#introduction11",
+    "#introduction12",
+    "#introduction13"
     );
 
 currentURL = CTATConfiguration.get('run_problem_url');
@@ -369,10 +376,10 @@ function dragOnItem(itemName) {
             var component = sai.getSelection();
             console.log(sai.getSelection() + ';' + sai.getAction() + ';' + sai.getInput() + ';' + indicator);
             if ("correct" == indicator.toLowerCase()) {
-                if (sav[i] != '#instruction10') {
+                //if (sav[i] != '#instruction10') {
                   isComplete = true;
                   onCorrect();
-                }
+                //}
             } else {
                 if (!isComplete)
                     $('#next').attr("disabled", true);
@@ -391,13 +398,18 @@ function dragOnItem(itemName) {
   CTATCommShell.commShell.gradeSAI("UnityObject", "dragOnItem", itemName);
 }
 
+function dragOut(name){
+  console.log("dragOut name: " + name);
+  CTATCommShell.commShell.gradeSAI("UnityObject", "dragOut", name);
+}
+
 // set id of the component
 var i = 0;
 $('#next').on("click", function() {
   if (sav[i] == '#instruction3') {
     processUnity();
   }
-  if (sav[i] == '#instruction9') {
+  if (intro[i] == '#introduction13') {
     console.log("this is the end")
     if(confirm(message_dict["confirm_done"])) {
       // CTATCommShell.commShell.processDoneContinue(7);
@@ -407,16 +419,19 @@ $('#next').on("click", function() {
   }
   else{
     console.log("clicknext, sav[i] = " + sav[i]);
-    if (sav[i] == '#instruction1' || sav[i] == '#instruction2' || sav[i] == '#instruction3')
+    if (sav[i] == '#instruction1' || sav[i] == '#instruction2' || sav[i] == '#instruction3' || sav[i] == '#instruction4')
       $(sav[i]).hide();
+    if (sav[i] == '#unity8') {
+      $('#unity1').remove();
+    }
     $(intro[i]).hide();
     i += 1;
-    if (sav[i] == '#instruction2' || sav[i] == '#instruction3' || sav[i] == '#instruction4')
+    if (sav[i] == '#instruction2' || sav[i] == '#instruction3' || sav[i] == '#unity1' || sav[i] == '#instruction4' || sav[i] == '#instruction5')
       $(sav[i]).show();
     $(intro[i]).show();
     $('#hint_text').text(messages.question_text);
     $("#hint_text").css("color","white");
-    if (sav[i] != '#instruction2' && sav[i] != '#instruction3' && sav[i] != '#instruction4') {
+    if (sav[i] != '#instruction2' && sav[i] != '#instruction3' && intro[i] != '#introduction12' && intro[i] != '#introduction13') {
       $('#next').attr("disabled", true);
       nextStep();
     }
