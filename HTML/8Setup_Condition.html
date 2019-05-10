@@ -18,18 +18,135 @@
   <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-8nq3OiMMgrVFAHyRMMO+DTfMEciSY+c3Awhj/5ljQ1xck1Uv2BUtMjsjLD8GT5Er" crossorigin="anonymous">
   <!-- Custom styles for this template -->
   <link rel = "stylesheet" href = "Assets/css/custom.css">
+  <link rel="stylesheet" href="Assets/css/easy-numpad.css">
   <!-- <link rel = "stylesheet" href = "Assets/css/custom.common.style.css"> -->
   <script src="Assets/unity/TemplateData/UnityProgress.js"></script>
   <script src="Assets/unity/Build/UnityLoader.js"></script>
   <script src="Assets/js/custom/unity.js"></script>
 </head>
 <style type="text/css">
-html {
-      overflow:auto;
-}
-#scrim{
-  display:none!important;
-}
+  .container-class {
+      background-image: url(Assets/images/tablet_border.png);
+      background-repeat: no-repeat;
+      background-position: top;
+      padding-top:12px;
+      width: 320px;
+      height: 280px;
+      background-size: auto 90%;
+      border: 0px solid red;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color:white;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 280px;
+    height: 220px;
+    padding:0px;
+    background-size: auto 100%;
+    align-items: right;
+    /*border: 2px solid red; */
+  }
+  .item {
+    background-color:transparent;
+    border: 1px solid grey;
+    padding: 0px;
+    margin: 0px;
+    /*font-size: 30px; */
+    text-align: right;
+    align-items: right;
+  }
+  .button-control-left {
+    border-radius:10px;
+    font-size:10px;
+    margin:0px;
+    align:right;
+  }
+  .button-control-right {
+    border-radius:10px;
+    font-size:10px;
+    margin:0px;
+    align:left;
+  }
+  .button-control-confirm {
+    border-radius:10px;
+    font-size:10px;
+    margin-top: 177%;
+    align:left;
+  }
+  .block{
+    background-color:grey;
+    background-size: 90%;
+  }
+  
+  #rectangle1 {
+        width: 138px;
+        height: 20px;
+        background: #D0E2F2;
+        border:1px solid grey;
+      }
+  #rectangle2 {
+        width: 138px;
+        height: 35px;
+        border:1px solid grey;
+        background: #8698AF;
+      }
+  #recoater {
+        position:absolute;
+        margin-left:110px;
+        margin-right:10px;
+        width: 15px;
+        height: 35px;
+        /* margin-left:10px; */
+        background: #59657B;
+        border:1px solid #251C13;
+      }
+  #rectangle4 {
+        width: 138px;
+        height: 65px;
+        background: black;
+        border:1px solid grey;
+      }
+  #conduct {
+    float:left; width: 20%;
+    /* width: 30px; */
+    height: 65px;
+    background: #404C64;
+    }
+  #platform,#dispenser{
+    float:left; width: 39%;
+    margin-left:1px;
+    /* width: 34px; */
+    height: 65px;
+    background: #404C64;
+    }
+  #plate1 {
+    position:absolute;
+    width:20%;
+    margin-top:20px;
+    height: 4px;
+    background: #D0E2F2;
+    border:3px black;
+  }
+  
+  #plate2 {
+    position:absolute;
+    width:39%;
+    margin-top:3px;
+    height: 5px;
+    background: #D0E2F2;
+  }
+  
+  #plate3 {
+    position:absolute;
+    width:40%;
+    margin-top:25px;
+    height: 5px;
+    background: #D0E2F2;
+  }
+  </style>
+  
 </style>
 <body>
   <form class="testItemContainer" id="form1">
@@ -103,9 +220,9 @@ html {
                       <div class="card text-white border-dark mb-3 card-format1 lead">
                         <div class="card-header">Set up Conditions</div>
                         <div class="card-body border-dark">
-                          <div class="row" style="min-height:20%">
+                          <div class="row" style="min-height:120px;">
                             <div class="col-sm-7">
-                              <div class="card bg-transparent border-white" style="min-height:20%">
+                              <div class="card bg-transparent border-white" style="min-height:120px;">
                                 <div class="card-body">
                                   <div class="card-text text-white" id = "introduction1">
                                     <p class ="lead">After mounting the recoater blade and leveling the build plate, operators need to set up conditions. There are three main steps to set up before the build: adding powder, clean lens and set build conditions.</p>
@@ -117,33 +234,36 @@ html {
                                     <p class="lead">After selecting the powder, operators also need to estimate the powder needs for a build. Adding enough powder will prevent the crash in the build.</p>
                                   </div>
                                   <div class="card-text text-white" id = "introduction4">
+                                      <p class="lead">  After operators wire PPE, they should lower the dispenser and collector bin. <br>Please use the buttons on the screen to lower the dispenser abd collector bin.</p>
+                                    </div>
+                                  <div class="card-text text-white" id = "introduction5">
                                     <p class="lead">  After selecting the powder and estimating the powder, operators need to go through the processes to add powder. Before adding powder, operators should make sure they wire PPE<br>
                                         Step1: Select an active powder on the left for your Titanium Model and drag the bottle to the dispenser duct in order to pour it into the dispenser duct.</p>
                                   </div>
-                                  <div class="card-text text-white" id = "introduction5">
+                                  <div class="card-text text-white" id = "introduction6">
                                       <p class="lead">  Adding powder process:<br>
                                       Step 2: User tamp to pack Powder in with EOS Scraper around build Plate perimeter. Tamp down powder to make sure it is compacted. Please click the powder to tamp down powder.</p>
                                     </div>
-                                  <div class="card-text text-white" id = "introduction6">
+                                  <div class="card-text text-white" id = "introduction7">
                                     <p class="lead">  Adding powder process:<br>
                                       Ramp powder slightly towards recoater on right side, so Dispenser Duct powder could level out well. Then the operator will take off the safety coil and close the door. After the door is closed, operators:<br>
                                       Step 3: Control the button on the monitor to move the recoater from the right to the left to spread thin layer of powder across plate.</p>
                                   </div>
-                                  <div class="card-text text-white" id = "introduction7">
+                                  <div class="card-text text-white" id = "introduction8">
                                       <p class="lead">Cleaning lens:<br>
                                       Before the build, operators need to check whether the lens are clean. The F-theta lens of laser</p>
                                     </div>
-                                  <div class="card-text text-white" id = "introduction8">
+                                  <div class="card-text text-white" id = "introduction9">
                                     <p class="lead">After adding the powder and cleaning the lens, operators need to set up the machine. Before parts can be built with the machine, the machine must be prepared necessary activities for the building process.</p>
                                   </div>
-                                  <div class="card-text text-white" id = "introduction9">
+                                  <div class="card-text text-white" id = "introduction10">
                                       <p class="lead">One important step is to make appropriate chamber environment.</p>
                                     </div>
                                 </div>
                               </div>
                             </div>
                             <div class="col-sm-5" style="padding-left:0px;padding-right:15px;">
-                              <div class="card text-white bg-dark mb-3" style="border:#1f4349;min-height:20%">
+                              <div class="card text-white bg-dark mb-3" style="border:#1f4349;min-height:120px;">
                                 <div class="card-body" id="Hint-Window">
                                   <div class="card-text text-white">
                                     <div id = "hint_text"></div>
@@ -200,8 +320,73 @@ html {
                                   </p>
                                 </div>
                                 <div class="card-text text-white" id = "instruction4">
-                                  <p class="lead">Unity-drag the bottle to add powder</p>
-                                </div>
+                                    <div class ="row">
+                                      <div class ="col-8" style="padding:0px;">
+                                          <div id ="unity">
+                                              <div class="webgl-content">
+                                                  <div id="gameContainer" style="width: 100%; height: 600px;"></div>
+                                                </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-4">
+                                          <div class="container-class">
+                                              <div class="container">
+                                                  <div class="row" style="padding:0px;margin:2px;">
+                                                      <div class ="col-12" style="padding:0px;">
+                                                          <div class ="block" style="background-color:white"></div>
+                                                      </div>
+                                                      <div class ="col-3" style="padding:0px; padding-top:20px; text-align:right;">
+                                                          <button type="button" class="button-control-left" id="left">run<br>recoater<br>left</button><br>
+                                                          <button type="button" class="button-control-left" id="collector">collector<br>bin<br>down</button>
+                                                      </div>
+                                                      <div class ="col-6" style="padding:0px;margin:0px;">
+                                                          <div class ="block" style="padding:0px;margin:0px;height:100px;">
+                                                              <div id ="rectangle1"></div>
+                                                              <div id ="rectangle2">
+                                                                  <div id ="recoater"></div>
+                                                              </div>
+                                                              <div id ="rectangle4">
+                                                                  <div id ="conduct">
+                                                                    <div id ="plate1"></div>
+                                                                  </div>
+                                                                  <div id ="platform">
+                                                                      <div id ="plate2"></div>
+                                                                  </div>
+                                                                  <div id ="dispenser">
+                                                                      <div id ="plate3"></div>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                      <div class ="col-3" style="padding:0px;padding-top:20px;">
+                                                          <button type="button" class="button-control-right" id="right">run<br>recoater<br>right</button><br>
+                                                          <button type="button" class="button-control-right" id="dispenserdown">dispenser<br>bin<br>down</button>
+                                                      </div>
+                                                      <div class ="col-6 offset-sm-3" style="padding:0px;padding-left:10px;padding-bottom:10px;">
+                                                        <div class ="row">
+                                                          <button type="button" class="button-control-left" id="up">move<br>plateform<br>up</button>
+                                                          <button type="button" class="button-control-right" id="down">move<br>plateform<br>down</button>
+                                                        </div>
+                                                        <div class ="row" style ="padding-top:20px;">
+                                                          <p clas ="lead" style="color:black;font-size:12px">distance to up
+                                                              <div class="input-container easy-get">
+                                                                  <input type="text" class="easy-put" readonly="true" id="text"/>
+                                                              </div>
+                                                              <p clas ="lead" style="color:black;font-size:12px">mm</p>
+                                                          </p>
+                                                        </div>
+                                                          <!-- <button type="button" id="inputText" value="0.55">0.55</button> -->
+                                                      </div>
+                                                      <div class ="col-3">
+                                                          <button type="button" class="button-control-confirm" id="confirm">Confirm</button>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                            <div style ="padding-top:30px;transform: rotate(210deg);height:80%; width:80%;"><canvas id="foo"></canvas></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
                                 <div class="card-text text-white" id = "instruction5">
                                   <p class="lead">Unity-tamp down the powder</p>
                                 </div>
@@ -212,7 +397,7 @@ html {
                                     <p class="lead">Unity-clean lens</p>
                                   </div>
                                 <div class="card-text text-white" id = "instruction8">
-                                    <p class="lead">Unity-recoater left to the right
+                                    <p class="lead">
                                     <ul class="lead">Ensure the following work steps are performed:
                                         <li>Clean process chamber</li>
                                         <li>Fill dispenser duct</li>
@@ -249,5 +434,6 @@ html {
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="Assets/js/custom/SetupCondition.js"></script>
+    <script src="Assets/js/custom/easy-numpad.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 </body

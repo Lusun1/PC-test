@@ -42,7 +42,8 @@ sav = new Array(
   "#instruction6",
   "#instruction7",
   "#instruction8",
-  "#instruction9"
+  "#instruction9",
+  "#instruction10"
   );
 
 intro = new Array(
@@ -70,6 +71,185 @@ $('.chapter').on("click", function() {
   }
 })
 
+// $('#down').mousedown(function() {
+//   gameInstance.SendMessage('JSManager', 'BuildPlateDown');
+// });
+
+// $('#down').mouseup(function() {
+//   gameInstance.SendMessage('JSManager', 'BuildPlateStop');
+// });
+
+// $('#up').mousedown(function() {
+//   gameInstance.SendMessage('JSManager', 'BuildPlateUp');
+// });
+
+// $('#up').mouseup(function() {
+//   gameInstance.SendMessage('JSManager', 'BuildPlateStop');
+// });
+
+
+// $('#left').mousedown(function() {
+//   gameInstance.SendMessage('JSManager', 'RecoaterLeft');
+  
+// });
+
+// $('#left').mouseup(function() {
+//   gameInstance.SendMessage('JSManager', 'RecoaterStop');
+// });
+
+// $('#right').mousedown(function() {
+//   gameInstance.SendMessage('JSManager', 'RecoaterRight');
+// });
+
+// $('#right').mouseup(function() {
+//   gameInstance.SendMessage('JSManager', 'RecoaterStop');
+// });
+
+// $('#confirm').on("click", function() {
+//   var distance = $("#text").val();
+//   CTATCommShell.commShell.gradeSAI("inputText", "enterNumber", distance);
+//   console.log(distance);
+// });
+
+
+function loopLeft(trigger) {
+  if (trigger == 1){
+    if($("#recoater").position().left > -109){
+      $('#recoater').animate ({
+        left: '-=1.3',
+      }, 50, 'linear', function() {
+        loopLeft(1)
+      });
+    }
+    else{
+      console.log("stop");
+      $('#recoater').stop();
+    }
+  }
+  else{
+    $('#recoater').stop();
+    }
+  }
+
+$('#left').mousedown(function() {
+  loopLeft(1);
+}); 
+
+$('#left').mouseup(function() {
+  loopLeft(0);
+}); 
+
+function loopRight(trigger) {
+  if (trigger == 1){
+    if($("#recoater").position().left < 10){
+      $('#recoater').animate ({
+        left: '+=1.3',
+      }, 50, 'linear', function() {
+        loopRight(1)
+      });
+    }
+    else{
+      console.log("stop");
+      $('#recoater').stop();
+    }
+  }
+  else{
+    $('#recoater').stop();
+    }
+  }
+
+$('#right').mousedown(function() {
+  loopRight(1);
+}); 
+
+$('#right').mouseup(function() {
+  loopRight(0);
+}); 
+
+function loopDown(trigger) {
+  if (trigger == 1){
+      $('#plate2').animate ({
+        top: '+=1',
+      }, 200, 'linear', function() {
+        loopDown(1)
+      });
+    }
+    else{
+      $('#plate2').stop();
+    }
+  }
+
+$('#down').mousedown(function() {
+  loopDown(1);
+}); 
+
+$('#down').mouseup(function() {
+  loopDown(0);
+}); 
+
+
+function loopUp(trigger) {
+  if (trigger == 1){
+      $('#plate2').animate ({
+        top: '-=1',
+      }, 200, 'linear', function() {
+        loopUp(1)
+      });
+    }
+    else{
+      $('#plate2').stop();
+    }
+  }
+
+$('#up').mousedown(function() {
+  loopUp(1);
+}); 
+
+$('#up').mouseup(function() {
+  loopUp(0);
+}); 
+
+function loopCollectorDown(trigger) {
+  if (trigger == 1){
+      $('#plate1').animate ({
+        top: '+=1',
+      }, 200, 'linear', function() {
+        loopCollectorDown(1)
+      });
+    }
+    else{
+      $('#plate1').stop();
+    }
+  }
+
+$('#collector').mousedown(function() {
+  loopCollectorDown(1);
+}); 
+
+$('#collector').mouseup(function() {
+  loopCollectorDown(0);
+}); 
+
+function loopDispenserDown(trigger) {
+  if (trigger == 1){
+      $('#plate3').animate ({
+        top: '+=1',
+      }, 200, 'linear', function() {
+        loopDispenserDown(1)
+      });
+    }
+    else{
+      $('#plate3').stop();
+    }
+  }
+
+$('#dispenserdown').mousedown(function() {
+  loopDispenserDown(1);
+}); 
+
+$('#dispenserdown').mouseup(function() {
+  loopDispenserDown(0);
+}); 
   // CTATCommShell.commShell.getLoggingLibrary().then(
   //   // success
   //   function () {
