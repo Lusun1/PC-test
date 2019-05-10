@@ -1,6 +1,6 @@
 // this need to be set according to each question content
 
-currentScene = '5.1';
+currentScene = '7.1';
 
 var text_dict = {
     questionId:"MFI Test",
@@ -119,6 +119,9 @@ function processUnity(){
 // set id of the component
 var i = 0;
 $('#next').on("click", function() {
+  if (sav[i] == '#instruction3') {
+    processUnity();
+  }
   if (sav[i] == '#instruction9') {
     console.log("this is the end")
     if(confirm(message_dict["confirm_done"])) {
