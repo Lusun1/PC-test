@@ -88,22 +88,22 @@ $('.chapter').on("click", function() {
 // });
 
 
-// $('#left').mousedown(function() {
-//   gameInstance.SendMessage('JSManager', 'RecoaterLeft');
+$('#left').mousedown(function() {
+  gameInstance.SendMessage('JSManager', 'RecoaterLeft');
   
-// });
+});
 
-// $('#left').mouseup(function() {
-//   gameInstance.SendMessage('JSManager', 'RecoaterStop');
-// });
+$('#left').mouseup(function() {
+  gameInstance.SendMessage('JSManager', 'RecoaterStop');
+});
 
-// $('#right').mousedown(function() {
-//   gameInstance.SendMessage('JSManager', 'RecoaterRight');
-// });
+$('#right').mousedown(function() {
+  gameInstance.SendMessage('JSManager', 'RecoaterRight');
+});
 
-// $('#right').mouseup(function() {
-//   gameInstance.SendMessage('JSManager', 'RecoaterStop');
-// });
+$('#right').mouseup(function() {
+  gameInstance.SendMessage('JSManager', 'RecoaterStop');
+});
 
 // $('#confirm').on("click", function() {
 //   var distance = $("#text").val();
@@ -222,11 +222,11 @@ function loopCollectorDown(trigger) {
     }
   }
 
-$('#collector').mousedown(function() {
+$('#collectordown').mousedown(function() {
   loopCollectorDown(1);
 }); 
 
-$('#collector').mouseup(function() {
+$('#collectordown').mouseup(function() {
   loopCollectorDown(0);
 }); 
 
@@ -270,6 +270,23 @@ function processIncorrectMessageMountRecoater(answer){
   $('#hint_text').text(answer);
 }
 
+function loadComplete() {
+    $("#hint_text").css("color","white");
+    $('#hint_text').text("Press Next to continue.");
+    console.log("Connected to Unity");
+    setStep(currentScene);
+    //gameInstance.SendMessage('JSManager', 'ToggleHint', 0);
+    //$('#hint').show();
+}
+
+function setStep(stepId) {
+    gameInstance.SendMessage('JSManager', 'SetStep', stepId);
+}
+
+function nextStep() {
+    gameInstance.SendMessage('JSManager', 'NextStep');
+}
+
 let CheckAnswer = function(){
     result = $("#sortable2").children().attr("id") +":"+$("#sortable3").children().attr("id") +":"+$("#sortable4").children().attr("id");
     console.log(result)
@@ -286,6 +303,22 @@ let CheckAnswer = function(){
     } 
 }
 
+$('#collectordown').mousedown(function() {
+  gameInstance.SendMessage('JSManager', 'CollectorDown');
+});
+
+$('#collectordown').mouseup(function() {
+  gameInstance.SendMessage('JSManager', 'CollectorStop');
+});
+
+$('#dispenserdown').mousedown(function() {
+  gameInstance.SendMessage('JSManager', 'DispenserDown');
+});
+
+$('#dispenserdown').mouseup(function() {
+  gameInstance.SendMessage('JSManager', 'DispenserStop');
+});
+
 function processUnity(){
   $('#unity').show();
   //CTATCommShell.commShell.gradeSAI("unity_recoater_blade", "grabOnItem", "HSS")
@@ -294,6 +327,68 @@ function processUnity(){
   gameInstance = UnityLoader.instantiate("gameContainer", "Assets/unity/Build/unity.json", {onProgress: UnityProgress});
   $("#hint_text").css("color","white");
   $('#hint_text').text(messages.question_text);
+}
+
+function reachLimit(type) {
+  console.log("reachLimit type: " + type + " isComplete: " + isComplete);
+  if (!isComplete) {
+    isComplete = true;
+    onCorrect();
+    CTATCommShell.commShell.gradeSAI("UnityObject", "reachLimit", type);
+  }
+}
+
+function spreadPowder(str){
+  CTATCommShell.commShell.gradeSAI("UnityObject", "spreadPowder", str);
+}
+
+function onCorrect() {
+  $('#next').attr("disabled", false);
+  $('#hint_text').css('color', 'green');
+  $('#hint_text').text(messages.success_text);
+}
+
+var dragOnItemRegistered = false;
+var screwCount = 0;
+var isComplete = false;
+function dragOnItem(itemName) {
+  console.log('dragOnItem: ' + itemName);
+  assocRulesListener =
+    {
+      processCommShellEvent: function(evt, msg)
+          {
+              var events = ["AssociatedRules", "BuggyMessage"];
+              if( events.indexOf(evt) == -1  || !msg)
+              {
+                  return;
+              }
+            window.assocrules = msg;
+            var indicator = msg.getIndicator();
+            console.log("this is the indicator" + indicator);
+            var sai = msg.getSAI();
+            var component = sai.getSelection();
+            console.log(sai.getSelection() + ';' + sai.getAction() + ';' + sai.getInput() + ';' + indicator);
+            if ("correct" == indicator.toLowerCase()) {
+                if (sav[i] != '#instruction10') {
+                  isComplete = true;
+                  onCorrect();
+                }
+            } else {
+                if (!isComplete)
+                    $('#next').attr("disabled", true);
+            }
+            if("incorrect" == indicator.toLowerCase())
+            {
+                $("#hint_text").css("color","red");
+                $('#hint_text').text("Sorry, you are incorrect. Please try another powder");
+            }
+    }
+  };
+  if (!dragOnItemRegistered) {
+      dragOnItemRegistered = true;
+      CTATCommShell.commShell.addGlobalEventListener(assocRulesListener);
+  }
+  CTATCommShell.commShell.gradeSAI("UnityObject", "dragOnItem", itemName);
 }
 
 // set id of the component
@@ -311,12 +406,21 @@ $('#next').on("click", function() {
     }
   }
   else{
-    console.log(sav[i]);
-    $(sav[i]).hide();
+    console.log("clicknext, sav[i] = " + sav[i]);
+    if (sav[i] == '#instruction1' || sav[i] == '#instruction2' || sav[i] == '#instruction3')
+      $(sav[i]).hide();
     $(intro[i]).hide();
     i += 1;
-    $(sav[i]).show();
+    if (sav[i] == '#instruction2' || sav[i] == '#instruction3' || sav[i] == '#instruction4')
+      $(sav[i]).show();
     $(intro[i]).show();
+    $('#hint_text').text(messages.question_text);
+    $("#hint_text").css("color","white");
+    if (sav[i] != '#instruction2' && sav[i] != '#instruction3' && sav[i] != '#instruction4') {
+      $('#next').attr("disabled", true);
+      nextStep();
+    }
+    isComplete = false;
   }
  });
 

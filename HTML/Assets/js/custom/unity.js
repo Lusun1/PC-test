@@ -28,14 +28,14 @@ function nextStep() {
 var dropObject = {
 }
 
-var dropArr = ['Recoater', 'Building Platform', 'Collector Duct', 'Dispenser Duct', 'Rocker Swithches'];
+var dropArr = ['Recoater', 'Building Platform', 'Collector Duct', 'Dispenser Duct', 'Rocker Switches'];
 
 var dropIdToName = {
     RecoaterText: 'Recoater',
     BuildingPlatformText: 'Building Platform',
     CollectorDuctText: 'Collector Duct',
     DispenserDuctText: 'Dispenser Duct',
-    RockerSwitchesText: 'Rocker Swithches'
+    RockerSwitchesText: 'Rocker Switches'
 }
 
 function dropText(objectId, objectText) {
@@ -61,7 +61,7 @@ var idToName = {
     'Building Platform': 'Building Platform',
     CollectorBinModel: 'Collector Duct',
     DispenserModel: 'Dispenser Duct',
-    Rocker: 'Rocker Swithches'
+    Rocker: 'Rocker Switches'
 }
 
 var termToId = {
@@ -136,7 +136,7 @@ var dropNameToId = {
     'Building Platform': 'BuildingPlatformText',
     'Collector Duct': 'CollectorDuctText',
     'Dispenser Duct': 'DispenserDuctText',
-    'Rocker Swithches': 'RockerSwitchesText'
+    'Rocker Switches': 'RockerSwitchesText'
 }
 
 function clickObject(objectName) {
