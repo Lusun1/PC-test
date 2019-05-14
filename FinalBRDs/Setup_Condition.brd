@@ -88,76 +88,12 @@
             <y>1011</y>
         </dimension>
     </node>
-    <node locked="false" doneState="false">
-        <text>state27</text>
-        <uniqueID>28</uniqueID>
-        <dimension>
-            <x>322</x>
-            <y>1121</y>
-        </dimension>
-    </node>
-    <node locked="false" doneState="false">
-        <text>state28</text>
-        <uniqueID>29</uniqueID>
-        <dimension>
-            <x>322</x>
-            <y>1231</y>
-        </dimension>
-    </node>
-    <node locked="false" doneState="false">
-        <text>state29</text>
-        <uniqueID>30</uniqueID>
-        <dimension>
-            <x>322</x>
-            <y>1341</y>
-        </dimension>
-    </node>
-    <node locked="false" doneState="false">
-        <text>state30</text>
-        <uniqueID>31</uniqueID>
-        <dimension>
-            <x>322</x>
-            <y>1451</y>
-        </dimension>
-    </node>
-    <node locked="false" doneState="false">
-        <text>state31</text>
-        <uniqueID>32</uniqueID>
-        <dimension>
-            <x>322</x>
-            <y>1561</y>
-        </dimension>
-    </node>
-    <node locked="false" doneState="false">
-        <text>state32</text>
-        <uniqueID>33</uniqueID>
-        <dimension>
-            <x>322</x>
-            <y>1671</y>
-        </dimension>
-    </node>
-    <node locked="false" doneState="false">
-        <text>state33</text>
-        <uniqueID>34</uniqueID>
-        <dimension>
-            <x>322</x>
-            <y>1781</y>
-        </dimension>
-    </node>
-    <node locked="false" doneState="false">
-        <text>state34</text>
-        <uniqueID>35</uniqueID>
-        <dimension>
-            <x>322</x>
-            <y>1891</y>
-        </dimension>
-    </node>
     <node locked="false" doneState="true">
         <text>Done</text>
         <uniqueID>36</uniqueID>
         <dimension>
-            <x>329</x>
-            <y>2001</y>
+            <x>330</x>
+            <y>1121</y>
         </dimension>
     </node>
     <edge>
@@ -294,10 +230,10 @@
                         <value>UnityObject</value>
                     </Selection>
                     <Action>
-                        <value>dragOnItem</value>
+                        <value>spreadPowder</value>
                     </Action>
                     <Input>
-                        <value>UIPlateScrew</value>
+                        <value>Complete</value>
                     </Input>
                     <transaction_id>fdedc88f-51ae-61b3-6d8e-fd79a6648529</transaction_id>
                 </properties>
@@ -319,13 +255,13 @@
                 <Action>
                     <matcher>
                         <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">dragOnItem</matcherParameter>
+                        <matcherParameter name="single">spreadPowder</matcherParameter>
                     </matcher>
                 </Action>
                 <Input>
                     <matcher>
                         <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">UIPlateScrew</matcherParameter>
+                        <matcherParameter name="single">Complete</matcherParameter>
                     </matcher>
                 </Input>
                 <Actor linkTriggered="false">Student</Actor>
@@ -354,10 +290,10 @@
                         <value>UnityObject</value>
                     </Selection>
                     <Action>
-                        <value>dragOnItem</value>
+                        <value>dragOut</value>
                     </Action>
                     <Input>
-                        <value>UIPlateScrew</value>
+                        <value>LensMask</value>
                     </Input>
                     <transaction_id>fdedc88f-51ae-61b3-6d8e-fd79a6648529</transaction_id>
                 </properties>
@@ -379,13 +315,13 @@
                 <Action>
                     <matcher>
                         <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">dragOnItem</matcherParameter>
+                        <matcherParameter name="single">dragOut</matcherParameter>
                     </matcher>
                 </Action>
                 <Input>
                     <matcher>
                         <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">UIPlateScrew</matcherParameter>
+                        <matcherParameter name="single">LensMask</matcherParameter>
                     </matcher>
                 </Input>
                 <Actor linkTriggered="false">Student</Actor>
@@ -415,10 +351,10 @@
                         <value>UnityObject</value>
                     </Selection>
                     <Action>
-                        <value>reachLimit</value>
+                        <value>dragOnItem</value>
                     </Action>
                     <Input>
-                        <value>Bottom</value>
+                        <value>UICleaner</value>
                     </Input>
                 </properties>
             </message>
@@ -441,13 +377,13 @@
                 <Action>
                     <matcher>
                         <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">reachLimit</matcherParameter>
+                        <matcherParameter name="single">dragOnItem</matcherParameter>
                     </matcher>
                 </Action>
                 <Input>
                     <matcher>
                         <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">Bottom</matcherParameter>
+                        <matcherParameter name="single">UICleaner</matcherParameter>
                     </matcher>
                 </Input>
                 <Actor linkTriggered="false">Student</Actor>
@@ -476,10 +412,10 @@
                         <value>UnityObject</value>
                     </Selection>
                     <Action>
-                        <value>reachLimit</value>
+                        <value>dragOnItem</value>
                     </Action>
                     <Input>
-                        <value>Left</value>
+                        <value>UIMask</value>
                     </Input>
                     <transaction_id>f229d499-b111-40c1-c29b-d58c0d4fd5b6</transaction_id>
                 </properties>
@@ -501,13 +437,13 @@
                 <Action>
                     <matcher>
                         <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">reachLimit</matcherParameter>
+                        <matcherParameter name="single">dragOnItem</matcherParameter>
                     </matcher>
                 </Action>
                 <Input>
                     <matcher>
                         <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">Left</matcherParameter>
+                        <matcherParameter name="single">UIMask</matcherParameter>
                     </matcher>
                 </Input>
                 <Actor linkTriggered="false">Student</Actor>
@@ -536,492 +472,12 @@
                         <value>UnityObject</value>
                     </Selection>
                     <Action>
-                        <value>dragOnItem</value>
-                    </Action>
-                    <Input>
-                        <value>UIMoveableIndicator</value>
-                    </Input>
-                    <transaction_id>T4f12026f-ff0b-4a93-aeee-14a43f40bd85</transaction_id>
-                </properties>
-            </message>
-            <buggyMessage>No, this is not correct.</buggyMessage>
-            <successMessage></successMessage>
-            <hintMessage>Please provide your answer 'No_Value' in the highlighted element.</hintMessage>
-            <callbackFn></callbackFn>
-            <actionType>Correct Action</actionType>
-            <oldActionType>Correct Action</oldActionType>
-            <checkedStatus>Never Checked</checkedStatus>
-            <matchers Concatenation="true">
-                <Selection>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">UnityObject</matcherParameter>
-                    </matcher>
-                </Selection>
-                <Action>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">dragOnItem</matcherParameter>
-                    </matcher>
-                </Action>
-                <Input>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">UIMoveableIndicator</matcherParameter>
-                    </matcher>
-                </Input>
-                <Actor linkTriggered="false">Student</Actor>
-            </matchers>
-        </actionLabel>
-        <preCheckedStatus>No-Applicable</preCheckedStatus>
-        <rule>
-            <text>unnamed</text>
-            <indicator>-1</indicator>
-        </rule>
-        <sourceID>26</sourceID>
-        <destID>27</destID>
-        <traversalCount>0</traversalCount>
-    </edge>
-    <edge>
-        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
-            <studentHintRequest></studentHintRequest>
-            <stepSuccessfulCompletion></stepSuccessfulCompletion>
-            <stepStudentError></stepStudentError>
-            <uniqueID>84</uniqueID>
-            <message>
-                <verb>SendNoteProperty</verb>
-                <properties>
-                    <MessageType>InterfaceAction</MessageType>
-                    <Selection>
-                        <value>UnityObject</value>
-                    </Selection>
-                    <Action>
-                        <value>reachLimit</value>
-                    </Action>
-                    <Input>
-                        <value>Front</value>
-                    </Input>
-                    <transaction_id>T7931c3c5-b6c2-4845-a3ac-f20fd6ccd80f</transaction_id>
-                </properties>
-            </message>
-            <buggyMessage>No, this is not correct.</buggyMessage>
-            <successMessage></successMessage>
-            <hintMessage>Please provide your answer 'No_Value' in the highlighted element.</hintMessage>
-            <callbackFn></callbackFn>
-            <actionType>Correct Action</actionType>
-            <oldActionType>Correct Action</oldActionType>
-            <checkedStatus>Never Checked</checkedStatus>
-            <matchers Concatenation="true">
-                <Selection>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">UnityObject</matcherParameter>
-                    </matcher>
-                </Selection>
-                <Action>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">reachLimit</matcherParameter>
-                    </matcher>
-                </Action>
-                <Input>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">Front</matcherParameter>
-                    </matcher>
-                </Input>
-                <Actor linkTriggered="false">Student</Actor>
-            </matchers>
-        </actionLabel>
-        <preCheckedStatus>No-Applicable</preCheckedStatus>
-        <rule>
-            <text>unnamed</text>
-            <indicator>-1</indicator>
-        </rule>
-        <sourceID>27</sourceID>
-        <destID>28</destID>
-        <traversalCount>0</traversalCount>
-    </edge>
-    <edge>
-        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
-            <studentHintRequest></studentHintRequest>
-            <stepSuccessfulCompletion></stepSuccessfulCompletion>
-            <stepStudentError></stepStudentError>
-            <uniqueID>85</uniqueID>
-            <message>
-                <verb>SendNoteProperty</verb>
-                <properties>
-                    <MessageType>InterfaceAction</MessageType>
-                    <Selection>
-                        <value>UnityObject</value>
-                    </Selection>
-                    <Action>
-                        <value>reachLimit</value>
-                    </Action>
-                    <Input>
-                        <value>PlateFlat</value>
-                    </Input>
-                    <transaction_id>c404a3fc-f635-7fd2-4d6d-c2d1a2b8b3ef</transaction_id>
-                </properties>
-            </message>
-            <buggyMessage>No, this is not correct.</buggyMessage>
-            <successMessage></successMessage>
-            <hintMessage>Please provide your answer 'No_Value' in the highlighted element.</hintMessage>
-            <callbackFn></callbackFn>
-            <actionType>Correct Action</actionType>
-            <oldActionType>Correct Action</oldActionType>
-            <checkedStatus>Never Checked</checkedStatus>
-            <matchers Concatenation="true">
-                <Selection>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">UnityObject</matcherParameter>
-                    </matcher>
-                </Selection>
-                <Action>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">reachLimit</matcherParameter>
-                    </matcher>
-                </Action>
-                <Input>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">PlateFlat</matcherParameter>
-                    </matcher>
-                </Input>
-                <Actor linkTriggered="false">Student</Actor>
-            </matchers>
-        </actionLabel>
-        <preCheckedStatus>No-Applicable</preCheckedStatus>
-        <rule>
-            <text>unnamed</text>
-            <indicator>-1</indicator>
-        </rule>
-        <sourceID>28</sourceID>
-        <destID>29</destID>
-        <traversalCount>0</traversalCount>
-    </edge>
-    <edge>
-        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
-            <studentHintRequest></studentHintRequest>
-            <stepSuccessfulCompletion></stepSuccessfulCompletion>
-            <stepStudentError></stepStudentError>
-            <uniqueID>86</uniqueID>
-            <message>
-                <verb>SendNoteProperty</verb>
-                <properties>
-                    <MessageType>InterfaceAction</MessageType>
-                    <Selection>
-                        <value>UnityObject</value>
-                    </Selection>
-                    <Action>
-                        <value>reachLimit</value>
-                    </Action>
-                    <Input>
-                        <value>Right</value>
-                    </Input>
-                    <transaction_id>f229d499-b111-40c1-c29b-d58c0d4fd5b6</transaction_id>
-                </properties>
-            </message>
-            <buggyMessage>No, this is not correct.</buggyMessage>
-            <successMessage></successMessage>
-            <hintMessage>Please provide your answer 'No_Value' in the highlighted element.</hintMessage>
-            <callbackFn></callbackFn>
-            <actionType>Correct Action</actionType>
-            <oldActionType>Correct Action</oldActionType>
-            <checkedStatus>Never Checked</checkedStatus>
-            <matchers Concatenation="true">
-                <Selection>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">UnityObject</matcherParameter>
-                    </matcher>
-                </Selection>
-                <Action>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">reachLimit</matcherParameter>
-                    </matcher>
-                </Action>
-                <Input>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">Right</matcherParameter>
-                    </matcher>
-                </Input>
-                <Actor linkTriggered="false">Student</Actor>
-            </matchers>
-        </actionLabel>
-        <preCheckedStatus>No-Applicable</preCheckedStatus>
-        <rule>
-            <text>unnamed</text>
-            <indicator>-1</indicator>
-        </rule>
-        <sourceID>29</sourceID>
-        <destID>30</destID>
-        <traversalCount>0</traversalCount>
-    </edge>
-    <edge>
-        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
-            <studentHintRequest></studentHintRequest>
-            <stepSuccessfulCompletion></stepSuccessfulCompletion>
-            <stepStudentError></stepStudentError>
-            <uniqueID>87</uniqueID>
-            <message>
-                <verb>SendNoteProperty</verb>
-                <properties>
-                    <MessageType>InterfaceAction</MessageType>
-                    <Selection>
-                        <value>UnityObject</value>
-                    </Selection>
-                    <Action>
-                        <value>reachLimit</value>
-                    </Action>
-                    <Input>
-                        <value>PlateFlat1</value>
-                    </Input>
-                    <transaction_id>T4f12026f-ff0b-4a93-aeee-14a43f40bd85</transaction_id>
-                </properties>
-            </message>
-            <buggyMessage>No, this is not correct.</buggyMessage>
-            <successMessage></successMessage>
-            <hintMessage>Please provide your answer 'No_Value' in the highlighted element.</hintMessage>
-            <callbackFn></callbackFn>
-            <actionType>Correct Action</actionType>
-            <oldActionType>Correct Action</oldActionType>
-            <checkedStatus>Never Checked</checkedStatus>
-            <matchers Concatenation="true">
-                <Selection>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">UnityObject</matcherParameter>
-                    </matcher>
-                </Selection>
-                <Action>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">reachLimit</matcherParameter>
-                    </matcher>
-                </Action>
-                <Input>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">PlateFlat1</matcherParameter>
-                    </matcher>
-                </Input>
-                <Actor linkTriggered="false">Student</Actor>
-            </matchers>
-        </actionLabel>
-        <preCheckedStatus>No-Applicable</preCheckedStatus>
-        <rule>
-            <text>unnamed</text>
-            <indicator>-1</indicator>
-        </rule>
-        <sourceID>30</sourceID>
-        <destID>31</destID>
-        <traversalCount>0</traversalCount>
-    </edge>
-    <edge>
-        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
-            <studentHintRequest></studentHintRequest>
-            <stepSuccessfulCompletion></stepSuccessfulCompletion>
-            <stepStudentError></stepStudentError>
-            <uniqueID>88</uniqueID>
-            <message>
-                <verb>SendNoteProperty</verb>
-                <properties>
-                    <MessageType>InterfaceAction</MessageType>
-                    <Selection>
-                        <value>UnityObject</value>
-                    </Selection>
-                    <Action>
-                        <value>dragOnItem</value>
-                    </Action>
-                    <Input>
-                        <value>UI550Micron</value>
-                    </Input>
-                    <transaction_id>T7931c3c5-b6c2-4845-a3ac-f20fd6ccd80f</transaction_id>
-                </properties>
-            </message>
-            <buggyMessage>No, this is not correct.</buggyMessage>
-            <successMessage></successMessage>
-            <hintMessage>Please provide your answer 'No_Value' in the highlighted element.</hintMessage>
-            <callbackFn></callbackFn>
-            <actionType>Correct Action</actionType>
-            <oldActionType>Correct Action</oldActionType>
-            <checkedStatus>Never Checked</checkedStatus>
-            <matchers Concatenation="true">
-                <Selection>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">UnityObject</matcherParameter>
-                    </matcher>
-                </Selection>
-                <Action>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">dragOnItem</matcherParameter>
-                    </matcher>
-                </Action>
-                <Input>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">UI550Micron</matcherParameter>
-                    </matcher>
-                </Input>
-                <Actor linkTriggered="false">Student</Actor>
-            </matchers>
-        </actionLabel>
-        <preCheckedStatus>No-Applicable</preCheckedStatus>
-        <rule>
-            <text>unnamed</text>
-            <indicator>-1</indicator>
-        </rule>
-        <sourceID>31</sourceID>
-        <destID>32</destID>
-        <traversalCount>0</traversalCount>
-    </edge>
-    <edge>
-        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
-            <studentHintRequest></studentHintRequest>
-            <stepSuccessfulCompletion></stepSuccessfulCompletion>
-            <stepStudentError></stepStudentError>
-            <uniqueID>89</uniqueID>
-            <message>
-                <verb>SendNoteProperty</verb>
-                <properties>
-                    <MessageType>InterfaceAction</MessageType>
-                    <Selection>
-                        <value>inputText</value>
-                    </Selection>
-                    <Action>
-                        <value>enterNumber</value>
-                    </Action>
-                    <Input>
-                        <value>0.55</value>
-                    </Input>
-                    <transaction_id>c404a3fc-f635-7fd2-4d6d-c2d1a2b8b3ef</transaction_id>
-                </properties>
-            </message>
-            <buggyMessage>No, this is not correct.</buggyMessage>
-            <successMessage></successMessage>
-            <hintMessage>Please provide your answer 'No_Value' in the highlighted element.</hintMessage>
-            <callbackFn></callbackFn>
-            <actionType>Correct Action</actionType>
-            <oldActionType>Correct Action</oldActionType>
-            <checkedStatus>Never Checked</checkedStatus>
-            <matchers Concatenation="true">
-                <Selection>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">inputText</matcherParameter>
-                    </matcher>
-                </Selection>
-                <Action>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">enterNumber</matcherParameter>
-                    </matcher>
-                </Action>
-                <Input>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">0.55</matcherParameter>
-                    </matcher>
-                </Input>
-                <Actor linkTriggered="false">Student</Actor>
-            </matchers>
-        </actionLabel>
-        <preCheckedStatus>No-Applicable</preCheckedStatus>
-        <rule>
-            <text>unnamed</text>
-            <indicator>-1</indicator>
-        </rule>
-        <sourceID>32</sourceID>
-        <destID>33</destID>
-        <traversalCount>0</traversalCount>
-    </edge>
-    <edge>
-        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
-            <studentHintRequest></studentHintRequest>
-            <stepSuccessfulCompletion></stepSuccessfulCompletion>
-            <stepStudentError></stepStudentError>
-            <uniqueID>90</uniqueID>
-            <message>
-                <verb>SendNoteProperty</verb>
-                <properties>
-                    <MessageType>InterfaceAction</MessageType>
-                    <Selection>
-                        <value>UnityObject</value>
-                    </Selection>
-                    <Action>
-                        <value>reachLimit</value>
-                    </Action>
-                    <Input>
-                        <value>Top</value>
-                    </Input>
-                    <transaction_id>T7931c3c5-b6c2-4845-a3ac-f20fd6ccd80f</transaction_id>
-                </properties>
-            </message>
-            <buggyMessage>No, this is not correct.</buggyMessage>
-            <successMessage></successMessage>
-            <hintMessage>Please provide your answer 'No_Value' in the highlighted element.</hintMessage>
-            <callbackFn></callbackFn>
-            <actionType>Correct Action</actionType>
-            <oldActionType>Correct Action</oldActionType>
-            <checkedStatus>Never Checked</checkedStatus>
-            <matchers Concatenation="true">
-                <Selection>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">UnityObject</matcherParameter>
-                    </matcher>
-                </Selection>
-                <Action>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">reachLimit</matcherParameter>
-                    </matcher>
-                </Action>
-                <Input>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">Top</matcherParameter>
-                    </matcher>
-                </Input>
-                <Actor linkTriggered="false">Student</Actor>
-            </matchers>
-        </actionLabel>
-        <preCheckedStatus>No-Applicable</preCheckedStatus>
-        <rule>
-            <text>unnamed</text>
-            <indicator>-1</indicator>
-        </rule>
-        <sourceID>33</sourceID>
-        <destID>34</destID>
-        <traversalCount>0</traversalCount>
-    </edge>
-    <edge>
-        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
-            <studentHintRequest></studentHintRequest>
-            <stepSuccessfulCompletion></stepSuccessfulCompletion>
-            <stepStudentError></stepStudentError>
-            <uniqueID>91</uniqueID>
-            <message>
-                <verb>SendNoteProperty</verb>
-                <properties>
-                    <MessageType>InterfaceAction</MessageType>
-                    <Selection>
-                        <value>UnityObject</value>
-                    </Selection>
-                    <Action>
                         <value>dragOut</value>
                     </Action>
                     <Input>
-                        <value>Indicator</value>
+                        <value>Filter</value>
                     </Input>
-                    <transaction_id>c404a3fc-f635-7fd2-4d6d-c2d1a2b8b3ef</transaction_id>
+                    <transaction_id>T4f12026f-ff0b-4a93-aeee-14a43f40bd85</transaction_id>
                 </properties>
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
@@ -1047,7 +503,7 @@
                 <Input>
                     <matcher>
                         <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">Indicator</matcherParameter>
+                        <matcherParameter name="single">Filter</matcherParameter>
                     </matcher>
                 </Input>
                 <Actor linkTriggered="false">Student</Actor>
@@ -1058,68 +514,8 @@
             <text>unnamed</text>
             <indicator>-1</indicator>
         </rule>
-        <sourceID>34</sourceID>
-        <destID>35</destID>
-        <traversalCount>0</traversalCount>
-    </edge>
-    <edge>
-        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
-            <studentHintRequest></studentHintRequest>
-            <stepSuccessfulCompletion></stepSuccessfulCompletion>
-            <stepStudentError></stepStudentError>
-            <uniqueID>92</uniqueID>
-            <message>
-                <verb>NotePropertySet</verb>
-                <properties>
-                    <MessageType>InterfaceAction</MessageType>
-                    <transaction_id>1c025f88-f6be-b493-a811-2b09fd08576b</transaction_id>
-                    <Selection>
-                        <value>done</value>
-                    </Selection>
-                    <Action>
-                        <value>ButtonPressed</value>
-                    </Action>
-                    <Input>
-                        <value>-1</value>
-                    </Input>
-                </properties>
-            </message>
-            <buggyMessage>No, this is not correct.</buggyMessage>
-            <successMessage></successMessage>
-            <hintMessage>Please click on the highlighted button.</hintMessage>
-            <callbackFn></callbackFn>
-            <actionType>Correct Action</actionType>
-            <oldActionType>Correct Action</oldActionType>
-            <checkedStatus>Never Checked</checkedStatus>
-            <matchers Concatenation="true">
-                <Selection>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">done</matcherParameter>
-                    </matcher>
-                </Selection>
-                <Action>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">ButtonPressed</matcherParameter>
-                    </matcher>
-                </Action>
-                <Input>
-                    <matcher>
-                        <matcherType>ExactMatcher</matcherType>
-                        <matcherParameter name="single">-1</matcherParameter>
-                    </matcher>
-                </Input>
-                <Actor linkTriggered="false">Student</Actor>
-            </matchers>
-        </actionLabel>
-        <preCheckedStatus>No-Applicable</preCheckedStatus>
-        <rule>
-            <text>unnamed</text>
-            <indicator>-1</indicator>
-        </rule>
-        <sourceID>35</sourceID>
-        <destID>36</destID>
+        <sourceID>26</sourceID>
+        <destID>27</destID>
         <traversalCount>0</traversalCount>
     </edge>
     <edge>
@@ -1180,6 +576,66 @@
         </rule>
         <sourceID>1</sourceID>
         <destID>20</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>92</uniqueID>
+            <message>
+                <verb>NotePropertySet</verb>
+                <properties>
+                    <MessageType>InterfaceAction</MessageType>
+                    <transaction_id>1c025f88-f6be-b493-a811-2b09fd08576b</transaction_id>
+                    <Selection>
+                        <value>done</value>
+                    </Selection>
+                    <Action>
+                        <value>ButtonPressed</value>
+                    </Action>
+                    <Input>
+                        <value>-1</value>
+                    </Input>
+                </properties>
+            </message>
+            <buggyMessage>No, this is not correct.</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Please click on the highlighted button.</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Correct Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">done</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">ButtonPressed</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">-1</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>unnamed</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>27</sourceID>
+        <destID>36</destID>
         <traversalCount>0</traversalCount>
     </edge>
     <EdgesGroups ordered="true"></EdgesGroups>
